@@ -1,7 +1,49 @@
+const ANSWER_SECONDS = 20;
+
 let currentIdx = 0;
 let revealedCount = 1;
 let showEN = false;
+let timerShownFor = -1;
+let answerTimerInterval = null;
 const visited = new Set();
+
+function clearAnswerTimer() {
+  if (answerTimerInterval) {
+    clearInterval(answerTimerInterval);
+    answerTimerInterval = null;
+  }
+}
+
+function startAnswerTimer(seconds) {
+  let remaining = seconds;
+  const controls = document.getElementById("controls");
+  controls.innerHTML = `
+    <div class="timer-box">
+      <div class="timer-label">Spreek je antwoord nu hardop. Je hebt ongeveer <span id="timerCount">${seconds}</span> seconden.</div>
+      <div class="timer-track"><div class="timer-fill" id="timerFill"></div></div>
+      <button class="btn-secondary" id="skipTimerBtn">Ik ben klaar &rarr;</button>
+    </div>`;
+  const fill = document.getElementById("timerFill");
+  fill.style.width = "100%";
+  requestAnimationFrame(() => {
+    fill.style.transition = `width ${seconds}s linear`;
+    fill.style.width = "0%";
+  });
+  document.getElementById("skipTimerBtn").addEventListener("click", () => {
+    clearAnswerTimer();
+    revealNext();
+  });
+  clearAnswerTimer();
+  answerTimerInterval = setInterval(() => {
+    remaining--;
+    const countEl = document.getElementById("timerCount");
+    if (countEl) countEl.textContent = Math.max(remaining, 0);
+    if (remaining <= 0) {
+      clearAnswerTimer();
+      revealNext();
+    }
+  }, 1000);
+}
 
 function speakerLabel(turn, scenario) {
   return turn.speaker === "you" ? "Jij" : scenario.other;
@@ -128,9 +170,17 @@ function renderScenario() {
   const controls = document.getElementById("controls");
   if (revealedCount < s.turns.length) {
     const next = s.turns[revealedCount];
-    const label = next.speaker === "you" ? "Toon jouw antwoord →" : "Volgende zin →";
-    controls.innerHTML = `<button class="reveal-btn" onclick="revealNext()">${label}</button>`;
+    if (next.speaker === "you") {
+      if (timerShownFor !== revealedCount) {
+        timerShownFor = revealedCount;
+        startAnswerTimer(ANSWER_SECONDS);
+      }
+    } else {
+      clearAnswerTimer();
+      controls.innerHTML = `<button class="reveal-btn" onclick="revealNext()">Volgende zin &rarr;</button>`;
+    }
   } else {
+    clearAnswerTimer();
     controls.innerHTML = `
       <button class="btn-secondary" onclick="restartScenario()">Opnieuw oefenen</button>
       <button class="btn-primary" onclick="goTo(currentIdx+1)" ${currentIdx === SCENARIOS.length - 1 ? "disabled" : ""}>Volgende situatie &rarr;</button>`;
@@ -143,6 +193,8 @@ function revealNext() {
 }
 
 function restartScenario() {
+  clearAnswerTimer();
+  timerShownFor = -1;
   revealedCount = 1;
   renderScenario();
 }
@@ -155,6 +207,8 @@ function toggleEN() {
 function goTo(idx) {
   if (idx < 0 || idx >= SCENARIOS.length) return;
   window.speechSynthesis && window.speechSynthesis.cancel();
+  clearAnswerTimer();
+  timerShownFor = -1;
   visited.add(currentIdx);
   currentIdx = idx;
   revealedCount = 1;

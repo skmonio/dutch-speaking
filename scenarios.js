@@ -2,8 +2,8 @@ const SCENARIOS = [
   {
     topic: "Gezondheid & sport",
     situation: {
-      nl: "Je vriend vraagt je om advies over sporten.",
-      en: "Your friend is asking you for advice about exercising."
+      nl: "Je zit met een vriend te praten. Hij vertelt dat hij graag wil sporten, maar dat de sportschool hem te duur is. Hij vraagt jou om advies.",
+      en: "You're sitting talking with a friend. He tells you he'd like to exercise, but that the gym is too expensive for him. He asks you for advice."
     },
     other: "Vriend",
     turns: [
@@ -22,8 +22,8 @@ const SCENARIOS = [
   {
     topic: "Bij de huisarts",
     situation: {
-      nl: "Je belt de assistente van de huisarts om je afspraak te verzetten.",
-      en: "You call the doctor's assistant to reschedule your appointment."
+      nl: "Je hebt morgen een afspraak bij de huisarts, maar je kunt niet komen. Je belt de praktijk om de afspraak te verzetten.",
+      en: "You have an appointment at the doctor's tomorrow, but you can't come. You call the practice to reschedule the appointment."
     },
     other: "Assistente",
     turns: [
@@ -52,8 +52,8 @@ const SCENARIOS = [
   {
     topic: "Op het werk",
     situation: {
-      nl: "Je vraagt je manager om een dag vrij.",
-      en: "You ask your manager for a day off."
+      nl: "Je zus gaat trouwen op een dag dat jij moet werken. Je gaat naar je manager om te vragen of je die dag vrij mag nemen.",
+      en: "Your sister is getting married on a day when you have to work. You go to your manager to ask if you can take that day off."
     },
     other: "Manager",
     turns: [
@@ -82,8 +82,8 @@ const SCENARIOS = [
   {
     topic: "Met de buren",
     situation: {
-      nl: "Je spreekt je buurman aan over lawaai.",
-      en: "You talk to your neighbor about noise."
+      nl: "Je buurman zet 's avonds laat vaak harde muziek aan. Jij kunt daardoor niet goed slapen. Je spreekt hem hierover aan.",
+      en: "Your neighbor often plays loud music late in the evening. Because of this you can't sleep well. You talk to him about it."
     },
     other: "Buurman",
     turns: [
@@ -107,8 +107,8 @@ const SCENARIOS = [
   {
     topic: "Onderweg",
     situation: {
-      nl: "Je vraagt een voorbijganger de weg naar het station.",
-      en: "You ask a passerby for directions to the station."
+      nl: "Je bent in een stad die je niet goed kent. Je moet naar het station, maar je weet de weg niet. Je vraagt het aan een voorbijganger.",
+      en: "You are in a city you don't know well. You need to get to the station, but you don't know the way. You ask a passerby."
     },
     other: "Voorbijganger",
     turns: [
@@ -137,8 +137,8 @@ const SCENARIOS = [
   {
     topic: "Sociale afspraken",
     situation: {
-      nl: "Je belt een vriendin af voor het etentje van vanavond.",
-      en: "You call a friend to cancel tonight's dinner."
+      nl: "Je hebt met een vriendin afgesproken om vanavond samen te eten. Je voelt je niet lekker en wilt liever thuisblijven. Je belt haar op.",
+      en: "You've arranged to have dinner with a friend tonight. You don't feel well and would rather stay home. You call her."
     },
     other: "Vriendin",
     turns: [
@@ -167,8 +167,8 @@ const SCENARIOS = [
   {
     topic: "Advies geven",
     situation: {
-      nl: "Een vriend wil weten wat je advies is over het kopen van een tweedehands fiets.",
-      en: "A friend wants to know your advice about buying a second-hand bike."
+      nl: "Een vriend wil een tweedehands fiets kopen. Hij heeft dat nog nooit eerder gedaan en weet niet waar hij op moet letten. Hij vraagt jou om hulp.",
+      en: "A friend wants to buy a second-hand bike. He's never done that before and doesn't know what to look out for. He asks you for help."
     },
     other: "Vriend",
     turns: [
@@ -187,8 +187,8 @@ const SCENARIOS = [
   {
     topic: "Op het werk",
     situation: {
-      nl: "Een collega vraagt wat je dit weekend gaat doen.",
-      en: "A colleague asks what you're going to do this weekend."
+      nl: "Je bent op je werk, tijdens de pauze. Een collega begint een gesprek over het weekend.",
+      en: "You're at work, during the break. A colleague starts a conversation about the weekend."
     },
     other: "Collega",
     turns: [
@@ -207,8 +207,8 @@ const SCENARIOS = [
   {
     topic: "Winkelen",
     situation: {
-      nl: "Je brengt een kapotte broodrooster terug naar de winkel.",
-      en: "You bring a broken toaster back to the store."
+      nl: "Je hebt twee weken geleden een broodrooster gekocht, maar hij werkt niet meer. Je gaat terug naar de winkel om dit op te lossen.",
+      en: "You bought a toaster two weeks ago, but it doesn't work anymore. You go back to the store to sort this out."
     },
     other: "Verkoper",
     turns: [
@@ -237,8 +237,8 @@ const SCENARIOS = [
   {
     topic: "Openbaar vervoer",
     situation: {
-      nl: "Je trein heeft vertraging en je belt je collega.",
-      en: "Your train is delayed and you call your colleague."
+      nl: "Je moet naar een vergadering op je werk, maar je trein heeft vertraging. Je belt een collega om dit door te geven.",
+      en: "You need to get to a meeting at work, but your train is delayed. You call a colleague to let them know."
     },
     other: "Collega",
     turns: [
@@ -262,8 +262,8 @@ const SCENARIOS = [
   {
     topic: "Nederlands leren",
     situation: {
-      nl: "Je vraagt een medestudent om hulp met je Nederlands.",
-      en: "You ask a fellow student for help with your Dutch."
+      nl: "Je leert Nederlands, maar grammatica vind je nog moeilijk. Je praat erover met een medestudent.",
+      en: "You're learning Dutch, but you still find grammar difficult. You talk about it with a fellow student."
     },
     other: "Medestudent",
     turns: [
@@ -292,8 +292,8 @@ const SCENARIOS = [
   {
     topic: "Sociale afspraken",
     situation: {
-      nl: "Je nodigt een vriend uit voor je verjaardag.",
-      en: "You invite a friend to your birthday."
+      nl: "Je geeft binnenkort een klein feestje voor je verjaardag. Je wilt een goede vriend uitnodigen.",
+      en: "You're having a small party for your birthday soon. You want to invite a good friend."
     },
     other: "Vriend",
     turns: [
@@ -322,8 +322,8 @@ const SCENARIOS = [
   {
     topic: "Wonen",
     situation: {
-      nl: "Je belt een makelaar voor een afspraak om een appartement te bekijken.",
-      en: "You call an estate agent to make an appointment to view an apartment."
+      nl: "Je zoekt een nieuw appartement en hebt er een gezien op internet. Je belt de makelaar op om het te bekijken.",
+      en: "You're looking for a new apartment and saw one online. You call the estate agent to view it."
     },
     other: "Makelaar",
     turns: [
@@ -352,8 +352,8 @@ const SCENARIOS = [
   {
     topic: "Gezond eten",
     situation: {
-      nl: "Een collega vraagt wat je van fastfood vindt.",
-      en: "A colleague asks what you think of fast food."
+      nl: "Je bent op je werk, tijdens de pauze. Een collega vertelt dat hij vaak fastfood eet en vraagt wat jij daarvan vindt.",
+      en: "You're at work, during the break. A colleague tells you he often eats fast food and asks what you think about it."
     },
     other: "Collega",
     turns: [

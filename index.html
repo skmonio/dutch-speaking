@@ -57,6 +57,12 @@
   .btn-primary:disabled{opacity:.4;cursor:default}
   .btn-secondary{background:transparent;color:var(--muted);border:1px solid var(--border);padding:10px 18px;border-radius:3px;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;font-weight:500;cursor:pointer;transition:border-color .15s,color .15s}
   .btn-secondary:hover{border-color:var(--muted);color:var(--text)}
+  .timer-box{display:flex;flex-direction:column;gap:9px;width:100%}
+  .timer-label{font-size:.85rem;color:var(--text);line-height:1.4}
+  .timer-label span{font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
+  .timer-track{height:7px;border-radius:4px;background:var(--border);overflow:hidden}
+  .timer-fill{height:100%;width:100%;background:var(--accent);border-radius:4px}
+  .timer-box .btn-secondary{align-self:flex-start}
   .tts-note{font-size:.72rem;color:var(--label);margin-top:10px;line-height:1.4}
   footer{margin-top:28px;text-align:center;font-size:.72rem;color:var(--label)}
 </style>
