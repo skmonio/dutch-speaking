@@ -63,6 +63,14 @@
   .timer-track{height:7px;border-radius:4px;background:var(--border);overflow:hidden}
   .timer-fill{height:100%;width:100%;background:var(--accent);border-radius:4px}
   .timer-box .btn-secondary{align-self:flex-start}
+  .record-area{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .rec-btn{display:inline-flex;align-items:center;gap:6px}
+  .rec-btn.recording{background:#fbeaea;border-color:#b23b3b;color:#b23b3b;animation:recPulse 1.4s ease-in-out infinite}
+  @keyframes recPulse{0%,100%{opacity:1}50%{opacity:.55}}
+  .record-area audio{height:32px;max-width:220px}
+  .own-recording{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+  .own-recording-label{font-size:.66rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--label)}
+  .own-recording audio{height:32px;max-width:220px}
   .tts-note{font-size:.72rem;color:var(--label);margin-top:10px;line-height:1.4}
   footer{margin-top:28px;text-align:center;font-size:.72rem;color:var(--label)}
 </style>
@@ -91,7 +99,7 @@
   </div>
   <div class="controls" id="controls"></div>
   <p class="tts-note" id="ttsNote"></p>
-  <footer>Tik op &#128264; om een zin te beluisteren &middot; op iPhone: zet de stille modus uit &middot; script voor spreekoefening, geen woordelijke test</footer>
+  <footer>Tik op &#128264; om een zin te beluisteren, of neem je eigen antwoord op &middot; opnames blijven op je eigen toestel &middot; voor een natuurlijkere stem op iPhone: Instellingen &rarr; Toegankelijkheid &rarr; Gesproken content &rarr; Stemmen &rarr; Nederlands &rarr; kies een Enhanced/Premium stem</footer>
 </div>
 <script src="scenarios.js"></script>
 <script src="app.js"></script>
