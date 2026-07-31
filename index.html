@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spreektraining B1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+  :root{--bg:#f0ede6;--surface:#faf8f4;--border:#d6d0c4;--text:#1c1a16;--muted:#6b6558;--accent:#2b5c3e;--accent-light:#e8f0eb;--label:#8a7f6e;--divider:#ddd8ce;--bubble-other:#ece8de;--bubble-you:#dcebe1}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);font-family:'IBM Plex Sans',sans-serif;color:var(--text);min-height:100vh;padding:24px 16px 60px}
+  .container{max-width:640px;margin:0 auto}
+  header{display:flex;align-items:baseline;gap:12px;margin-bottom:24px;border-bottom:2px solid var(--accent);padding-bottom:12px;flex-wrap:wrap}
+  header h1{font-family:'IBM Plex Serif',serif;font-size:1.4rem;font-weight:600;color:var(--accent)}
+  .badge{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--label)}
+  .picker-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+  .picker-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--label)}
+  .picker-nav{display:flex;align-items:center;gap:8px}
+  .nav-btn{background:var(--surface);border:1px solid var(--border);border-radius:3px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;color:var(--muted);transition:border-color .12s,color .12s}
+  .nav-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+  .nav-btn:disabled{opacity:.35;cursor:default}
+  .nav-counter{font-size:.82rem;color:var(--muted);min-width:52px;text-align:center}
+  .topic-dots{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+  .topic-dot{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--border);background:transparent;cursor:pointer;transition:background .12s,border-color .12s,box-shadow .12s;padding:0}
+  .topic-dot.visited{background:var(--accent-light);border-color:var(--accent)}
+  .topic-dot.active{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-light);background:var(--accent)}
+  .scenario-card{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:20px 20px 24px;margin-bottom:18px}
+  .scenario-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+  .topic-tag{font-size:.67rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:2px 8px;border-radius:2px}
+  .en-toggle-btn{font-size:.64rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:3px 9px;border-radius:10px;cursor:pointer;transition:background .12s,border-color .12s,color .12s;margin-left:auto}
+  .en-toggle-btn:hover{border-color:var(--accent);color:var(--accent)}
+  .en-toggle-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  .situation{font-family:'IBM Plex Serif',serif;font-style:italic;font-size:.9rem;color:var(--muted);line-height:1.5;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed var(--divider)}
+  .situation .situation-en{font-style:normal;font-size:.8rem;color:var(--label);margin-top:5px;display:none}
+  .situation .situation-en.show{display:block}
+  .chat{display:flex;flex-direction:column;gap:14px}
+  .bubble-row{display:flex;gap:8px;align-items:flex-end}
+  .bubble-row.you{flex-direction:row-reverse}
+  .bubble-wrap{max-width:82%;display:flex;flex-direction:column}
+  .bubble-row.you .bubble-wrap{align-items:flex-end}
+  .bubble-name{font-size:.68rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--label);margin-bottom:4px}
+  .bubble-row.you .bubble-name{text-align:right}
+  .bubble{position:relative;padding:11px 14px;border-radius:14px;font-size:.92rem;line-height:1.5;box-shadow:0 1px 1px rgba(0,0,0,.03)}
+  .bubble-row.other .bubble{background:var(--bubble-other);border-bottom-left-radius:3px}
+  .bubble-row.you .bubble{background:var(--bubble-you);border-bottom-right-radius:3px}
+  .bubble-en{font-size:.78rem;color:var(--label);margin-top:6px;font-style:italic;display:none;line-height:1.4}
+  .bubble-en.show{display:block}
+  .speak-btn{background:none;border:1px solid var(--border);color:var(--muted);width:26px;height:26px;min-width:26px;border-radius:50%;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;transition:border-color .12s,color .12s,background .12s}
+  .speak-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+  .speak-btn.speaking{background:var(--accent);border-color:var(--accent);color:#fff}
+  .bubble-hidden{display:flex;align-items:center;gap:10px;padding:6px 2px}
+  .reveal-btn{background:var(--accent-light);color:var(--accent);border:1.5px solid var(--accent);padding:9px 16px;border-radius:16px;font-family:'IBM Plex Sans',sans-serif;font-size:.84rem;font-weight:600;cursor:pointer;transition:background .15s}
+  .reveal-btn:hover{background:#d0e5d8}
+  .controls{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .btn-primary{background:var(--accent);color:white;border:none;padding:10px 22px;border-radius:3px;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s}
+  .btn-primary:hover:not(:disabled){opacity:.85}
+  .btn-primary:disabled{opacity:.4;cursor:default}
+  .btn-secondary{background:transparent;color:var(--muted);border:1px solid var(--border);padding:10px 18px;border-radius:3px;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;font-weight:500;cursor:pointer;transition:border-color .15s,color .15s}
+  .btn-secondary:hover{border-color:var(--muted);color:var(--text)}
+  .tts-note{font-size:.72rem;color:var(--label);margin-top:10px;line-height:1.4}
+  footer{margin-top:28px;text-align:center;font-size:.72rem;color:var(--label)}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Spreektraining</h1><span class="badge">Niveau B1 &middot; NT2 &middot; Gespreksoefeningen</span>
+  </header>
+  <div class="picker-header">
+    <span class="picker-label">Situatie kiezen</span>
+    <div class="picker-nav">
+      <button class="nav-btn" id="prevBtn" onclick="goTo(currentIdx-1)">&#8592;</button>
+      <span class="nav-counter" id="navCounter"></span>
+      <button class="nav-btn" id="nextBtn" onclick="goTo(currentIdx+1)">&#8594;</button>
+    </div>
+  </div>
+  <div class="topic-dots" id="topicDots"></div>
+  <div class="scenario-card">
+    <div class="scenario-meta">
+      <span class="topic-tag" id="topicTag"></span>
+      <button class="en-toggle-btn" id="enBtn" onclick="toggleEN()">EN</button>
+    </div>
+    <div class="situation" id="situation"></div>
+    <div class="chat" id="chat"></div>
+  </div>
+  <div class="controls" id="controls"></div>
+  <p class="tts-note" id="ttsNote"></p>
+  <footer>Tik op &#128264; om een zin te beluisteren &middot; script voor spreekoefening, geen woordelijke test</footer>
+</div>
+<script src="scenarios.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
