@@ -34,8 +34,8 @@ const SCENARIOS = [
       },
       {
         speaker: "you",
-        nl: "Goedemorgen. Ik kan morgen helaas niet komen, want ik moet werken. Zou het mogelijk zijn om de afspraak te verzetten naar donderdag? Ik ben die dag de hele middag vrij.",
-        en: "Good morning. Unfortunately I can't come tomorrow, because I have to work. Would it be possible to move the appointment to Thursday? I'm free that whole afternoon."
+        nl: "Goedemorgen. Ik kan morgen niet komen, want ik moet werken. Kan ik de afspraak verzetten naar donderdag? Die middag ben ik helemaal vrij.",
+        en: "Good morning. I can't come tomorrow, because I have to work. Can I move the appointment to Thursday? I'm completely free that afternoon."
       },
       {
         speaker: "other",
@@ -44,8 +44,8 @@ const SCENARIOS = [
       },
       {
         speaker: "you",
-        nl: "Ja, dat komt goed uit. Dank u wel voor uw hulp.",
-        en: "Yes, that works well. Thank you for your help."
+        nl: "Ja, dat komt goed uit. Dank u wel.",
+        en: "Yes, that works well. Thank you."
       }
     ]
   },
@@ -59,48 +59,48 @@ const SCENARIOS = [
     turns: [
       {
         speaker: "other",
-        nl: "Je wilde iets vragen? Waar gaat het over?",
-        en: "You wanted to ask something? What's it about?"
+        nl: "Hoi, je wilde me iets vragen? Waar gaat het over?",
+        en: "Hi, you wanted to ask me something? What's it about?"
       },
       {
         speaker: "you",
-        nl: "Ja, ik wilde vragen of ik volgende week vrijdag vrij mag nemen. Mijn zus trouwt en de bruiloft is die dag. Ik weet dat het weinig van tevoren is, maar ik hoop dat het toch kan.",
-        en: "Yes, I wanted to ask if I could take next Friday off. My sister is getting married and the wedding is that day. I know it's short notice, but I hope it's still possible."
+        nl: "Ja. Mag ik volgende week vrijdag vrij nemen? Mijn zus trouwt die dag. Ik weet dat het kort van tevoren is, maar ik hoop dat het toch kan.",
+        en: "Yes. Could I take next Friday off? My sister is getting married that day. I know it's short notice, but I hope it's still possible."
       },
       {
         speaker: "other",
-        nl: "Dat lijkt me geen probleem. Zorg je er wel voor dat je werk op tijd af is voordat je weggaat?",
-        en: "That doesn't seem like a problem to me. Will you make sure your work is finished on time before you leave?"
+        nl: "Dat is geen probleem. Maak je je werk deze week wel op tijd af?",
+        en: "That's no problem. Will you finish your work this week on time though?"
       },
       {
         speaker: "you",
-        nl: "Natuurlijk, ik zal mijn taken deze week alvast afmaken.",
-        en: "Of course, I'll finish my tasks this week already."
+        nl: "Natuurlijk. Ik maak mijn taken deze week alvast af.",
+        en: "Of course. I'll get my tasks done this week already."
       }
     ]
   },
   {
     topic: "Met de buren",
     situation: {
-      nl: "Je spreekt je buurman aan over geluidsoverlast.",
-      en: "You talk to your neighbor about noise disturbance."
+      nl: "Je spreekt je buurman aan over lawaai.",
+      en: "You talk to your neighbor about noise."
     },
     other: "Buurman",
     turns: [
       {
         speaker: "other",
-        nl: "Hoi, alles goed? Ik zag je al aankomen.",
-        en: "Hi, all good? I saw you coming already."
+        nl: "Hoi! Alles goed met jou?",
+        en: "Hi! Everything good with you?"
       },
       {
         speaker: "you",
-        nl: "Hoi, met mij gaat het goed, dank je. Ik wilde je alleen even zeggen dat ik 's avonds laat vaak harde muziek hoor. Ik moet vroeg opstaan voor mijn werk en kan daardoor niet goed slapen. Zou je de muziek na tien uur wat zachter kunnen zetten?",
-        en: "Hi, I'm doing well, thanks. I just wanted to tell you that I often hear loud music late in the evening. I have to get up early for work and because of that I can't sleep well. Could you turn the music down a bit after ten o'clock?"
+        nl: "Ja, goed hoor. Ik wil je wel iets vragen. Ik hoor 's avonds vaak harde muziek. Ik moet vroeg opstaan voor mijn werk en kan dan niet goed slapen. Kun je de muziek na tien uur zachter zetten?",
+        en: "Yes, good actually. I do want to ask you something. I often hear loud music in the evening. I have to get up early for work and can't sleep well then. Could you turn the music down after ten o'clock?"
       },
       {
         speaker: "other",
-        nl: "Oh, dat wist ik niet. Sorry daarvoor, ik zal er voortaan op letten.",
-        en: "Oh, I didn't know that. Sorry about that, I'll pay attention to it from now on."
+        nl: "Oh, dat wist ik niet. Sorry! Ik let er vanaf nu op.",
+        en: "Oh, I didn't know that. Sorry! I'll pay attention to it from now on."
       }
     ]
   },
@@ -114,23 +114,23 @@ const SCENARIOS = [
     turns: [
       {
         speaker: "other",
-        nl: "Kan ik u ergens mee helpen?",
-        en: "Can I help you with something?"
+        nl: "Hallo, kan ik u ergens mee helpen?",
+        en: "Hello, can I help you with something?"
       },
       {
         speaker: "you",
-        nl: "Ja, graag. Ik zoek het treinstation, maar ik ken de weg hier niet zo goed. Kunt u mij vertellen hoe ik daar het snelst kom?",
-        en: "Yes, please. I'm looking for the train station, but I don't know my way around here very well. Could you tell me the fastest way to get there?"
+        nl: "Ja, graag. Ik zoek het station. Ik ken de weg hier niet zo goed. Hoe kom ik daar het snelst?",
+        en: "Yes, please. I'm looking for the station. I don't know my way around here very well. What's the fastest way to get there?"
       },
       {
         speaker: "other",
-        nl: "Natuurlijk. U loopt deze straat rechtdoor tot aan het stoplicht en dan slaat u linksaf. Het station ligt dan aan uw rechterhand, u kunt het gebouw al zien.",
-        en: "Of course. You walk straight down this street to the traffic light and then turn left. The station is then on your right, you can already see the building."
+        nl: "Natuurlijk. Loop deze straat rechtdoor tot het stoplicht. Sla daar linksaf. Het station is dan aan uw rechterhand.",
+        en: "Of course. Walk straight down this street to the traffic light. Turn left there. The station is then on your right."
       },
       {
         speaker: "you",
-        nl: "Dank u wel, dat is heel duidelijk uitgelegd.",
-        en: "Thank you, that's explained very clearly."
+        nl: "Dank u wel! Dat is heel duidelijk.",
+        en: "Thank you! That's very clear."
       }
     ]
   },
@@ -144,23 +144,23 @@ const SCENARIOS = [
     turns: [
       {
         speaker: "other",
-        nl: "Hé, ik kijk al uit naar vanavond! Hoe laat zullen we afspreken?",
+        nl: "Hé, ik kijk al uit naar vanavond! Hoe laat spreken we af?",
         en: "Hey, I'm already looking forward to tonight! What time shall we meet?"
       },
       {
         speaker: "you",
-        nl: "Hoi, ik bel je eigenlijk om iets anders te zeggen. Ik voel me niet zo lekker en ik denk dat het verstandiger is om vanavond thuis te blijven. Vind je het erg als we het etentje verzetten naar een andere dag?",
-        en: "Hi, actually I'm calling to say something else. I don't feel very well and I think it's wiser to stay home tonight. Do you mind if we move the dinner to another day?"
+        nl: "Hoi. Ik bel je voor iets anders. Ik voel me niet zo lekker. Ik denk dat ik vanavond beter thuis kan blijven. Vind je het erg als we een andere dag afspreken?",
+        en: "Hi. I'm calling about something else. I don't feel very well. I think it's better if I stay home tonight. Do you mind if we meet on another day?"
       },
       {
         speaker: "other",
-        nl: "Nee, dat geeft helemaal niets. Beterschap! Zullen we volgende week zaterdag afspreken in plaats daarvan?",
-        en: "No, that's absolutely fine. Get well soon! Shall we meet next Saturday instead?"
+        nl: "Nee, dat is niet erg. Beterschap! Zullen we volgende week zaterdag afspreken?",
+        en: "No, that's fine. Get well soon! Shall we meet next Saturday?"
       },
       {
         speaker: "you",
-        nl: "Dat lijkt me een goed idee. Dan kan ik ook helemaal hersteld zijn.",
-        en: "That sounds like a good idea. That way I can also be fully recovered."
+        nl: "Dat is een goed idee. Dan ben ik ook weer helemaal beter.",
+        en: "That's a good idea. By then I'll also be completely better again."
       }
     ]
   },
@@ -174,13 +174,13 @@ const SCENARIOS = [
     turns: [
       {
         speaker: "other",
-        nl: "Ik wil een tweedehands fiets kopen, maar ik heb geen idee waar ik op moet letten. Heb jij daar ervaring mee?",
-        en: "I want to buy a second-hand bike, but I have no idea what to look out for. Do you have experience with that?"
+        nl: "Ik wil een tweedehands fiets kopen. Ik weet niet goed waar ik op moet letten. Heb jij daar ervaring mee?",
+        en: "I want to buy a second-hand bike. I don't really know what to look out for. Do you have experience with that?"
       },
       {
         speaker: "you",
-        nl: "Zeker. Controleer altijd eerst de banden en de remmen, want die zijn duur om te vervangen. Kijk ook of de fiets niet te veel roest heeft en probeer even te fietsen voordat je hem koopt. Zo weet je zeker of alles goed werkt.",
-        en: "Sure. Always check the tires and the brakes first, because those are expensive to replace. Also check that the bike doesn't have too much rust and try riding it briefly before you buy it. That way you know for sure that everything works well."
+        nl: "Zeker. Check altijd eerst de banden en de remmen, want die zijn duur om te vervangen. Kijk ook of de fiets niet te veel roest heeft. Fiets even een stukje voordat je hem koopt.",
+        en: "Sure. Always check the tires and the brakes first, because those are expensive to replace. Also check that the bike doesn't have too much rust. Ride it a bit before you buy it."
       }
     ]
   },
@@ -194,13 +194,178 @@ const SCENARIOS = [
     turns: [
       {
         speaker: "other",
-        nl: "Heb je al plannen voor dit weekend?",
-        en: "Do you already have plans for this weekend?"
+        nl: "Hé, heb je al plannen voor dit weekend?",
+        en: "Hey, do you already have plans for this weekend?"
       },
       {
         speaker: "you",
-        nl: "Nog niet helemaal, maar ik denk dat ik zaterdag naar de markt ga en daarna misschien een terrasje pak als het weer goed is. Zondag wil ik het rustig aan doen en een boek lezen. En jij, heb jij al iets leuks gepland?",
-        en: "Not entirely yet, but I think I'll go to the market on Saturday and maybe sit on a terrace afterwards if the weather is good. On Sunday I want to take it easy and read a book. And you, do you already have something fun planned?"
+        nl: "Nog niet helemaal. Zaterdag ga ik naar de markt. Daarna zit ik misschien op een terras, als het weer goed is. Zondag doe ik het rustig aan met een boek. En jij, heb jij al iets leuks gepland?",
+        en: "Not entirely yet. On Saturday I'm going to the market. Afterwards I might sit on a terrace, if the weather is good. On Sunday I'll take it easy with a book. And you, do you already have something fun planned?"
+      }
+    ]
+  },
+  {
+    topic: "Winkelen",
+    situation: {
+      nl: "Je brengt een kapotte broodrooster terug naar de winkel.",
+      en: "You bring a broken toaster back to the store."
+    },
+    other: "Verkoper",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Goedemiddag. Waarmee kan ik u helpen?",
+        en: "Good afternoon. How can I help you?"
+      },
+      {
+        speaker: "you",
+        nl: "Goedemiddag. Ik heb twee weken geleden deze broodrooster gekocht. Hij doet het nu niet meer. Kan ik hem omruilen voor een nieuwe?",
+        en: "Good afternoon. I bought this toaster two weeks ago. It doesn't work anymore now. Can I exchange it for a new one?"
+      },
+      {
+        speaker: "other",
+        nl: "Dat is jammer. Heeft u de bon nog? Dan kunt u hem gratis omruilen.",
+        en: "That's a shame. Do you still have the receipt? Then you can exchange it for free."
+      },
+      {
+        speaker: "you",
+        nl: "Ja, ik heb de bon hier bij me.",
+        en: "Yes, I have the receipt here with me."
+      }
+    ]
+  },
+  {
+    topic: "Openbaar vervoer",
+    situation: {
+      nl: "Je trein heeft vertraging en je belt je collega.",
+      en: "Your train is delayed and you call your colleague."
+    },
+    other: "Collega",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Hoi, waar blijf je? De vergadering begint zo.",
+        en: "Hi, where are you? The meeting starts soon."
+      },
+      {
+        speaker: "you",
+        nl: "Hoi, sorry! Mijn trein heeft vertraging. Ik ben er over twintig minuten. Kunnen jullie alvast beginnen zonder mij?",
+        en: "Hi, sorry! My train is delayed. I'll be there in twenty minutes. Can you all start without me?"
+      },
+      {
+        speaker: "other",
+        nl: "Geen probleem. Ik vertel je later wat je gemist hebt.",
+        en: "No problem. I'll tell you later what you missed."
+      }
+    ]
+  },
+  {
+    topic: "Nederlands leren",
+    situation: {
+      nl: "Je vraagt een medestudent om hulp met je Nederlands.",
+      en: "You ask a fellow student for help with your Dutch."
+    },
+    other: "Medestudent",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Hoe gaat het met je Nederlands? Vind je het moeilijk?",
+        en: "How is your Dutch going? Do you find it difficult?"
+      },
+      {
+        speaker: "you",
+        nl: "Het gaat wel goed, maar grammatica vind ik nog lastig. Kun jij mij misschien een keer helpen met oefenen?",
+        en: "It's going alright, but I still find grammar difficult. Could you maybe help me practice sometime?"
+      },
+      {
+        speaker: "other",
+        nl: "Natuurlijk! Zullen we volgende week samen studeren in de bibliotheek?",
+        en: "Of course! Shall we study together next week in the library?"
+      },
+      {
+        speaker: "you",
+        nl: "Ja, heel graag. Dank je wel voor je hulp.",
+        en: "Yes, I'd really like that. Thank you for your help."
+      }
+    ]
+  },
+  {
+    topic: "Sociale afspraken",
+    situation: {
+      nl: "Je nodigt een vriend uit voor je verjaardag.",
+      en: "You invite a friend to your birthday."
+    },
+    other: "Vriend",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Hoi! Doe je iets leuks voor je verjaardag dit jaar?",
+        en: "Hi! Are you doing something fun for your birthday this year?"
+      },
+      {
+        speaker: "you",
+        nl: "Ja, ik geef een klein feestje bij mij thuis. Kom je ook? Het is zaterdag om acht uur.",
+        en: "Yes, I'm having a small party at my place. Are you coming too? It's Saturday at eight o'clock."
+      },
+      {
+        speaker: "other",
+        nl: "Leuk, ik kom graag! Zal ik iets meenemen om te drinken?",
+        en: "Nice, I'd love to come! Shall I bring something to drink?"
+      },
+      {
+        speaker: "you",
+        nl: "Dat is niet nodig, maar het mag natuurlijk wel.",
+        en: "That's not necessary, but you're welcome to of course."
+      }
+    ]
+  },
+  {
+    topic: "Wonen",
+    situation: {
+      nl: "Je belt een makelaar voor een afspraak om een appartement te bekijken.",
+      en: "You call an estate agent to make an appointment to view an apartment."
+    },
+    other: "Makelaar",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Goedemorgen, met makelaarskantoor De Vries.",
+        en: "Good morning, De Vries estate agency speaking."
+      },
+      {
+        speaker: "you",
+        nl: "Goedemorgen. Ik heb een appartement op uw website gezien. Kan ik een afspraak maken om het te bekijken?",
+        en: "Good morning. I saw an apartment on your website. Can I make an appointment to view it?"
+      },
+      {
+        speaker: "other",
+        nl: "Zeker. Komt woensdagmiddag om drie uur u uit?",
+        en: "Certainly. Does Wednesday afternoon at three o'clock suit you?"
+      },
+      {
+        speaker: "you",
+        nl: "Ja, dat komt goed uit. Tot woensdag!",
+        en: "Yes, that works well. See you Wednesday!"
+      }
+    ]
+  },
+  {
+    topic: "Gezond eten",
+    situation: {
+      nl: "Een collega vraagt wat je van fastfood vindt.",
+      en: "A colleague asks what you think of fast food."
+    },
+    other: "Collega",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Eet jij weleens fastfood? Ik doe het zelf best vaak.",
+        en: "Do you ever eat fast food? I do it myself quite often."
+      },
+      {
+        speaker: "you",
+        nl: "Ik eet het soms, maar niet te vaak. Meestal kook ik gezond, met groente en fruit. Zo voel ik me beter.",
+        en: "I eat it sometimes, but not too often. I usually cook healthy, with vegetables and fruit. That way I feel better."
       }
     ]
   }
