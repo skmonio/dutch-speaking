@@ -191,17 +191,20 @@ function escapeHtml(str) {
 // --- Text-to-speech ----------------------------------------------------------
 
 let cachedVoices = null;
+let voicesLoadAttempted = false;
 const CHOSEN_VOICE_STORAGE_KEY = "spreektraining_chosen_voice";
 
 function loadVoices(forceRefresh) {
-  if (forceRefresh) cachedVoices = null;
-  if (cachedVoices && cachedVoices.length) return Promise.resolve(cachedVoices);
+  if (forceRefresh) { cachedVoices = null; voicesLoadAttempted = false; }
+  // An empty result still counts as "attempted" - without this, every speak() on a device
+  // that genuinely has zero voices would re-poll for ~3s on every single call.
+  if (voicesLoadAttempted) return Promise.resolve(cachedVoices || []);
   return new Promise(resolve => {
     const synth = window.speechSynthesis;
     let voices = synth.getVoices();
-    if (voices.length) { cachedVoices = voices; resolve(voices); return; }
+    if (voices.length) { cachedVoices = voices; voicesLoadAttempted = true; resolve(voices); return; }
     let tries = 0;
-    const finish = v => { cachedVoices = v; resolve(v); };
+    const finish = v => { cachedVoices = v; voicesLoadAttempted = true; resolve(v); };
     const onChange = () => {
       voices = synth.getVoices();
       if (voices.length) { clearInterval(poll); synth.removeEventListener("voiceschanged", onChange); finish(voices); }
@@ -276,6 +279,8 @@ function populateVoicePicker(voices) {
   picker.hidden = false;
 }
 
+let currentlySpeakingBtn = null;
+
 function speakNow(text, btn, voices) {
   const synth = window.speechSynthesis;
   const utter = new SpeechSynthesisUtterance(text);
@@ -292,9 +297,14 @@ function speakNow(text, btn, voices) {
   if (btn) {
     document.querySelectorAll(".speak-btn.speaking").forEach(b => b.classList.remove("speaking"));
     btn.classList.add("speaking");
-    utter.onend = () => btn.classList.remove("speaking");
+    currentlySpeakingBtn = btn;
+    utter.onend = () => {
+      btn.classList.remove("speaking");
+      if (currentlySpeakingBtn === btn) currentlySpeakingBtn = null;
+    };
     utter.onerror = () => {
       btn.classList.remove("speaking");
+      if (currentlySpeakingBtn === btn) currentlySpeakingBtn = null;
       document.getElementById("ttsNote").textContent =
         "Afspelen is mislukt. Controleer of je toestel niet stil staat en of het volume aan staat.";
     };
@@ -302,9 +312,20 @@ function speakNow(text, btn, voices) {
   synth.speak(utter);
 }
 
+function stopSpeaking() {
+  window.speechSynthesis.cancel();
+  document.querySelectorAll(".speak-btn.speaking").forEach(b => b.classList.remove("speaking"));
+  currentlySpeakingBtn = null;
+}
+
 async function speak(text, btn) {
   if (!("speechSynthesis" in window)) {
     document.getElementById("ttsNote").textContent = "Tekst-naar-spraak wordt niet ondersteund in deze browser.";
+    return;
+  }
+  // Tapping the button that's already speaking stops it; a later tap restarts from the beginning.
+  if (currentlySpeakingBtn === btn) {
+    stopSpeaking();
     return;
   }
   const synth = window.speechSynthesis;
@@ -416,6 +437,7 @@ function revealNext() {
 }
 
 function restartScenario() {
+  if (window.speechSynthesis) stopSpeaking();
   stopActiveRecordingIfAny();
   answerUIShownFor = -1;
   revealedCount = 1;
@@ -429,7 +451,7 @@ function toggleEN() {
 
 function goTo(idx) {
   if (idx < 0 || idx >= SCENARIOS.length) return;
-  window.speechSynthesis && window.speechSynthesis.cancel();
+  if (window.speechSynthesis) stopSpeaking();
   stopActiveRecordingIfAny();
   answerUIShownFor = -1;
   visited.add(currentIdx);
