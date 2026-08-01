@@ -1,16 +1,17 @@
-const ANSWER_SECONDS = 20;
+const RECORD_MAX_SECONDS = 20;
 
 let currentIdx = 0;
 let revealedCount = 1;
 let showEN = false;
-let timerShownFor = -1;
-let answerTimerInterval = null;
+let answerUIShownFor = -1;
 const visited = new Set();
 
-// --- Local recording (per answer, never uploaded anywhere) ---------------
+// --- Local recording (per answer, persists until you delete it) -----------
 let mediaRecorder = null;
 let recordedChunks = [];
 let activeStream = null;
+let recordTimeout = null;
+let recordInterval = null;
 const recordingsByKey = {};
 
 function recordingKey(idx, turnIdx) {
@@ -29,125 +30,139 @@ function pickMimeType() {
   return "";
 }
 
-function clearRecordingsForScenario(idx) {
-  const prefix = `${idx}_`;
-  Object.keys(recordingsByKey).forEach(key => {
-    if (key.startsWith(prefix)) {
-      URL.revokeObjectURL(recordingsByKey[key]);
-      delete recordingsByKey[key];
-    }
-  });
+function clearRecordTimers() {
+  if (recordTimeout) { clearTimeout(recordTimeout); recordTimeout = null; }
+  if (recordInterval) { clearInterval(recordInterval); recordInterval = null; }
 }
 
 function stopActiveRecordingIfAny() {
+  clearRecordTimers();
   if (mediaRecorder && mediaRecorder.state === "recording") {
     mediaRecorder.stop();
   }
 }
 
+function deleteRecording(turnIdx) {
+  const key = recordingKey(currentIdx, turnIdx);
+  if (recordingsByKey[key]) {
+    URL.revokeObjectURL(recordingsByKey[key]);
+    delete recordingsByKey[key];
+  }
+  if (turnIdx === revealedCount) {
+    renderAnswerControls(turnIdx);
+  } else {
+    renderChat();
+  }
+}
+
 async function startRecording(turnIdx) {
-  const recNote = document.getElementById("ttsNote");
+  const note = document.getElementById("ttsNote");
+  let stream;
   try {
-    activeStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    stream = await navigator.mediaDevices.getUserMedia({ audio: true });
   } catch (err) {
-    recNote.textContent = "Opnemen is niet gelukt. Controleer of je toestel een microfoon heeft en of je toestemming hebt gegeven.";
+    note.textContent = "Opnemen is niet gelukt. Controleer of je toestel een microfoon heeft en of je toestemming hebt gegeven.";
     return;
   }
+  activeStream = stream;
   const mimeType = pickMimeType();
-  mediaRecorder = mimeType ? new MediaRecorder(activeStream, { mimeType }) : new MediaRecorder(activeStream);
+  mediaRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
   recordedChunks = [];
   mediaRecorder.ondataavailable = e => { if (e.data && e.data.size > 0) recordedChunks.push(e.data); };
   mediaRecorder.onstop = () => {
+    clearRecordTimers();
     activeStream.getTracks().forEach(t => t.stop());
     activeStream = null;
     const key = recordingKey(currentIdx, turnIdx);
     if (recordingsByKey[key]) URL.revokeObjectURL(recordingsByKey[key]);
     const blob = new Blob(recordedChunks, { type: mediaRecorder.mimeType || "audio/webm" });
     recordingsByKey[key] = URL.createObjectURL(blob);
-    renderRecordControls(turnIdx);
+    renderAnswerControls(turnIdx);
   };
   mediaRecorder.start();
-  renderRecordControls(turnIdx);
+  let remaining = RECORD_MAX_SECONDS;
+  renderAnswerControls(turnIdx, remaining);
+  recordInterval = setInterval(() => {
+    remaining--;
+    const countEl = document.getElementById("recordCount");
+    if (countEl) countEl.textContent = Math.max(remaining, 0);
+  }, 1000);
+  recordTimeout = setTimeout(() => stopActiveRecordingIfAny(), RECORD_MAX_SECONDS * 1000);
 }
 
-function renderRecordControls(turnIdx) {
-  const wrap = document.getElementById("recordArea");
-  if (!wrap) return;
+function renderAnswerControls(turnIdx, recordingRemaining) {
+  const controls = document.getElementById("controls");
   const key = recordingKey(currentIdx, turnIdx);
   const isRecording = mediaRecorder && mediaRecorder.state === "recording";
-  wrap.innerHTML = "";
+  controls.innerHTML = "";
+
+  const box = document.createElement("div");
+  box.className = "answer-box";
+
+  const label = document.createElement("div");
+  label.className = "answer-label";
+  label.textContent = "Spreek je antwoord nu hardop. Neem het op als je wilt (max. 20 seconden), of ga direct verder.";
+  box.appendChild(label);
 
   if (isRecording) {
-    const btn = document.createElement("button");
-    btn.className = "btn-secondary rec-btn recording";
-    btn.innerHTML = "&#9679; Stop opname";
-    btn.addEventListener("click", () => stopActiveRecordingIfAny());
-    wrap.appendChild(btn);
-    return;
+    const track = document.createElement("div");
+    track.className = "timer-track";
+    const fill = document.createElement("div");
+    fill.className = "timer-fill";
+    track.appendChild(fill);
+    box.appendChild(track);
+    fill.style.width = "100%";
+    requestAnimationFrame(() => {
+      fill.style.transition = `width ${RECORD_MAX_SECONDS}s linear`;
+      fill.style.width = "0%";
+    });
+
+    const recRow = document.createElement("div");
+    recRow.className = "record-area";
+    const stopBtn = document.createElement("button");
+    stopBtn.className = "btn-secondary rec-btn recording";
+    stopBtn.innerHTML = `&#9679; Stop opname (<span id="recordCount">${recordingRemaining ?? RECORD_MAX_SECONDS}</span>s)`;
+    stopBtn.addEventListener("click", () => stopActiveRecordingIfAny());
+    recRow.appendChild(stopBtn);
+    box.appendChild(recRow);
+  } else if (micSupported()) {
+    const recRow = document.createElement("div");
+    recRow.className = "record-area";
+    if (recordingsByKey[key]) {
+      const audio = document.createElement("audio");
+      audio.controls = true;
+      audio.src = recordingsByKey[key];
+      const reBtn = document.createElement("button");
+      reBtn.className = "btn-secondary rec-btn";
+      reBtn.innerHTML = "&#127908; Opnieuw opnemen";
+      reBtn.addEventListener("click", () => startRecording(turnIdx));
+      const delBtn = document.createElement("button");
+      delBtn.className = "btn-secondary rec-delete-btn";
+      delBtn.innerHTML = "&#128465; Verwijder";
+      delBtn.addEventListener("click", () => deleteRecording(turnIdx));
+      recRow.appendChild(audio);
+      recRow.appendChild(reBtn);
+      recRow.appendChild(delBtn);
+    } else {
+      const recBtn = document.createElement("button");
+      recBtn.className = "btn-secondary rec-btn";
+      recBtn.innerHTML = "&#127908; Neem je antwoord op";
+      recBtn.addEventListener("click", () => startRecording(turnIdx));
+      recRow.appendChild(recBtn);
+    }
+    box.appendChild(recRow);
   }
 
-  if (recordingsByKey[key]) {
-    const audio = document.createElement("audio");
-    audio.controls = true;
-    audio.src = recordingsByKey[key];
-    const btn = document.createElement("button");
-    btn.className = "btn-secondary rec-btn";
-    btn.innerHTML = "&#127908; Opnieuw opnemen";
-    btn.addEventListener("click", () => startRecording(turnIdx));
-    wrap.appendChild(audio);
-    wrap.appendChild(btn);
-    return;
-  }
-
-  const btn = document.createElement("button");
-  btn.className = "btn-secondary rec-btn";
-  btn.innerHTML = "&#127908; Neem je antwoord op";
-  btn.addEventListener("click", () => startRecording(turnIdx));
-  wrap.appendChild(btn);
-}
-
-// --- Answer timer ----------------------------------------------------------
-
-function clearAnswerTimer() {
-  if (answerTimerInterval) {
-    clearInterval(answerTimerInterval);
-    answerTimerInterval = null;
-  }
-}
-
-function startAnswerTimer(seconds, turnIdx) {
-  let remaining = seconds;
-  const controls = document.getElementById("controls");
-  controls.innerHTML = `
-    <div class="timer-box">
-      <div class="timer-label">Spreek je antwoord nu hardop. Je hebt ongeveer <span id="timerCount">${seconds}</span> seconden.</div>
-      <div class="timer-track"><div class="timer-fill" id="timerFill"></div></div>
-      ${micSupported() ? '<div id="recordArea" class="record-area"></div>' : ""}
-      <button class="btn-secondary" id="skipTimerBtn">Ik ben klaar &rarr;</button>
-    </div>`;
-  const fill = document.getElementById("timerFill");
-  fill.style.width = "100%";
-  requestAnimationFrame(() => {
-    fill.style.transition = `width ${seconds}s linear`;
-    fill.style.width = "0%";
-  });
-  if (micSupported()) renderRecordControls(turnIdx);
-  document.getElementById("skipTimerBtn").addEventListener("click", () => {
+  const proceedBtn = document.createElement("button");
+  proceedBtn.className = "reveal-btn";
+  proceedBtn.textContent = "Ik ben klaar → Toon antwoord";
+  proceedBtn.addEventListener("click", () => {
     stopActiveRecordingIfAny();
-    clearAnswerTimer();
     revealNext();
   });
-  clearAnswerTimer();
-  answerTimerInterval = setInterval(() => {
-    remaining--;
-    const countEl = document.getElementById("timerCount");
-    if (countEl) countEl.textContent = Math.max(remaining, 0);
-    if (remaining <= 0) {
-      stopActiveRecordingIfAny();
-      clearAnswerTimer();
-      revealNext();
-    }
-  }, 1000);
+  box.appendChild(proceedBtn);
+
+  controls.appendChild(box);
 }
 
 function speakerLabel(turn, scenario) {
@@ -255,24 +270,19 @@ async function speak(text, btn) {
 
 // --- Rendering ----------------------------------------------------------
 
-function renderScenario() {
+function renderChat() {
   const s = SCENARIOS[currentIdx];
-  document.getElementById("navCounter").textContent = `${currentIdx + 1} / ${SCENARIOS.length}`;
-  document.getElementById("prevBtn").disabled = currentIdx === 0;
-  document.getElementById("nextBtn").disabled = currentIdx === SCENARIOS.length - 1;
-  document.getElementById("topicTag").textContent = s.topic;
-  document.getElementById("enBtn").classList.toggle("active", showEN);
-
-  document.getElementById("situation").innerHTML =
-    `${escapeHtml(s.situation.nl)}<div class="situation-en${showEN ? " show" : ""}">${escapeHtml(s.situation.en)}</div>`;
-
   const chat = document.getElementById("chat");
   let html = "";
   for (let i = 0; i < revealedCount && i < s.turns.length; i++) {
     const t = s.turns[i];
     const key = recordingKey(currentIdx, i);
     const ownRecording = t.speaker === "you" && recordingsByKey[key]
-      ? `<div class="own-recording"><span class="own-recording-label">Jouw opname</span><audio controls src="${recordingsByKey[key]}"></audio></div>`
+      ? `<div class="own-recording">
+           <span class="own-recording-label">Jouw opname</span>
+           <audio controls src="${recordingsByKey[key]}"></audio>
+           <button class="rec-delete-btn" data-turn-idx="${i}" title="Verwijder opname">&#128465;</button>
+         </div>`
       : "";
     html += `
       <div class="bubble-row ${t.speaker}">
@@ -294,21 +304,38 @@ function renderScenario() {
       speak(t.nl, btn);
     });
   });
+  chat.querySelectorAll(".rec-delete-btn").forEach(btn => {
+    btn.addEventListener("click", () => deleteRecording(Number(btn.dataset.turnIdx)));
+  });
+}
+
+function renderScenario() {
+  const s = SCENARIOS[currentIdx];
+  document.getElementById("navCounter").textContent = `${currentIdx + 1} / ${SCENARIOS.length}`;
+  document.getElementById("prevBtn").disabled = currentIdx === 0;
+  document.getElementById("nextBtn").disabled = currentIdx === SCENARIOS.length - 1;
+  document.getElementById("topicTag").textContent = s.topic;
+  document.getElementById("enBtn").classList.toggle("active", showEN);
+
+  document.getElementById("situation").innerHTML =
+    `${escapeHtml(s.situation.nl)}<div class="situation-en${showEN ? " show" : ""}">${escapeHtml(s.situation.en)}</div>`;
+
+  renderChat();
 
   const controls = document.getElementById("controls");
   if (revealedCount < s.turns.length) {
     const next = s.turns[revealedCount];
     if (next.speaker === "you" && !next.quick) {
-      if (timerShownFor !== revealedCount) {
-        timerShownFor = revealedCount;
-        startAnswerTimer(ANSWER_SECONDS, revealedCount);
+      if (answerUIShownFor !== revealedCount) {
+        answerUIShownFor = revealedCount;
+        renderAnswerControls(revealedCount);
       }
     } else {
-      clearAnswerTimer();
+      answerUIShownFor = -1;
       controls.innerHTML = `<button class="reveal-btn" onclick="revealNext()">Volgende zin &rarr;</button>`;
     }
   } else {
-    clearAnswerTimer();
+    answerUIShownFor = -1;
     controls.innerHTML = `
       <button class="btn-secondary" onclick="restartScenario()">Opnieuw oefenen</button>
       <button class="btn-primary" onclick="goTo(currentIdx+1)" ${currentIdx === SCENARIOS.length - 1 ? "disabled" : ""}>Volgende situatie &rarr;</button>`;
@@ -322,9 +349,7 @@ function revealNext() {
 
 function restartScenario() {
   stopActiveRecordingIfAny();
-  clearAnswerTimer();
-  clearRecordingsForScenario(currentIdx);
-  timerShownFor = -1;
+  answerUIShownFor = -1;
   revealedCount = 1;
   renderScenario();
 }
@@ -338,9 +363,7 @@ function goTo(idx) {
   if (idx < 0 || idx >= SCENARIOS.length) return;
   window.speechSynthesis && window.speechSynthesis.cancel();
   stopActiveRecordingIfAny();
-  clearAnswerTimer();
-  clearRecordingsForScenario(currentIdx);
-  timerShownFor = -1;
+  answerUIShownFor = -1;
   visited.add(currentIdx);
   currentIdx = idx;
   revealedCount = 1;

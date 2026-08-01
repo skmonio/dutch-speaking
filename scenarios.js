@@ -518,5 +518,169 @@ const SCENARIOS = [
         en: "Good for you! I've also thought about it myself sometimes, especially because I find it important to do something for others. I might combine it with my hobby, for example by helping children with sports. The only thing is that I'm afraid I won't have the time for it alongside my work."
       }
     ]
+  },
+  {
+    topic: "In het restaurant",
+    situation: {
+      nl: "Je eet in een restaurant, maar je gerecht is koud aangekomen. Je roept de ober erbij.",
+      en: "You're eating at a restaurant, but your dish arrived cold. You call the waiter over."
+    },
+    other: "Ober",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Goedenavond, is alles naar wens met de maaltijd? Ik zie dat u nog niet veel gegeten heeft.",
+        en: "Good evening, is everything alright with the meal? I see you haven't eaten much yet."
+      },
+      {
+        speaker: "you",
+        nl: "Goedenavond. Eigenlijk niet helemaal, het spijt me dat ik het moet zeggen. Mijn soep is helaas koud aangekomen, terwijl de rest van het gerecht er wel goed uitziet. Zou het mogelijk zijn om een nieuwe, warme portie te krijgen?",
+        en: "Good evening. Actually not entirely, I'm sorry to say. My soup unfortunately arrived cold, while the rest of the dish looks good. Would it be possible to get a new, warm portion?"
+      },
+      {
+        speaker: "other",
+        nl: "Wat vervelend, mijn excuses daarvoor. Ik breng u meteen een nieuwe, warme portie.",
+        en: "How annoying, my apologies for that. I'll bring you a new, warm portion right away."
+      },
+      {
+        speaker: "you",
+        nl: "Dank u wel, dat stel ik op prijs.",
+        en: "Thank you, I appreciate that.",
+        quick: true
+      }
+    ]
+  },
+  {
+    topic: "Verzekering",
+    situation: {
+      nl: "Je wilt een nieuwe zorgverzekering afsluiten voor volgend jaar. Je belt een verzekeraar om meer informatie te krijgen.",
+      en: "You want to take out new health insurance for next year. You call an insurer for more information."
+    },
+    other: "Medewerker",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Goedemiddag, met de klantenservice. Waar kan ik u mee van dienst zijn?",
+        en: "Good afternoon, customer service speaking. How can I be of service to you?"
+      },
+      {
+        speaker: "you",
+        nl: "Goedemiddag. Ik overweeg om volgend jaar bij u een zorgverzekering af te sluiten, maar ik heb nog een paar vragen. Ik wil vooral weten wat er precies vergoed wordt voor de tandarts, en of ik zelf mijn huisarts mag kiezen.",
+        en: "Good afternoon. I'm considering taking out health insurance with you next year, but I still have a few questions. I especially want to know what exactly is covered for the dentist, and whether I can choose my own doctor."
+      },
+      {
+        speaker: "other",
+        nl: "Dat kan ik u vertellen. Bij het uitgebreide pakket wordt een deel van de tandartskosten vergoed, en u mag altijd zelf uw huisarts kiezen.",
+        en: "I can tell you that. With the extensive package, part of the dentist costs are covered, and you can always choose your own doctor."
+      },
+      {
+        speaker: "you",
+        nl: "Dat is fijn om te horen, dank u voor de duidelijke uitleg.",
+        en: "That's nice to hear, thank you for the clear explanation.",
+        quick: true
+      }
+    ]
+  },
+  {
+    topic: "Sportclub",
+    situation: {
+      nl: "Je wilt lid worden van een sportclub in je buurt. Je belt om te vragen naar de mogelijkheden.",
+      en: "You want to become a member of a sports club in your neighborhood. You call to ask about the options."
+    },
+    other: "Medewerker",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Goedemiddag, met de tennisclub. Waarmee kan ik u helpen?",
+        en: "Good afternoon, tennis club speaking. How can I help you?"
+      },
+      {
+        speaker: "you",
+        nl: "Goedemiddag. Ik wil graag lid worden, maar ik heb eigenlijk nog nooit getennist. Kan ik als beginner toch meedoen, en zijn er ook lessen voor mensen die net beginnen?",
+        en: "Good afternoon. I'd like to become a member, but I've actually never played tennis before. Can I join as a beginner anyway, and are there also lessons for people who are just starting?"
+      },
+      {
+        speaker: "other",
+        nl: "Zeker, we hebben elke week een lesuur speciaal voor beginners. U kunt gewoon een keer gratis komen proberen.",
+        en: "Certainly, we have a lesson hour every week especially for beginners. You can just come try it once for free."
+      },
+      {
+        speaker: "you",
+        nl: "Dat klinkt goed, dan kom ik binnenkort eens langs.",
+        en: "That sounds good, I'll come by sometime soon then.",
+        quick: true
+      }
+    ]
+  },
+  {
+    topic: "Bij de kapper",
+    situation: {
+      nl: "Je hebt een afspraak bij de kapper, maar je moet die dag onverwacht werken. Je belt om de afspraak te verzetten.",
+      en: "You have a hairdresser appointment, but you unexpectedly have to work that day. You call to reschedule."
+    },
+    other: "Kapper",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Goedemorgen, met kapsalon Els. Waarmee kan ik u helpen?",
+        en: "Good morning, Els hair salon speaking. How can I help you?"
+      },
+      {
+        speaker: "you",
+        nl: "Goedemorgen. Ik heb morgen om vier uur een afspraak bij u, maar ik moet die dag onverwacht werken. Zou ik de afspraak kunnen verzetten naar een avond later deze week, als dat mogelijk is?",
+        en: "Good morning. I have an appointment with you tomorrow at four o'clock, but I unexpectedly have to work that day. Could I move the appointment to an evening later this week, if that's possible?"
+      },
+      {
+        speaker: "other",
+        nl: "Dat is goed, ik heb donderdagavond om zes uur nog plek. Komt dat u uit?",
+        en: "That's fine, I still have space Thursday evening at six o'clock. Does that suit you?"
+      },
+      {
+        speaker: "you",
+        nl: "Ja, dat komt goed uit. Tot donderdag!",
+        en: "Yes, that works well. See you Thursday!",
+        quick: true
+      }
+    ]
+  },
+  {
+    topic: "Hulp aan de buren",
+    situation: {
+      nl: "Je buurman gaat binnenkort verhuizen en vraagt of jij een dagje kunt helpen met dragen.",
+      en: "Your neighbor is moving soon and asks if you can help carry things for a day."
+    },
+    other: "Buurman",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Ik ga volgende maand verhuizen naar een nieuw huis, en ik heb best veel spullen om te verplaatsen. Zou jij misschien een dagje kunnen helpen met dragen? Ik trakteer natuurlijk op pizza.",
+        en: "I'm moving to a new house next month, and I have quite a lot of stuff to move. Could you maybe help carry things for a day? I'll of course treat you to pizza."
+      },
+      {
+        speaker: "you",
+        nl: "Dat wil ik best doen, al kan ik niet de hele dag, want ik heb 's middags al iets anders gepland. Ik kan wel de hele ochtend helpen met de zware spullen. Laat me weten welke dag jou het beste uitkomt.",
+        en: "I'm happy to do that, although I can't do the whole day, because I already have something else planned in the afternoon. I can help with the heavy things all morning though. Let me know which day suits you best."
+      }
+    ]
+  },
+  {
+    topic: "Sociale media",
+    situation: {
+      nl: "Een vriend vertelt dat hij minder tijd op sociale media wil doorbrengen. Hij vraagt wat jij daarvan vindt.",
+      en: "A friend says he wants to spend less time on social media. He asks what you think about that."
+    },
+    other: "Vriend",
+    turns: [
+      {
+        speaker: "other",
+        nl: "Ik merk dat ik best veel tijd op mijn telefoon doorbreng, vooral op sociale media. Ik wil dat eigenlijk wel minder gaan doen, maar ik weet niet goed hoe ik dat het beste kan aanpakken. Wat vind jij daarvan, en heb je misschien tips?",
+        en: "I notice that I spend quite a lot of time on my phone, especially on social media. I'd actually like to do that less, but I don't really know how best to approach it. What do you think about that, and do you maybe have tips?"
+      },
+      {
+        speaker: "you",
+        nl: "Ik snap dat helemaal, dat merk ik zelf ook weleens bij mezelf. Je zou bijvoorbeeld een tijdslimiet op je apps kunnen instellen, of je telefoon 's avonds in een andere kamer kunnen leggen. Het helpt ook om een leuke hobby te zoeken, zodat je minder snel verveeld op je telefoon kijkt.",
+        en: "I totally understand that, I notice that in myself sometimes too. You could for example set a time limit on your apps, or put your phone in another room in the evening. It also helps to find a fun hobby, so you're less likely to check your phone out of boredom."
+      }
+    ]
   }
 ];

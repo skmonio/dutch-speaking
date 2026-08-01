@@ -57,20 +57,24 @@
   .btn-primary:disabled{opacity:.4;cursor:default}
   .btn-secondary{background:transparent;color:var(--muted);border:1px solid var(--border);padding:10px 18px;border-radius:3px;font-family:'IBM Plex Sans',sans-serif;font-size:.88rem;font-weight:500;cursor:pointer;transition:border-color .15s,color .15s}
   .btn-secondary:hover{border-color:var(--muted);color:var(--text)}
-  .timer-box{display:flex;flex-direction:column;gap:9px;width:100%}
-  .timer-label{font-size:.85rem;color:var(--text);line-height:1.4}
-  .timer-label span{font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
+  .answer-box{display:flex;flex-direction:column;gap:10px;width:100%;background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:16px 18px}
+  .answer-label{font-size:.85rem;color:var(--text);line-height:1.4}
+  .answer-box .reveal-btn{align-self:flex-start}
   .timer-track{height:7px;border-radius:4px;background:var(--border);overflow:hidden}
   .timer-fill{height:100%;width:100%;background:var(--accent);border-radius:4px}
-  .timer-box .btn-secondary{align-self:flex-start}
   .record-area{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   .rec-btn{display:inline-flex;align-items:center;gap:6px}
+  .rec-btn span{font-variant-numeric:tabular-nums}
   .rec-btn.recording{background:#fbeaea;border-color:#b23b3b;color:#b23b3b;animation:recPulse 1.4s ease-in-out infinite}
   @keyframes recPulse{0%,100%{opacity:1}50%{opacity:.55}}
   .record-area audio{height:32px;max-width:220px}
+  .rec-delete-btn{background:none;border:1px solid var(--border);color:var(--label);border-radius:3px;padding:5px 10px;font-size:.78rem;cursor:pointer;transition:border-color .12s,color .12s}
+  .rec-delete-btn:hover{border-color:#b23b3b;color:#b23b3b}
   .own-recording{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
   .own-recording-label{font-size:.66rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--label)}
   .own-recording audio{height:32px;max-width:220px}
+  .own-recording .rec-delete-btn{background:none;border:none;color:var(--label);font-size:.9rem;padding:2px 4px;cursor:pointer}
+  .own-recording .rec-delete-btn:hover{color:#b23b3b}
   .tts-note{font-size:.72rem;color:var(--label);margin-top:10px;line-height:1.4}
   footer{margin-top:28px;text-align:center;font-size:.72rem;color:var(--label)}
 </style>
