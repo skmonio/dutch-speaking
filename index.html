@@ -75,6 +75,9 @@
   .own-recording audio{height:32px;max-width:220px}
   .own-recording .rec-delete-btn{background:none;border:none;color:var(--label);font-size:.9rem;padding:2px 4px;cursor:pointer}
   .own-recording .rec-delete-btn:hover{color:#b23b3b}
+  .voice-picker{margin-top:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
+  .voice-picker select{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:5px 8px;border-radius:3px;font-family:'IBM Plex Sans',sans-serif;font-size:.8rem;max-width:220px}
+  .voice-picker .btn-secondary{padding:5px 12px;font-size:.78rem}
   .tts-note{font-size:.72rem;color:var(--label);margin-top:10px;line-height:1.4}
   footer{margin-top:28px;text-align:center;font-size:.72rem;color:var(--label)}
 </style>
@@ -102,8 +105,13 @@
     <div class="chat" id="chat"></div>
   </div>
   <div class="controls" id="controls"></div>
+  <div class="voice-picker" id="voicePicker" hidden>
+    <label for="voiceSelect">Stem</label>
+    <select id="voiceSelect"></select>
+    <button class="btn-secondary" id="refreshVoicesBtn" type="button">Vernieuw stemmen</button>
+  </div>
   <p class="tts-note" id="ttsNote"></p>
-  <footer>Tik op &#128264; om een zin te beluisteren, of neem je eigen antwoord op &middot; opnames blijven op je eigen toestel &middot; voor een natuurlijkere stem op iPhone: Instellingen &rarr; Toegankelijkheid &rarr; Gesproken content &rarr; Stemmen &rarr; Nederlands &rarr; kies een Enhanced/Premium stem</footer>
+  <footer>Tik op &#128264; om een zin te beluisteren, of neem je eigen antwoord op &middot; opnames blijven op je eigen toestel &middot; klinkt de stem robotachtig? Kies hierboven een andere stem, of download een Enhanced/Premium Nederlandse stem via Instellingen &rarr; Toegankelijkheid &rarr; Gesproken content &rarr; Stemmen</footer>
 </div>
 <script src="scenarios.js"></script>
 <script src="app.js"></script>

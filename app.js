@@ -186,8 +186,10 @@ function escapeHtml(str) {
 // --- Text-to-speech ----------------------------------------------------------
 
 let cachedVoices = null;
+const CHOSEN_VOICE_STORAGE_KEY = "spreektraining_chosen_voice";
 
-function loadVoices() {
+function loadVoices(forceRefresh) {
+  if (forceRefresh) cachedVoices = null;
   if (cachedVoices && cachedVoices.length) return Promise.resolve(cachedVoices);
   return new Promise(resolve => {
     const synth = window.speechSynthesis;
@@ -213,18 +215,60 @@ function loadVoices() {
   });
 }
 
+function voiceKey(v) {
+  // voiceURI is included because iOS exposes compact vs. Enhanced/Premium voices
+  // with the *same* name+lang, differing only in voiceURI - name+lang alone would
+  // make those two indistinguishable and impossible to pick between.
+  return `${v.name}|${v.lang}|${v.voiceURI || ""}`;
+}
+
+function isHigherQualityVoice(v) {
+  return /enhanced|premium|neural/i.test(v.name) || /enhanced|premium|neural/i.test(v.voiceURI || "");
+}
+
 function pickBestDutchVoice(voices) {
   const nl = voices.filter(v => v.lang === "nl-NL" || (v.lang && v.lang.toLowerCase().startsWith("nl")));
   if (!nl.length) return null;
   const score = v => {
     let s = 0;
-    // "Enhanced"/"Premium"/"Neural" voices (downloadable on iOS) sound far less robotic
-    // than the default compact system voice, so prefer them when present.
-    if (/enhanced|premium|neural/i.test(v.name)) s += 10;
+    if (isHigherQualityVoice(v)) s += 10;
     if (v.lang === "nl-NL") s += 1;
     return s;
   };
   return nl.slice().sort((a, b) => score(b) - score(a))[0];
+}
+
+function getChosenVoice(voices) {
+  const key = localStorage.getItem(CHOSEN_VOICE_STORAGE_KEY);
+  if (!key) return null;
+  return voices.find(v => voiceKey(v) === key) || null;
+}
+
+function populateVoicePicker(voices) {
+  const picker = document.getElementById("voicePicker");
+  const select = document.getElementById("voiceSelect");
+  if (!picker || !select || !voices.length) return;
+  const sorted = voices.slice().sort((a, b) => {
+    const aNl = a.lang.toLowerCase().startsWith("nl") ? 0 : 1;
+    const bNl = b.lang.toLowerCase().startsWith("nl") ? 0 : 1;
+    if (aNl !== bNl) return aNl - bNl;
+    return a.name.localeCompare(b.name);
+  });
+  const chosen = getChosenVoice(voices);
+  const best = chosen || pickBestDutchVoice(voices);
+  // iOS often exposes compact vs. Enhanced/Premium voices under the identical
+  // name+lang - label them distinctly so both are actually pickable in the list.
+  const nameLangCounts = {};
+  sorted.forEach(v => {
+    const k = `${v.name}|${v.lang}`;
+    nameLangCounts[k] = (nameLangCounts[k] || 0) + 1;
+  });
+  select.innerHTML = sorted.map(v => {
+    const dupeCount = nameLangCounts[`${v.name}|${v.lang}`];
+    const qualityTag = isHigherQualityVoice(v) ? " — Enhanced" : (dupeCount > 1 ? " — Standaard" : "");
+    return `<option value="${escapeHtml(voiceKey(v))}"${best && voiceKey(v) === voiceKey(best) ? " selected" : ""}>${escapeHtml(v.name)} (${escapeHtml(v.lang)})${qualityTag}</option>`;
+  }).join("");
+  picker.hidden = false;
 }
 
 function speakNow(text, btn, voices) {
@@ -232,7 +276,8 @@ function speakNow(text, btn, voices) {
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = "nl-NL";
   utter.rate = 0.92;
-  const nlVoice = pickBestDutchVoice(voices);
+  const chosenVoice = getChosenVoice(voices);
+  const nlVoice = chosenVoice || pickBestDutchVoice(voices);
   if (nlVoice) {
     utter.voice = nlVoice;
   } else if (voices.length) {
@@ -373,8 +418,20 @@ function goTo(idx) {
 }
 
 if ("speechSynthesis" in window) {
-  loadVoices();
-  document.addEventListener("pointerdown", () => loadVoices(), { once: true });
+  loadVoices().then(populateVoicePicker);
+  document.addEventListener("pointerdown", () => loadVoices().then(populateVoicePicker), { once: true });
+  document.getElementById("voiceSelect").addEventListener("change", e => {
+    localStorage.setItem(CHOSEN_VOICE_STORAGE_KEY, e.target.value);
+  });
+  document.getElementById("refreshVoicesBtn").addEventListener("click", () => {
+    document.getElementById("ttsNote").textContent = "Stemlijst wordt vernieuwd...";
+    loadVoices(true).then(voices => {
+      populateVoicePicker(voices);
+      document.getElementById("ttsNote").textContent = voices.length
+        ? "Stemlijst is vernieuwd."
+        : "Geen stemmen gevonden. Probeer Safari volledig te sluiten en opnieuw te openen.";
+    });
+  });
 } else {
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("ttsNote").textContent = "Tekst-naar-spraak wordt niet ondersteund in deze browser.";
