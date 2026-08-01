@@ -34,7 +34,7 @@
   .situation .situation-en{font-style:normal;font-size:.8rem;color:var(--label);margin-top:5px;display:none}
   .situation .situation-en.show{display:block}
   .chat{display:flex;flex-direction:column;gap:14px}
-  .bubble-row{display:flex;gap:8px;align-items:flex-end}
+  .bubble-row{display:flex;gap:8px;align-items:flex-start}
   .bubble-row.you{flex-direction:row-reverse}
   .bubble-wrap{max-width:82%;display:flex;flex-direction:column}
   .bubble-row.you .bubble-wrap{align-items:flex-end}
@@ -75,6 +75,10 @@
   .own-recording audio{height:32px;max-width:220px}
   .own-recording .rec-delete-btn{background:none;border:none;color:var(--label);font-size:.9rem;padding:2px 4px;cursor:pointer}
   .own-recording .rec-delete-btn:hover{color:#b23b3b}
+  .alt-toggle-btn{display:block;margin-top:8px;background:none;border:none;color:var(--accent);font-family:'IBM Plex Sans',sans-serif;font-size:.76rem;font-weight:600;cursor:pointer;padding:0}
+  .alt-toggle-btn:hover{text-decoration:underline}
+  .alt-answer{display:none;margin-top:6px;padding:9px 12px;background:var(--bg);border:1px dashed var(--divider);border-radius:8px;font-size:.85rem;line-height:1.5}
+  .alt-answer.show{display:block}
   .voice-picker{margin-top:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
   .voice-picker select{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:5px 8px;border-radius:3px;font-family:'IBM Plex Sans',sans-serif;font-size:.8rem;max-width:220px}
   .voice-picker .btn-secondary{padding:5px 12px;font-size:.78rem}
@@ -113,7 +117,7 @@
   <p class="tts-note" id="ttsNote"></p>
   <footer>Tik op &#128264; om een zin te beluisteren, of neem je eigen antwoord op &middot; opnames blijven op je eigen toestel &middot; klinkt de stem robotachtig? Kies hierboven een andere stem, of download een Enhanced/Premium Nederlandse stem via Instellingen &rarr; Toegankelijkheid &rarr; Gesproken content &rarr; Stemmen</footer>
 </div>
-<script src="scenarios.js?v=5"></script>
-<script src="app.js?v=5"></script>
+<script src="scenarios.js?v=6"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>
