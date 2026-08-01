@@ -1,15 +1,119 @@
 const RECORD_MAX_SECONDS = 20;
 
 let currentIdx = 0;
-let revealedCount = 1;
+const revealedCountByScenario = {};
 let showEN = false;
 let answerUIShownFor = -1;
 const visited = new Set();
 const expandedAlts = new Set();
 const optionIndexByKey = {};
 
+function getRevealedCount(idx) {
+  return revealedCountByScenario[idx] || 1;
+}
+
+function setRevealedCount(idx, val) {
+  revealedCountByScenario[idx] = val;
+  saveProgress();
+}
+
 function altKey(idx, turnIdx) {
   return `${idx}_${turnIdx}`;
+}
+
+// --- Persistence (IndexedDB): recordings and progress survive close/reopen -
+const DB_NAME = "spreektraining-db";
+const DB_VERSION = 1;
+let dbPromise = null;
+
+function openDB() {
+  if (dbPromise) return dbPromise;
+  dbPromise = new Promise(resolve => {
+    if (!("indexedDB" in window)) { resolve(null); return; }
+    let req;
+    try {
+      req = indexedDB.open(DB_NAME, DB_VERSION);
+    } catch (e) {
+      resolve(null);
+      return;
+    }
+    req.onupgradeneeded = () => {
+      const db = req.result;
+      if (!db.objectStoreNames.contains("recordings")) db.createObjectStore("recordings");
+      if (!db.objectStoreNames.contains("state")) db.createObjectStore("state");
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => resolve(null);
+  });
+  return dbPromise;
+}
+
+function idbGetAllRecordings() {
+  return openDB().then(db => new Promise(resolve => {
+    if (!db) { resolve({}); return; }
+    const result = {};
+    const req = db.transaction("recordings", "readonly").objectStore("recordings").openCursor();
+    req.onsuccess = e => {
+      const cursor = e.target.result;
+      if (cursor) { result[cursor.key] = cursor.value; cursor.continue(); }
+      else resolve(result);
+    };
+    req.onerror = () => resolve(result);
+  }));
+}
+
+function idbPutRecording(key, blob) {
+  openDB().then(db => {
+    if (!db) return;
+    db.transaction("recordings", "readwrite").objectStore("recordings").put(blob, key);
+  });
+}
+
+function idbDeleteRecording(key) {
+  openDB().then(db => {
+    if (!db) return;
+    db.transaction("recordings", "readwrite").objectStore("recordings").delete(key);
+  });
+}
+
+function idbClearRecordings() {
+  return openDB().then(db => new Promise(resolve => {
+    if (!db) { resolve(); return; }
+    const tx = db.transaction("recordings", "readwrite");
+    tx.objectStore("recordings").clear();
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => resolve();
+  }));
+}
+
+function idbGetState() {
+  return openDB().then(db => new Promise(resolve => {
+    if (!db) { resolve(null); return; }
+    const req = db.transaction("state", "readonly").objectStore("state").get("progress");
+    req.onsuccess = () => resolve(req.result || null);
+    req.onerror = () => resolve(null);
+  }));
+}
+
+function saveProgress() {
+  openDB().then(db => {
+    if (!db) return;
+    db.transaction("state", "readwrite").objectStore("state").put({
+      currentIdx,
+      revealedCountByScenario,
+      visited: Array.from(visited)
+    }, "progress");
+  });
+}
+
+function clearProgressState() {
+  return openDB().then(db => new Promise(resolve => {
+    if (!db) { resolve(); return; }
+    const tx = db.transaction("state", "readwrite");
+    tx.objectStore("state").delete("progress");
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => resolve();
+  }));
 }
 
 function getOptionIndex(key) {
@@ -63,11 +167,13 @@ function deleteRecording(turnIdx) {
     URL.revokeObjectURL(recordingsByKey[key]);
     delete recordingsByKey[key];
   }
-  if (turnIdx === revealedCount) {
+  idbDeleteRecording(key);
+  if (turnIdx === getRevealedCount(currentIdx)) {
     renderAnswerControls(turnIdx);
   } else {
     renderChat();
   }
+  renderDots();
 }
 
 async function startRecording(turnIdx) {
@@ -92,7 +198,9 @@ async function startRecording(turnIdx) {
     if (recordingsByKey[key]) URL.revokeObjectURL(recordingsByKey[key]);
     const blob = new Blob(recordedChunks, { type: mediaRecorder.mimeType || "audio/webm" });
     recordingsByKey[key] = URL.createObjectURL(blob);
+    idbPutRecording(key, blob);
     renderAnswerControls(turnIdx);
+    renderDots();
   };
   mediaRecorder.start();
   let remaining = RECORD_MAX_SECONDS;
@@ -184,13 +292,26 @@ function speakerLabel(turn, scenario) {
   return turn.speaker === "you" ? "Jij" : scenario.other;
 }
 
+function hasRecordingForScenario(idx) {
+  return SCENARIOS[idx].turns.some((t, ti) => t.speaker === "you" && !!recordingsByKey[recordingKey(idx, ti)]);
+}
+
+function answerShownForScenario(idx) {
+  return getRevealedCount(idx) >= SCENARIOS[idx].turns.length;
+}
+
 function renderDots() {
   const wrap = document.getElementById("topicDots");
   wrap.innerHTML = SCENARIOS.map((s, i) => {
     const cls = ["topic-dot"];
+    const recorded = hasRecordingForScenario(i);
+    const answered = answerShownForScenario(i);
+    let statusLabel = "";
+    if (recorded && answered) { cls.push("rec-done"); statusLabel = " — opname + antwoord getoond"; }
+    else if (recorded) { cls.push("rec-pending"); statusLabel = " — opname gemaakt"; }
+    else if (visited.has(i)) { cls.push("visited"); statusLabel = " — bekeken"; }
     if (i === currentIdx) cls.push("active");
-    else if (visited.has(i)) cls.push("visited");
-    return `<button class="${cls.join(" ")}" title="${escapeHtml(s.topic)}" onclick="goTo(${i})"></button>`;
+    return `<button class="${cls.join(" ")}" title="${escapeHtml(s.topic + statusLabel)}" onclick="goTo(${i})"></button>`;
   }).join("");
 }
 
@@ -355,7 +476,7 @@ function renderChat() {
   const s = SCENARIOS[currentIdx];
   const chat = document.getElementById("chat");
   let html = "";
-  for (let i = 0; i < revealedCount && i < s.turns.length; i++) {
+  for (let i = 0; i < getRevealedCount(currentIdx) && i < s.turns.length; i++) {
     const t = s.turns[i];
     const key = recordingKey(currentIdx, i);
     const shown = currentAnswerText(t, key);
@@ -438,6 +559,7 @@ function renderScenario() {
   renderChat();
 
   const controls = document.getElementById("controls");
+  const revealedCount = getRevealedCount(currentIdx);
   if (revealedCount < s.turns.length) {
     const next = s.turns[revealedCount];
     if (next.speaker === "you" && !next.quick) {
@@ -458,7 +580,8 @@ function renderScenario() {
 }
 
 function revealNext() {
-  revealedCount++;
+  setRevealedCount(currentIdx, getRevealedCount(currentIdx) + 1);
+  renderDots();
   renderScenario();
 }
 
@@ -466,7 +589,8 @@ function restartScenario() {
   if (window.speechSynthesis) stopSpeaking();
   stopActiveRecordingIfAny();
   answerUIShownFor = -1;
-  revealedCount = 1;
+  setRevealedCount(currentIdx, 1);
+  renderDots();
   renderScenario();
 }
 
@@ -482,8 +606,8 @@ function goTo(idx) {
   answerUIShownFor = -1;
   visited.add(currentIdx);
   currentIdx = idx;
-  revealedCount = 1;
   showEN = false;
+  saveProgress();
   renderDots();
   renderScenario();
 }
@@ -509,5 +633,42 @@ if ("speechSynthesis" in window) {
   });
 }
 
-renderDots();
-renderScenario();
+async function resetAll() {
+  const ok = confirm("Weet je zeker dat je alle opnames en voortgang wilt wissen? Dit kan niet ongedaan worden gemaakt.");
+  if (!ok) return;
+  if (window.speechSynthesis) stopSpeaking();
+  stopActiveRecordingIfAny();
+  Object.values(recordingsByKey).forEach(url => URL.revokeObjectURL(url));
+  Object.keys(recordingsByKey).forEach(key => delete recordingsByKey[key]);
+  Object.keys(revealedCountByScenario).forEach(key => delete revealedCountByScenario[key]);
+  Object.keys(optionIndexByKey).forEach(key => delete optionIndexByKey[key]);
+  visited.clear();
+  expandedAlts.clear();
+  currentIdx = 0;
+  answerUIShownFor = -1;
+  showEN = false;
+  await idbClearRecordings();
+  await clearProgressState();
+  renderDots();
+  renderScenario();
+}
+
+document.getElementById("resetAllBtn").addEventListener("click", resetAll);
+
+async function initApp() {
+  const [recordings, state] = await Promise.all([idbGetAllRecordings(), idbGetState()]);
+  Object.keys(recordings).forEach(key => {
+    recordingsByKey[key] = URL.createObjectURL(recordings[key]);
+  });
+  if (state) {
+    if (typeof state.currentIdx === "number" && state.currentIdx >= 0 && state.currentIdx < SCENARIOS.length) {
+      currentIdx = state.currentIdx;
+    }
+    Object.assign(revealedCountByScenario, state.revealedCountByScenario || {});
+    (state.visited || []).forEach(i => visited.add(i));
+  }
+  renderDots();
+  renderScenario();
+}
+
+initApp();
