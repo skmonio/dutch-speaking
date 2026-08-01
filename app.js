@@ -6,9 +6,19 @@ let showEN = false;
 let answerUIShownFor = -1;
 const visited = new Set();
 const expandedAlts = new Set();
+const optionIndexByKey = {};
 
 function altKey(idx, turnIdx) {
   return `${idx}_${turnIdx}`;
+}
+
+function getOptionIndex(key) {
+  return optionIndexByKey[key] || 0;
+}
+
+function currentAnswerText(t, key) {
+  if (t.options) return t.options[getOptionIndex(key)];
+  return { nl: t.nl, en: t.en };
 }
 
 // --- Local recording (per answer, persists until you delete it) -----------
@@ -348,6 +358,7 @@ function renderChat() {
   for (let i = 0; i < revealedCount && i < s.turns.length; i++) {
     const t = s.turns[i];
     const key = recordingKey(currentIdx, i);
+    const shown = currentAnswerText(t, key);
     const ownRecording = t.speaker === "you" && recordingsByKey[key]
       ? `<div class="own-recording">
            <span class="own-recording-label">Jouw opname</span>
@@ -355,13 +366,16 @@ function renderChat() {
            <button class="rec-delete-btn" data-turn-idx="${i}" title="Verwijder opname">&#128465;</button>
          </div>`
       : "";
+    const optionBlock = t.speaker === "you" && t.options && t.options.length > 1
+      ? `<button class="option-cycle-btn" data-turn-idx="${i}">Andere optie (${getOptionIndex(key) + 1}/${t.options.length}) &rarr;</button>`
+      : "";
     const aKey = altKey(currentIdx, i);
     const altExpanded = expandedAlts.has(aKey);
-    const altBlock = t.speaker === "you" && t.alt
-      ? `<button class="alt-toggle-btn" data-turn-idx="${i}">${altExpanded ? "Verberg andere manier" : "+ Andere manier om te antwoorden"}</button>
+    const altBlock = t.speaker === "you" && t.simple
+      ? `<button class="alt-toggle-btn" data-turn-idx="${i}">${altExpanded ? "Verberg eenvoudig antwoord" : "+ Toon eenvoudig antwoord"}</button>
          <div class="alt-answer${altExpanded ? " show" : ""}">
-           ${escapeHtml(t.alt.nl)}
-           <div class="bubble-en${showEN ? " show" : ""}">${escapeHtml(t.alt.en)}</div>
+           ${escapeHtml(t.simple.nl)}
+           <div class="bubble-en${showEN ? " show" : ""}">${escapeHtml(t.simple.en)}</div>
          </div>`
       : "";
     html += `
@@ -370,9 +384,10 @@ function renderChat() {
         <div class="bubble-wrap">
           <div class="bubble-name">${escapeHtml(speakerLabel(t, s))}</div>
           <div class="bubble">
-            ${escapeHtml(t.nl)}
-            <div class="bubble-en${showEN ? " show" : ""}">${escapeHtml(t.en)}</div>
+            ${escapeHtml(shown.nl)}
+            <div class="bubble-en${showEN ? " show" : ""}">${escapeHtml(shown.en)}</div>
           </div>
+          ${optionBlock}
           ${altBlock}
           ${ownRecording}
         </div>
@@ -381,8 +396,10 @@ function renderChat() {
   chat.innerHTML = html;
   chat.querySelectorAll(".speak-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      const t = s.turns[Number(btn.dataset.turnIdx)];
-      speak(t.nl, btn);
+      const turnIdx = Number(btn.dataset.turnIdx);
+      const t = s.turns[turnIdx];
+      const key = recordingKey(currentIdx, turnIdx);
+      speak(currentAnswerText(t, key).nl, btn);
     });
   });
   chat.querySelectorAll(".rec-delete-btn").forEach(btn => {
@@ -393,6 +410,15 @@ function renderChat() {
       const key = altKey(currentIdx, Number(btn.dataset.turnIdx));
       if (expandedAlts.has(key)) expandedAlts.delete(key);
       else expandedAlts.add(key);
+      renderChat();
+    });
+  });
+  chat.querySelectorAll(".option-cycle-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const turnIdx = Number(btn.dataset.turnIdx);
+      const key = recordingKey(currentIdx, turnIdx);
+      const total = s.turns[turnIdx].options.length;
+      optionIndexByKey[key] = (getOptionIndex(key) + 1) % total;
       renderChat();
     });
   });
