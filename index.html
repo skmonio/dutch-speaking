@@ -32,7 +32,7 @@
   .dots-legend i.rec-pending{background:var(--dot-orange)}
   .dots-legend i.rec-done{background:var(--accent)}
   .dots-legend i.visited{background:var(--accent-light);border:1.5px solid var(--accent)}
-  .reset-all-btn{margin-left:auto;font-size:.72rem;padding:5px 10px}
+  .reset-btn{margin-left:auto;font-size:.72rem;padding:5px 10px}
   .scenario-card{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:20px 20px 24px;margin-bottom:18px}
   .scenario-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
   .topic-tag{font-size:.67rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:2px 8px;border-radius:2px}
@@ -79,11 +79,6 @@
   .record-area audio{height:32px;max-width:220px}
   .rec-delete-btn{background:none;border:1px solid var(--border);color:var(--label);border-radius:3px;padding:5px 10px;font-size:.78rem;cursor:pointer;transition:border-color .12s,color .12s}
   .rec-delete-btn:hover{border-color:#b23b3b;color:#b23b3b}
-  .own-recording{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
-  .own-recording-label{font-size:.66rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--label)}
-  .own-recording audio{height:32px;max-width:220px}
-  .own-recording .rec-delete-btn{background:none;border:none;color:var(--label);font-size:.9rem;padding:2px 4px;cursor:pointer}
-  .own-recording .rec-delete-btn:hover{color:#b23b3b}
   .option-cycle-btn{display:block;margin-top:8px;background:none;border:none;color:var(--muted);font-family:'IBM Plex Sans',sans-serif;font-size:.76rem;font-weight:600;cursor:pointer;padding:0}
   .option-cycle-btn:hover{color:var(--accent);text-decoration:underline}
   .alt-toggle-btn{display:block;margin-top:6px;background:none;border:none;color:var(--accent);font-family:'IBM Plex Sans',sans-serif;font-size:.76rem;font-weight:600;cursor:pointer;padding:0}
@@ -108,7 +103,7 @@
       <button class="nav-btn" id="prevBtn" onclick="goTo(currentIdx-1)">&#8592;</button>
       <span class="nav-counter" id="navCounter"></span>
       <button class="nav-btn" id="nextBtn" onclick="goTo(currentIdx+1)">&#8594;</button>
-      <button class="btn-secondary reset-all-btn" id="resetAllBtn" type="button">Reset alles</button>
+      <button class="btn-secondary reset-btn" id="resetBtn" type="button">Reset deze vraag</button>
     </div>
   </div>
   <div class="topic-dots" id="topicDots"></div>
@@ -134,7 +129,7 @@
   <p class="tts-note" id="ttsNote"></p>
   <footer>Tik op &#128264; om een zin te beluisteren (nogmaals tikken stopt hem), of neem je eigen antwoord op &middot; opnames blijven op je eigen toestel</footer>
 </div>
-<script src="scenarios.js?v=9"></script>
-<script src="app.js?v=9"></script>
+<script src="scenarios.js?v=10"></script>
+<script src="app.js?v=10"></script>
 </body>
 </html>
