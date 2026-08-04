@@ -1,17 +1,10 @@
 const SCENARIOS = [
   {
     topic: "Gezondheid & sport",
-    situation: {
-      nl: "Je zit met een vriend te praten. Hij vertelt dat hij graag wil sporten, maar dat de sportschool hem te duur is. Hij vraagt jou om advies.",
-      en: "You're sitting talking with a friend. He tells you he'd like to exercise, but that the gym is too expensive for him. He asks you for advice."
-    },
+    situation: { nl: "Je zit met een vriend te praten. Hij vertelt dat hij graag wil sporten, maar dat de sportschool hem te duur is. Hij vraagt jou om advies.", en: "You're sitting talking with a friend. He tells you he'd like to exercise, but that the gym is too expensive for him. He asks you for advice." },
     other: "Vriend",
     turns: [
-      {
-        speaker: "other",
-        nl: "Mijn vrienden gaan naar de sportschool, maar ik vind dat te duur. Ik wil op een andere manier fit worden, zonder geld uit te geven. Wat zou jij aanbevelen?",
-        en: "My friends go to the gym, but I think that's too expensive. I want to get fit in another way, without spending money. What would you recommend?"
-      },
+      { speaker: "other", nl: "Mijn vrienden gaan naar de sportschool, maar ik vind dat te duur. Ik wil op een andere manier fit worden, zonder geld uit te geven. Wat zou jij aanbevelen?", en: "My friends go to the gym, but I think that's too expensive. I want to get fit in another way, without spending money. What would you recommend?" },
       {
         speaker: "you",
         options: [
@@ -21,21 +14,28 @@ const SCENARIOS = [
         ],
         simple: { nl: "Je kunt ook gewoon buiten wandelen of fietsen. Dat is gratis en heel gezond.", en: "You can also just walk or bike outside. That's free and very healthy." }
       }
+    ],
+    hints: [
+      "goedkoop (affordable/cheap)",
+      "conditie opbouwen (build fitness)",
+      "buiten bewegen (exercise outdoors)"
+    ],
+    glossary: [
+      { nl: "sportschool", en: "gym" },
+      { nl: "aanbevelen", en: "to recommend" },
+      { nl: "buitenzwembad", en: "outdoor pool" },
+      { nl: "beweging", en: "exercise/movement" },
+      { nl: "motiverend", en: "motivating" },
+      { nl: "in plaats van", en: "instead of" },
+      { nl: "trap", en: "stairs" }
     ]
   },
   {
     topic: "Bij de huisarts",
-    situation: {
-      nl: "Je hebt morgen een afspraak bij de huisarts, maar je kunt niet komen. Je belt de praktijk om de afspraak te verzetten.",
-      en: "You have an appointment at the doctor's tomorrow, but you can't come. You call the practice to reschedule the appointment."
-    },
+    situation: { nl: "Je hebt morgen een afspraak bij de huisarts, maar je kunt niet komen. Je belt de praktijk om de afspraak te verzetten.", en: "You have an appointment at the doctor's tomorrow, but you can't come. You call the practice to reschedule the appointment." },
     other: "Assistente",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemorgen, met de huisartsenpraktijk. Ik zie dat u morgen om tien uur een afspraak heeft voor een controle. Waar kan ik u mee helpen?",
-        en: "Good morning, doctor's office speaking. I see you have an appointment tomorrow at ten o'clock for a check-up. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemorgen, met de huisartsenpraktijk. Ik zie dat u morgen om tien uur een afspraak heeft voor een controle. Waar kan ik u mee helpen?", en: "Good morning, doctor's office speaking. I see you have an appointment tomorrow at ten o'clock for a check-up. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -45,21 +45,28 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik kan morgen niet komen. Kan het ook donderdag?", en: "I can't come tomorrow. Can it also be Thursday?" }
       }
+    ],
+    hints: [
+      "omboeken (to rebook)",
+      "onverwachts (unexpectedly)",
+      "schikken (to suit/work for)"
+    ],
+    glossary: [
+      { nl: "verzetten", en: "to reschedule" },
+      { nl: "controle", en: "check-up" },
+      { nl: "dringende", en: "urgent" },
+      { nl: "uitkomt", en: "suits/works for" },
+      { nl: "toevallig", en: "by any chance" },
+      { nl: "huisartsenpraktijk", en: "doctor's practice" },
+      { nl: "helaas", en: "unfortunately" }
     ]
   },
   {
     topic: "Op het werk",
-    situation: {
-      nl: "Je zus gaat trouwen op een dag dat jij moet werken. Je gaat naar je manager om te vragen of je die dag vrij mag nemen.",
-      en: "Your sister is getting married on a day when you have to work. You go to your manager to ask if you can take that day off."
-    },
+    situation: { nl: "Je zus gaat trouwen op een dag dat jij moet werken. Je gaat naar je manager om te vragen of je die dag vrij mag nemen.", en: "Your sister is getting married on a day when you have to work. You go to your manager to ask if you can take that day off." },
     other: "Manager",
     turns: [
-{
-        speaker: "other",
-        nl: "Hoi, je wilde me even spreken? Ik heb tien minuten, dus vertel maar rustig waar het over gaat.",
-        en: "Hi, you wanted to talk to me? I have ten minutes, so just tell me calmly what it's about."
-      },
+      { speaker: "other", nl: "Hoi, je wilde me even spreken? Ik heb tien minuten, dus vertel maar rustig waar het over gaat.", en: "Hi, you wanted to talk to me? I have ten minutes, so just tell me calmly what it's about." },
       {
         speaker: "you",
         options: [
@@ -69,21 +76,27 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mag ik vrijdag vrij? Mijn zus trouwt die dag.", en: "May I have Friday off? My sister is getting married that day." }
       }
+    ],
+    hints: [
+      "toestemming vragen (ask permission)",
+      "verlof (leave/time off)",
+      "ruim van tevoren (well in advance)"
+    ],
+    glossary: [
+      { nl: "trouwen", en: "to get married" },
+      { nl: "vrij mag nemen", en: "to be allowed time off" },
+      { nl: "kort van tevoren", en: "short notice" },
+      { nl: "familiegebeurtenis", en: "family event" },
+      { nl: "oppakken", en: "to take on" },
+      { nl: "vertel maar rustig", en: "tell me calmly" }
     ]
   },
   {
     topic: "Met de buren",
-    situation: {
-      nl: "Je buurman zet 's avonds laat vaak harde muziek aan. Jij kunt daardoor niet goed slapen. Je spreekt hem hierover aan.",
-      en: "Your neighbor often plays loud music late in the evening. Because of this you can't sleep well. You talk to him about it."
-    },
+    situation: { nl: "Je buurman zet 's avonds laat vaak harde muziek aan. Jij kunt daardoor niet goed slapen. Je spreekt hem hierover aan.", en: "Your neighbor often plays loud music late in the evening. Because of this you can't sleep well. You talk to him about it." },
     other: "Buurman",
     turns: [
-{
-        speaker: "other",
-        nl: "Hoi! Wat leuk je te zien. Alles goed bij jou?",
-        en: "Hi! Nice to see you. Everything good with you?"
-      },
+      { speaker: "other", nl: "Hoi! Wat leuk je te zien. Alles goed bij jou?", en: "Hi! Nice to see you. Everything good with you?" },
       {
         speaker: "you",
         options: [
@@ -93,21 +106,27 @@ const SCENARIOS = [
         ],
         simple: { nl: "De muziek is 's avonds erg hard. Kun je het zachter zetten?", en: "The music is very loud in the evening. Can you turn it down?" }
       }
+    ],
+    hints: [
+      "geluidsoverlast (noise nuisance)",
+      "rustig houden (keep quiet)",
+      "begrip vragen (ask for understanding)"
+    ],
+    glossary: [
+      { nl: "storend", en: "disturbing" },
+      { nl: "schelen", en: "to matter/help" },
+      { nl: "zachter", en: "softer/quieter" },
+      { nl: "volume", en: "volume" },
+      { nl: "muur", en: "wall" },
+      { nl: "de laatste tijd", en: "lately" }
     ]
   },
   {
     topic: "Onderweg",
-    situation: {
-      nl: "Je bent in een stad die je niet goed kent. Je moet naar het station, maar je weet de weg niet. Je vraagt het aan een voorbijganger.",
-      en: "You are in a city you don't know well. You need to get to the station, but you don't know the way. You ask a passerby."
-    },
+    situation: { nl: "Je bent in een stad die je niet goed kent. Je moet naar het station, maar je weet de weg niet. Je vraagt het aan een voorbijganger.", en: "You are in a city you don't know well. You need to get to the station, but you don't know the way. You ask a passerby." },
     other: "Voorbijganger",
     turns: [
-{
-        speaker: "other",
-        nl: "Hallo! U ziet er een beetje verdwaald uit. Kan ik u misschien ergens mee helpen?",
-        en: "Hello! You look a bit lost. Can I maybe help you with something?"
-      },
+      { speaker: "other", nl: "Hallo! U ziet er een beetje verdwaald uit. Kan ik u misschien ergens mee helpen?", en: "Hello! You look a bit lost. Can I maybe help you with something?" },
       {
         speaker: "you",
         options: [
@@ -117,21 +136,27 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik zoek het station. Weet u de weg?", en: "I'm looking for the station. Do you know the way?" }
       }
+    ],
+    hints: [
+      "rechtdoor (straight ahead)",
+      "linksaf/rechtsaf (turn left/right)",
+      "hoe kom ik bij (how do I get to)"
+    ],
+    glossary: [
+      { nl: "verdwaald", en: "lost" },
+      { nl: "bekend", en: "familiar" },
+      { nl: "de weg kunnen wijzen", en: "to be able to show the way" },
+      { nl: "kwijt", en: "lost/missing" },
+      { nl: "ver lopen", en: "far to walk" },
+      { nl: "welke kant", en: "which direction" }
     ]
   },
   {
     topic: "Sociale afspraken",
-    situation: {
-      nl: "Je hebt met een vriendin afgesproken om vanavond samen te eten. Je voelt je niet lekker en wilt liever thuisblijven. Je belt haar op.",
-      en: "You've arranged to have dinner with a friend tonight. You don't feel well and would rather stay home. You call her."
-    },
+    situation: { nl: "Je hebt met een vriendin afgesproken om vanavond samen te eten. Je voelt je niet lekker en wilt liever thuisblijven. Je belt haar op.", en: "You've arranged to have dinner with a friend tonight. You don't feel well and would rather stay home. You call her." },
     other: "Vriendin",
     turns: [
-{
-        speaker: "other",
-        nl: "Hé! Ik heb er al zo'n zin in vanavond. Zal ik om zeven uur bij jou langskomen, of spreken we ergens anders af?",
-        en: "Hey! I'm already really looking forward to tonight. Shall I come by your place at seven, or shall we meet somewhere else?"
-      },
+      { speaker: "other", nl: "Hé! Ik heb er al zo'n zin in vanavond. Zal ik om zeven uur bij jou langskomen, of spreken we ergens anders af?", en: "Hey! I'm already really looking forward to tonight. Shall I come by your place at seven, or shall we meet somewhere else?" },
       {
         speaker: "you",
         options: [
@@ -141,21 +166,27 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik voel me niet goed. Kunnen we een andere dag afspreken?", en: "I don't feel well. Can we meet on another day?" }
       }
+    ],
+    hints: [
+      "opknappen (to recover)",
+      "verkouden zijn (to have a cold)",
+      "een andere avond (another evening)"
+    ],
+    glossary: [
+      { nl: "verstandiger", en: "wiser" },
+      { nl: "etentje", en: "dinner" },
+      { nl: "uitrusten", en: "to rest" },
+      { nl: "afzeggen", en: "to cancel" },
+      { nl: "fit", en: "well/fit" },
+      { nl: "erg vinden", en: "to mind" }
     ]
   },
   {
     topic: "Advies geven",
-    situation: {
-      nl: "Een vriend wil een tweedehands fiets kopen. Hij heeft dat nog nooit eerder gedaan en weet niet waar hij op moet letten. Hij vraagt jou om hulp.",
-      en: "A friend wants to buy a second-hand bike. He's never done that before and doesn't know what to look out for. He asks you for help."
-    },
+    situation: { nl: "Een vriend wil een tweedehands fiets kopen. Hij heeft dat nog nooit eerder gedaan en weet niet waar hij op moet letten. Hij vraagt jou om hulp.", en: "A friend wants to buy a second-hand bike. He's never done that before and doesn't know what to look out for. He asks you for help." },
     other: "Vriend",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik heb eindelijk genoeg geld gespaard voor een fiets, maar nieuwe fietsen zijn zo duur. Ik denk erover om een tweedehands fiets te kopen, maar ik heb dat nog nooit gedaan. Waar moet ik allemaal op letten, denk je?",
-        en: "I've finally saved up enough money for a bike, but new bikes are so expensive. I'm thinking about buying a second-hand bike, but I've never done that before. What should I look out for, do you think?"
-      },
+      { speaker: "other", nl: "Ik heb eindelijk genoeg geld gespaard voor een fiets, maar nieuwe fietsen zijn zo duur. Ik denk erover om een tweedehands fiets te kopen, maar ik heb dat nog nooit gedaan. Waar moet ik allemaal op letten, denk je?", en: "I've finally saved up enough money for a bike, but new bikes are so expensive. I'm thinking about buying a second-hand bike, but I've never done that before. What should I look out for, do you think?" },
       {
         speaker: "you",
         options: [
@@ -165,21 +196,28 @@ const SCENARIOS = [
         ],
         simple: { nl: "Kijk goed naar de banden en de remmen. En fiets er even mee voordat je koopt.", en: "Look carefully at the tires and the brakes. And ride it a bit before you buy." }
       }
+    ],
+    hints: [
+      "kilometerstand (mileage)",
+      "bandenspanning (tire pressure)",
+      "garantie (warranty)"
+    ],
+    glossary: [
+      { nl: "tweedehands", en: "second-hand" },
+      { nl: "remmen", en: "brakes" },
+      { nl: "roest", en: "rust" },
+      { nl: "ketting", en: "chain" },
+      { nl: "versnellingen", en: "gears" },
+      { nl: "zadel", en: "saddle" },
+      { nl: "onderhandel", en: "negotiate" }
     ]
   },
   {
     topic: "Op het werk",
-    situation: {
-      nl: "Je bent op je werk, tijdens de pauze. Een collega begint een gesprek over het weekend.",
-      en: "You're at work, during the break. A colleague starts a conversation about the weekend."
-    },
+    situation: { nl: "Je bent op je werk, tijdens de pauze. Een collega begint een gesprek over het weekend.", en: "You're at work, during the break. A colleague starts a conversation about the weekend." },
     other: "Collega",
     turns: [
-      {
-        speaker: "other",
-        nl: "Het is bijna vrijdag en ik heb dit weekend eigenlijk nog helemaal niks gepland. Ik wil wel iets leuks doen, maar ik kan zo snel niks bedenken. Wat doe jij meestal in het weekend, en heb je nog tips voor mij?",
-        en: "It's almost Friday and I actually have nothing planned yet for this weekend. I do want to do something fun, but I can't think of anything right away. What do you usually do on the weekend, and do you have any tips for me?"
-      },
+      { speaker: "other", nl: "Het is bijna vrijdag en ik heb dit weekend eigenlijk nog helemaal niks gepland. Ik wil wel iets leuks doen, maar ik kan zo snel niks bedenken. Wat doe jij meestal in het weekend, en heb je nog tips voor mij?", en: "It's almost Friday and I actually have nothing planned yet for this weekend. I do want to do something fun, but I can't think of anything right away. What do you usually do on the weekend, and do you have any tips for me?" },
       {
         speaker: "you",
         options: [
@@ -189,21 +227,27 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik ga wandelen en naar de markt. Ook lees ik graag een boek.", en: "I'm going for a walk and to the market. I also like reading a book." }
       }
+    ],
+    hints: [
+      "ontspannen (to relax)",
+      "vrienden opzoeken (visit friends)",
+      "een dagtrip maken (take a day trip)"
+    ],
+    glossary: [
+      { nl: "terrasje", en: "outdoor cafe seat" },
+      { nl: "filmavond", en: "movie night" },
+      { nl: "gezellig", en: "nice/cozy" },
+      { nl: "fietstochtjes", en: "bike rides" },
+      { nl: "dagje", en: "day trip" },
+      { nl: "markt", en: "market" }
     ]
   },
   {
     topic: "Winkelen",
-    situation: {
-      nl: "Je hebt twee weken geleden een broodrooster gekocht, maar hij werkt niet meer. Je gaat terug naar de winkel om dit op te lossen.",
-      en: "You bought a toaster two weeks ago, but it doesn't work anymore. You go back to the store to sort this out."
-    },
+    situation: { nl: "Je hebt twee weken geleden een broodrooster gekocht, maar hij werkt niet meer. Je gaat terug naar de winkel om dit op te lossen.", en: "You bought a toaster two weeks ago, but it doesn't work anymore. You go back to the store to sort this out." },
     other: "Verkoper",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, welkom terug bij ons. Waarmee kan ik u vandaag helpen?",
-        en: "Good afternoon, welcome back to our store. How can I help you today?"
-      },
+      { speaker: "other", nl: "Goedemiddag, welkom terug bij ons. Waarmee kan ik u vandaag helpen?", en: "Good afternoon, welcome back to our store. How can I help you today?" },
       {
         speaker: "you",
         options: [
@@ -213,21 +257,27 @@ const SCENARIOS = [
         ],
         simple: { nl: "Deze broodrooster is kapot. Mag ik hem omruilen?", en: "This toaster is broken. Can I exchange it?" }
       }
+    ],
+    hints: [
+      "kassabon (receipt)",
+      "garantie (warranty)",
+      "kapot (broken)"
+    ],
+    glossary: [
+      { nl: "broodrooster", en: "toaster" },
+      { nl: "omruilen", en: "to exchange" },
+      { nl: "defect", en: "broken/faulty" },
+      { nl: "aan te sluiten", en: "to plug in" },
+      { nl: "apparaat", en: "appliance" },
+      { nl: "geld terug", en: "money back" }
     ]
   },
   {
     topic: "Openbaar vervoer",
-    situation: {
-      nl: "Je moet naar een vergadering op je werk, maar je trein heeft vertraging. Je belt een collega om dit door te geven.",
-      en: "You need to get to a meeting at work, but your train is delayed. You call a colleague to let them know."
-    },
+    situation: { nl: "Je moet naar een vergadering op je werk, maar je trein heeft vertraging. Je belt een collega om dit door te geven.", en: "You need to get to a meeting at work, but your train is delayed. You call a colleague to let them know." },
     other: "Collega",
     turns: [
-{
-        speaker: "other",
-        nl: "Hoi, waar blijf je nou? Iedereen is er al en de vergadering begint over vijf minuten.",
-        en: "Hi, where are you? Everyone's already here and the meeting starts in five minutes."
-      },
+      { speaker: "other", nl: "Hoi, waar blijf je nou? Iedereen is er al en de vergadering begint over vijf minuten.", en: "Hi, where are you? Everyone's already here and the meeting starts in five minutes." },
       {
         speaker: "you",
         options: [
@@ -237,21 +287,27 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn trein heeft vertraging. Ik kom later.", en: "My train is delayed. I'll arrive later." }
       }
+    ],
+    hints: [
+      "oponthoud (delay)",
+      "bijpraten (catch up/fill in)",
+      "excuus aanbieden (apologize)"
+    ],
+    glossary: [
+      { nl: "vertraging", en: "delay" },
+      { nl: "opeens", en: "suddenly" },
+      { nl: "treinstoring", en: "train disruption" },
+      { nl: "aantekeningen", en: "notes" },
+      { nl: "sluit later aan", en: "I'll join later" },
+      { nl: "melding", en: "notice" }
     ]
   },
   {
     topic: "Nederlands leren",
-    situation: {
-      nl: "Je leert Nederlands, maar grammatica vind je nog moeilijk. Je praat erover met een medestudent.",
-      en: "You're learning Dutch, but you still find grammar difficult. You talk about it with a fellow student."
-    },
+    situation: { nl: "Je leert Nederlands, maar grammatica vind je nog moeilijk. Je praat erover met een medestudent.", en: "You're learning Dutch, but you still find grammar difficult. You talk about it with a fellow student." },
     other: "Medestudent",
     turns: [
-{
-        speaker: "other",
-        nl: "Hé, hoe gaat het eigenlijk met je Nederlands? Ik zie je de laatste tijd steeds harder studeren.",
-        en: "Hey, how's your Dutch actually going? I've noticed you studying harder and harder lately."
-      },
+      { speaker: "other", nl: "Hé, hoe gaat het eigenlijk met je Nederlands? Ik zie je de laatste tijd steeds harder studeren.", en: "Hey, how's your Dutch actually going? I've noticed you studying harder and harder lately." },
       {
         speaker: "you",
         options: [
@@ -261,21 +317,27 @@ const SCENARIOS = [
         ],
         simple: { nl: "Grammatica is moeilijk voor mij. Kun je me helpen?", en: "Grammar is difficult for me. Can you help me?" }
       }
+    ],
+    hints: [
+      "vervoegen (to conjugate)",
+      "regelmatig oefenen (practice regularly)",
+      "een werkwoord (a verb)"
+    ],
+    glossary: [
+      { nl: "werkwoordsvormen", en: "verb forms" },
+      { nl: "lastig", en: "difficult" },
+      { nl: "oefensite", en: "practice website" },
+      { nl: "snap", en: "understand" },
+      { nl: "handige manier", en: "handy way" },
+      { nl: "harder studeren", en: "study harder" }
     ]
   },
   {
     topic: "Sociale afspraken",
-    situation: {
-      nl: "Je geeft binnenkort een klein feestje voor je verjaardag. Je wilt een goede vriend uitnodigen.",
-      en: "You're having a small party for your birthday soon. You want to invite a good friend."
-    },
+    situation: { nl: "Je geeft binnenkort een klein feestje voor je verjaardag. Je wilt een goede vriend uitnodigen.", en: "You're having a small party for your birthday soon. You want to invite a good friend." },
     other: "Vriend",
     turns: [
-{
-        speaker: "other",
-        nl: "Hoi! Ik hoorde dat je binnenkort jarig bent. Ga je dit jaar iets leuks doen, of houd je het rustig?",
-        en: "Hi! I heard you have a birthday coming up. Are you doing something fun this year, or are you keeping it quiet?"
-      },
+      { speaker: "other", nl: "Hoi! Ik hoorde dat je binnenkort jarig bent. Ga je dit jaar iets leuks doen, of houd je het rustig?", en: "Hi! I heard you have a birthday coming up. Are you doing something fun this year, or are you keeping it quiet?" },
       {
         speaker: "you",
         options: [
@@ -285,21 +347,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik geef zaterdag een feestje. Kom je ook?", en: "I'm having a party Saturday. Are you coming too?" }
       }
+    ],
+    hints: [
+      "een cadeau meenemen (bring a gift)",
+      "verjaardag vieren (celebrate a birthday)",
+      "gasten uitnodigen (invite guests)"
+    ],
+    glossary: [
+      { nl: "jarig", en: "having a birthday" },
+      { nl: "feestje", en: "party" },
+      { nl: "van harte welkom", en: "very welcome" },
+      { nl: "gezellig", en: "fun/pleasant" },
+      { nl: "houd je het rustig", en: "keep it quiet" }
     ]
   },
   {
     topic: "Wonen",
-    situation: {
-      nl: "Je zoekt een nieuw appartement en hebt er een gezien op internet. Je belt de makelaar op om het te bekijken.",
-      en: "You're looking for a new apartment and saw one online. You call the estate agent to view it."
-    },
+    situation: { nl: "Je zoekt een nieuw appartement en hebt er een gezien op internet. Je belt de makelaar op om het te bekijken.", en: "You're looking for a new apartment and saw one online. You call the estate agent to view it." },
     other: "Makelaar",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemorgen, met makelaarskantoor De Vries, u spreekt met Sanne. Waarmee kan ik u helpen?",
-        en: "Good morning, De Vries estate agency, you're speaking with Sanne. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemorgen, met makelaarskantoor De Vries, u spreekt met Sanne. Waarmee kan ik u helpen?", en: "Good morning, De Vries estate agency, you're speaking with Sanne. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -309,21 +376,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik wil het appartement bekijken. Kan dat deze week?", en: "I want to view the apartment. Is that possible this week?" }
       }
+    ],
+    hints: [
+      "huurcontract (rental contract)",
+      "bezichtiging (viewing)",
+      "kale huur (base rent)"
+    ],
+    glossary: [
+      { nl: "makelaar", en: "estate agent" },
+      { nl: "aanspreekt", en: "appeals to" },
+      { nl: "bezichtigen", en: "to view (property)" },
+      { nl: "beschikbaar", en: "available" },
+      { nl: "van binnen te bekijken", en: "to see the inside" }
     ]
   },
   {
     topic: "Gezond eten",
-    situation: {
-      nl: "Je bent op je werk, tijdens de pauze. Een collega vertelt dat hij vaak fastfood eet en vraagt wat jij daarvan vindt.",
-      en: "You're at work, during the break. A colleague tells you he often eats fast food and asks what you think about it."
-    },
+    situation: { nl: "Je bent op je werk, tijdens de pauze. Een collega vertelt dat hij vaak fastfood eet en vraagt wat jij daarvan vindt.", en: "You're at work, during the break. A colleague tells you he often eats fast food and asks what you think about it." },
     other: "Collega",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik heb net weer een broodje gehaald bij de snackbar. Ik eet eigenlijk best vaak fastfood, gewoon omdat het snel en makkelijk is. Wat vind jij daar eigenlijk van?",
-        en: "I've just picked up another sandwich from the snack bar. I actually eat fast food quite often, just because it's quick and easy. What do you actually think about that?"
-      },
+      { speaker: "other", nl: "Ik heb net weer een broodje gehaald bij de snackbar. Ik eet eigenlijk best vaak fastfood, gewoon omdat het snel en makkelijk is. Wat vind jij daar eigenlijk van?", en: "I've just picked up another sandwich from the snack bar. I actually eat fast food quite often, just because it's quick and easy. What do you actually think about that?" },
       {
         speaker: "you",
         options: [
@@ -333,21 +405,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik kook meestal gezond. Fastfood eet ik niet vaak.", en: "I usually cook healthy. I don't eat fast food often." }
       }
+    ],
+    hints: [
+      "evenwichtig eten (eat balanced)",
+      "vezels (fiber)",
+      "maaltijd bereiden (prepare a meal)"
+    ],
+    glossary: [
+      { nl: "snackbar", en: "snack bar" },
+      { nl: "verse groente", en: "fresh vegetables" },
+      { nl: "uitzondering", en: "exception" },
+      { nl: "gezonde keuzes", en: "healthy choices" },
+      { nl: "ingrediënten", en: "ingredients" }
     ]
   },
   {
     topic: "Cadeau kopen",
-    situation: {
-      nl: "Je beste vriendin is over twee weken jarig. Je hebt nog geen idee wat je haar zou moeten geven. Je vraagt een andere vriend om advies.",
-      en: "Your best friend has a birthday in two weeks. You have no idea what to give her. You ask another friend for advice."
-    },
+    situation: { nl: "Je beste vriendin is over twee weken jarig. Je hebt nog geen idee wat je haar zou moeten geven. Je vraagt een andere vriend om advies.", en: "Your best friend has a birthday in two weeks. You have no idea what to give her. You ask another friend for advice." },
     other: "Vriend",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik hoorde dat Lisa binnenkort jarig is. Heb je al een cadeau voor haar gevonden? Ik weet zelf nooit zo goed wat ik moet geven, vooral niet als iemand eigenlijk al alles heeft.",
-        en: "I heard that Lisa has a birthday coming up soon. Have you found a gift for her yet? I myself never really know what to give, especially not when someone already has everything."
-      },
+      { speaker: "other", nl: "Ik hoorde dat Lisa binnenkort jarig is. Heb je al een cadeau voor haar gevonden? Ik weet zelf nooit zo goed wat ik moet geven, vooral niet als iemand eigenlijk al alles heeft.", en: "I heard that Lisa has a birthday coming up soon. Have you found a gift for her yet? I myself never really know what to give, especially not when someone already has everything." },
       {
         speaker: "you",
         options: [
@@ -357,21 +434,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Een cadeaubon is een goed idee. Of een boek dat ze leuk vindt.", en: "A gift card is a good idea. Or a book she'd like." }
       }
+    ],
+    hints: [
+      "verrassen (to surprise)",
+      "smaak kennen (know someone's taste)",
+      "iets origineels (something original)"
+    ],
+    glossary: [
+      { nl: "cadeaubon", en: "gift card" },
+      { nl: "schrijver", en: "writer" },
+      { nl: "workshop", en: "workshop" },
+      { nl: "sieraden", en: "jewelry" },
+      { nl: "persoonlijks", en: "something personal" }
     ]
   },
   {
     topic: "Vakantie plannen",
-    situation: {
-      nl: "Je collega gaat dit jaar voor het eerst zelf een vakantie plannen. Ze weet nog niet goed waar ze heen wil. Ze vraagt jou om ideeën.",
-      en: "Your colleague is planning a vacation by herself for the first time this year. She doesn't know yet where she wants to go. She asks you for ideas."
-    },
+    situation: { nl: "Je collega gaat dit jaar voor het eerst zelf een vakantie plannen. Ze weet nog niet goed waar ze heen wil. Ze vraagt jou om ideeën.", en: "Your colleague is planning a vacation by herself for the first time this year. She doesn't know yet where she wants to go. She asks you for ideas." },
     other: "Collega",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik ga dit jaar voor het eerst zelf mijn vakantie regelen, en ik weet eigenlijk niet waar ik moet beginnen. Ik hou van rust, maar ook wel van een beetje cultuur. Heb jij misschien tips voor een leuke bestemming?",
-        en: "This year I'm arranging my vacation by myself for the first time, and I actually don't know where to start. I like peace and quiet, but also a bit of culture. Do you maybe have tips for a nice destination?"
-      },
+      { speaker: "other", nl: "Ik ga dit jaar voor het eerst zelf mijn vakantie regelen, en ik weet eigenlijk niet waar ik moet beginnen. Ik hou van rust, maar ook wel van een beetje cultuur. Heb jij misschien tips voor een leuke bestemming?", en: "This year I'm arranging my vacation by myself for the first time, and I actually don't know where to start. I like peace and quiet, but also a bit of culture. Do you maybe have tips for a nice destination?" },
       {
         speaker: "you",
         options: [
@@ -381,21 +463,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ga naar een stad aan zee. Daar kun je rusten en ook musea bezoeken.", en: "Go to a coastal city. There you can rest and also visit museums." }
       }
+    ],
+    hints: [
+      "een reis boeken (book a trip)",
+      "cultuur opsnuiven (soak up culture)",
+      "een rustige plek (a quiet place)"
+    ],
+    glossary: [
+      { nl: "bestemming", en: "destination" },
+      { nl: "rondreis", en: "tour/round trip" },
+      { nl: "ontspannen", en: "to relax" },
+      { nl: "tot rust komt", en: "unwinds/relaxes fully" },
+      { nl: "dorp in de bergen", en: "village in the mountains" }
     ]
   },
   {
     topic: "Auto delen",
-    situation: {
-      nl: "Jij en een collega wonen in dezelfde buurt en rijden allebei elke dag met de auto naar hetzelfde werk. Je collega stelt voor om samen te rijden.",
-      en: "You and a colleague live in the same neighborhood and both drive to the same work every day. Your colleague suggests carpooling."
-    },
+    situation: { nl: "Jij en een collega wonen in dezelfde buurt en rijden allebei elke dag met de auto naar hetzelfde werk. Je collega stelt voor om samen te rijden.", en: "You and a colleague live in the same neighborhood and both drive to the same work every day. Your colleague suggests carpooling." },
     other: "Collega",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik zag laatst dat jij in dezelfde straat woont als ik. We rijden allebei elke dag met de auto naar hetzelfde werk, en dat kost best veel geld aan benzine. Zullen we om de beurt rijden, zodat we allebei minder hoeven te betalen?",
-        en: "I noticed recently that you live in the same street as me. We both drive to the same work every day, and that costs quite a lot of money on gas. Shall we take turns driving, so we both have to pay less?"
-      },
+      { speaker: "other", nl: "Ik zag laatst dat jij in dezelfde straat woont als ik. We rijden allebei elke dag met de auto naar hetzelfde werk, en dat kost best veel geld aan benzine. Zullen we om de beurt rijden, zodat we allebei minder hoeven te betalen?", en: "I noticed recently that you live in the same street as me. We both drive to the same work every day, and that costs quite a lot of money on gas. Shall we take turns driving, so we both have to pay less?" },
       {
         speaker: "you",
         options: [
@@ -405,21 +492,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Goed idee! We kunnen om de beurt rijden.", en: "Good idea! We can take turns driving." }
       }
+    ],
+    hints: [
+      "carpoolen (to carpool)",
+      "brandstofkosten (fuel costs)",
+      "afwisselen (to alternate)"
+    ],
+    glossary: [
+      { nl: "benzine", en: "gas/petrol" },
+      { nl: "om de beurt", en: "taking turns" },
+      { nl: "rooster", en: "schedule" },
+      { nl: "file-stress", en: "traffic stress" },
+      { nl: "wisselen", en: "to switch" }
     ]
   },
   {
     topic: "Nieuwe buurt",
-    situation: {
-      nl: "Je bent net verhuisd naar een nieuwe buurt en kent nog bijna niemand. Je maakt kennis met een buurvrouw op straat.",
-      en: "You've just moved to a new neighborhood and hardly know anyone yet. You meet a neighbor on the street."
-    },
+    situation: { nl: "Je bent net verhuisd naar een nieuwe buurt en kent nog bijna niemand. Je maakt kennis met een buurvrouw op straat.", en: "You've just moved to a new neighborhood and hardly know anyone yet. You meet a neighbor on the street." },
     other: "Buurvrouw",
     turns: [
-{
-        speaker: "other",
-        nl: "Oh hallo, jij bent toch net hier komen wonen? Welkom in de buurt! Zeg, ken je hier al een beetje de weg, of kan ik je nog ergens mee helpen?",
-        en: "Oh hello, you just moved here, right? Welcome to the neighborhood! Say, do you know your way around here a bit yet, or can I help you with anything?"
-      },
+      { speaker: "other", nl: "Oh hallo, jij bent toch net hier komen wonen? Welkom in de buurt! Zeg, ken je hier al een beetje de weg, of kan ik je nog ergens mee helpen?", en: "Oh hello, you just moved here, right? Welcome to the neighborhood! Say, do you know your way around here a bit yet, or can I help you with anything?" },
       {
         speaker: "you",
         options: [
@@ -429,21 +521,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik zoek een supermarkt en een markt. Weet u waar die zijn?", en: "I'm looking for a supermarket and a market. Do you know where they are?" }
       }
+    ],
+    hints: [
+      "zich thuis voelen (feel at home)",
+      "buurtgenoten (neighbors)",
+      "de omgeving verkennen (explore the area)"
+    ],
+    glossary: [
+      { nl: "supermarkt", en: "supermarket" },
+      { nl: "aanraden", en: "to recommend" },
+      { nl: "winkelstraat", en: "shopping street" },
+      { nl: "pas komen wonen", en: "just moved here" },
+      { nl: "weg", en: "way/directions" }
     ]
   },
   {
     topic: "Klacht doorgeven",
-    situation: {
-      nl: "Je internet thuis valt al een week steeds uit. Je belt de klantenservice van je provider om dit te melden.",
-      en: "Your internet at home keeps dropping out for a week now. You call your provider's customer service to report this."
-    },
+    situation: { nl: "Je internet thuis valt al een week steeds uit. Je belt de klantenservice van je provider om dit te melden.", en: "Your internet at home keeps dropping out for a week now. You call your provider's customer service to report this." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, u spreekt met de klantenservice. Waarmee kan ik u helpen?",
-        en: "Good afternoon, customer service speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, u spreekt met de klantenservice. Waarmee kan ik u helpen?", en: "Good afternoon, customer service speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -453,21 +550,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn internet werkt niet goed. Kunt u dit repareren?", en: "My internet isn't working well. Can you fix this?" }
       }
+    ],
+    hints: [
+      "storing (disruption/outage)",
+      "opnieuw opstarten (restart)",
+      "technische problemen (technical issues)"
+    ],
+    glossary: [
+      { nl: "internetverbinding", en: "internet connection" },
+      { nl: "klantenservice", en: "customer service" },
+      { nl: "monteur", en: "technician" },
+      { nl: "vervelend", en: "annoying" },
+      { nl: "aan de hand", en: "going on" }
     ]
   },
   {
     topic: "Vrijwilligerswerk",
-    situation: {
-      nl: "Een vriend vertelt dat hij sinds kort vrijwilligerswerk doet. Hij vraagt wat jij daarvan vindt en of jij dat ook zou willen doen.",
-      en: "A friend tells you he recently started doing volunteer work. He asks what you think of it and whether you would want to do that too."
-    },
+    situation: { nl: "Een vriend vertelt dat hij sinds kort vrijwilligerswerk doet. Hij vraagt wat jij daarvan vindt en of jij dat ook zou willen doen.", en: "A friend tells you he recently started doing volunteer work. He asks what you think of it and whether you would want to do that too." },
     other: "Vriend",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik doe sinds een maand vrijwilligerswerk bij een buurthuis, en ik vind het eigenlijk heel leuk om te doen. Het kost wel wat vrije tijd, maar het geeft me ook veel energie. Zou jij dat ook wel eens willen proberen, denk je?",
-        en: "I've been doing volunteer work at a community center for a month now, and I actually really enjoy it. It does cost some free time, but it also gives me a lot of energy. Would you also want to try that sometime, do you think?"
-      },
+      { speaker: "other", nl: "Ik doe sinds een maand vrijwilligerswerk bij een buurthuis, en ik vind het eigenlijk heel leuk om te doen. Het kost wel wat vrije tijd, maar het geeft me ook veel energie. Zou jij dat ook wel eens willen proberen, denk je?", en: "I've been doing volunteer work at a community center for a month now, and I actually really enjoy it. It does cost some free time, but it also gives me a lot of energy. Would you also want to try that sometime, do you think?" },
       {
         speaker: "you",
         options: [
@@ -477,21 +579,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Dat is leuk! Ik wil dat ook wel eens proberen.", en: "That's nice! I'd like to try that sometime too." }
       }
+    ],
+    hints: [
+      "iets terugdoen (give something back)",
+      "betrokken zijn (be involved)",
+      "vrije tijd besteden (spend free time)"
+    ],
+    glossary: [
+      { nl: "buurthuis", en: "community center" },
+      { nl: "energie", en: "energy" },
+      { nl: "talenten", en: "talents" },
+      { nl: "twijfel", en: "doubt" },
+      { nl: "spreekt me wel aan", en: "does appeal to me" }
     ]
   },
   {
     topic: "In het restaurant",
-    situation: {
-      nl: "Je eet in een restaurant, maar je gerecht is koud aangekomen. Je roept de ober erbij.",
-      en: "You're eating at a restaurant, but your dish arrived cold. You call the waiter over."
-    },
+    situation: { nl: "Je eet in een restaurant, maar je gerecht is koud aangekomen. Je roept de ober erbij.", en: "You're eating at a restaurant, but your dish arrived cold. You call the waiter over." },
     other: "Ober",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedenavond, is alles naar wens met de maaltijd? Ik zie dat u nog niet veel gegeten heeft.",
-        en: "Good evening, is everything alright with the meal? I see you haven't eaten much yet."
-      },
+      { speaker: "other", nl: "Goedenavond, is alles naar wens met de maaltijd? Ik zie dat u nog niet veel gegeten heeft.", en: "Good evening, is everything alright with the meal? I see you haven't eaten much yet." },
       {
         speaker: "you",
         options: [
@@ -501,21 +608,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn soep is koud. Mag ik een warme, nieuwe portie?", en: "My soup is cold. Can I get a warm, new portion?" }
       }
+    ],
+    hints: [
+      "opnieuw opwarmen (reheat)",
+      "een klacht indienen (file a complaint)",
+      "de rekening (the bill)"
+    ],
+    glossary: [
+      { nl: "soep", en: "soup" },
+      { nl: "koud aangekomen", en: "arrived cold" },
+      { nl: "portie", en: "portion" },
+      { nl: "keuken", en: "kitchen" },
+      { nl: "opgewarmd", en: "reheated" }
     ]
   },
   {
     topic: "Verzekering",
-    situation: {
-      nl: "Je wilt een nieuwe zorgverzekering afsluiten voor volgend jaar. Je belt een verzekeraar om meer informatie te krijgen.",
-      en: "You want to take out new health insurance for next year. You call an insurer for more information."
-    },
+    situation: { nl: "Je wilt een nieuwe zorgverzekering afsluiten voor volgend jaar. Je belt een verzekeraar om meer informatie te krijgen.", en: "You want to take out new health insurance for next year. You call an insurer for more information." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met de klantenservice. Waar kan ik u mee van dienst zijn?",
-        en: "Good afternoon, customer service speaking. How can I be of service to you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met de klantenservice. Waar kan ik u mee van dienst zijn?", en: "Good afternoon, customer service speaking. How can I be of service to you?" },
       {
         speaker: "you",
         options: [
@@ -525,21 +637,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik wil een verzekering afsluiten. Wat kost dat, en wat is inbegrepen?", en: "I want to take out insurance. What does it cost, and what's included?" }
       }
+    ],
+    hints: [
+      "eigen risico (deductible)",
+      "premie (premium)",
+      "dekking (coverage)"
+    ],
+    glossary: [
+      { nl: "zorgverzekering", en: "health insurance" },
+      { nl: "vergoed", en: "reimbursed" },
+      { nl: "tandarts", en: "dentist" },
+      { nl: "pakketten", en: "packages/plans" },
+      { nl: "fysiotherapie", en: "physiotherapy" }
     ]
   },
   {
     topic: "Sportclub",
-    situation: {
-      nl: "Je wilt lid worden van een sportclub in je buurt. Je belt om te vragen naar de mogelijkheden.",
-      en: "You want to become a member of a sports club in your neighborhood. You call to ask about the options."
-    },
+    situation: { nl: "Je wilt lid worden van een sportclub in je buurt. Je belt om te vragen naar de mogelijkheden.", en: "You want to become a member of a sports club in your neighborhood. You call to ask about the options." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met de tennisclub. Waarmee kan ik u helpen?",
-        en: "Good afternoon, tennis club speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met de tennisclub. Waarmee kan ik u helpen?", en: "Good afternoon, tennis club speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -549,21 +666,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik ben een beginner. Zijn er ook lessen voor mij?", en: "I'm a beginner. Are there also lessons for me?" }
       }
+    ],
+    hints: [
+      "inschrijfgeld (registration fee)",
+      "trainingstijden (training times)",
+      "uitrusting (equipment)"
+    ],
+    glossary: [
+      { nl: "lid worden", en: "to become a member" },
+      { nl: "beginner", en: "beginner" },
+      { nl: "begeleiding", en: "guidance" },
+      { nl: "ervaring", en: "experience" },
+      { nl: "meedoen", en: "to join in" }
     ]
   },
   {
     topic: "Bij de kapper",
-    situation: {
-      nl: "Je hebt een afspraak bij de kapper, maar je moet die dag onverwacht werken. Je belt om de afspraak te verzetten.",
-      en: "You have a hairdresser appointment, but you unexpectedly have to work that day. You call to reschedule."
-    },
+    situation: { nl: "Je hebt een afspraak bij de kapper, maar je moet die dag onverwacht werken. Je belt om de afspraak te verzetten.", en: "You have a hairdresser appointment, but you unexpectedly have to work that day. You call to reschedule." },
     other: "Kapper",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemorgen, met kapsalon Els. Waarmee kan ik u helpen?",
-        en: "Good morning, Els hair salon speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemorgen, met kapsalon Els. Waarmee kan ik u helpen?", en: "Good morning, Els hair salon speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -573,21 +695,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik moet morgen werken. Kan mijn afspraak naar donderdag?", en: "I have to work tomorrow. Can my appointment move to Thursday?" }
       }
+    ],
+    hints: [
+      "een nieuwe afspraak maken (make a new appointment)",
+      "verplaatsen (to move/reschedule)",
+      "rooster (schedule)"
+    ],
+    glossary: [
+      { nl: "kapsalon", en: "hair salon" },
+      { nl: "onverwacht", en: "unexpectedly" },
+      { nl: "verzetten", en: "to reschedule" },
+      { nl: "komt iets tussen", en: "something comes up" },
+      { nl: "avond later", en: "a later evening" }
     ]
   },
   {
     topic: "Hulp aan de buren",
-    situation: {
-      nl: "Je buurman gaat binnenkort verhuizen en vraagt of jij een dagje kunt helpen met dragen.",
-      en: "Your neighbor is moving soon and asks if you can help carry things for a day."
-    },
+    situation: { nl: "Je buurman gaat binnenkort verhuizen en vraagt of jij een dagje kunt helpen met dragen.", en: "Your neighbor is moving soon and asks if you can help carry things for a day." },
     other: "Buurman",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik ga volgende maand verhuizen naar een nieuw huis, en ik heb best veel spullen om te verplaatsen. Zou jij misschien een dagje kunnen helpen met dragen? Ik trakteer natuurlijk op pizza.",
-        en: "I'm moving to a new house next month, and I have quite a lot of stuff to move. Could you maybe help carry things for a day? I'll of course treat you to pizza."
-      },
+      { speaker: "other", nl: "Ik ga volgende maand verhuizen naar een nieuw huis, en ik heb best veel spullen om te verplaatsen. Zou jij misschien een dagje kunnen helpen met dragen? Ik trakteer natuurlijk op pizza.", en: "I'm moving to a new house next month, and I have quite a lot of stuff to move. Could you maybe help carry things for a day? I'll of course treat you to pizza." },
       {
         speaker: "you",
         options: [
@@ -597,21 +724,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik help graag 's ochtends. 's Middags kan ik helaas niet.", en: "I'm happy to help in the morning. In the afternoon I unfortunately can't." }
       }
+    ],
+    hints: [
+      "een handje helpen (lend a hand)",
+      "inpakken (to pack)",
+      "verhuisdozen (moving boxes)"
+    ],
+    glossary: [
+      { nl: "verhuizen", en: "to move house" },
+      { nl: "dragen", en: "to carry" },
+      { nl: "trakteer", en: "treat (someone)" },
+      { nl: "zware spullen", en: "heavy items" },
+      { nl: "dozen", en: "boxes" }
     ]
   },
   {
     topic: "Sociale media",
-    situation: {
-      nl: "Een vriend vertelt dat hij minder tijd op sociale media wil doorbrengen. Hij vraagt wat jij daarvan vindt.",
-      en: "A friend says he wants to spend less time on social media. He asks what you think about that."
-    },
+    situation: { nl: "Een vriend vertelt dat hij minder tijd op sociale media wil doorbrengen. Hij vraagt wat jij daarvan vindt.", en: "A friend says he wants to spend less time on social media. He asks what you think about that." },
     other: "Vriend",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik merk dat ik best veel tijd op mijn telefoon doorbreng, vooral op sociale media. Ik wil dat eigenlijk wel minder gaan doen, maar ik weet niet goed hoe ik dat het beste kan aanpakken. Wat vind jij daarvan, en heb je misschien tips?",
-        en: "I notice that I spend quite a lot of time on my phone, especially on social media. I'd actually like to do that less, but I don't really know how best to approach it. What do you think about that, and do you maybe have tips?"
-      },
+      { speaker: "other", nl: "Ik merk dat ik best veel tijd op mijn telefoon doorbreng, vooral op sociale media. Ik wil dat eigenlijk wel minder gaan doen, maar ik weet niet goed hoe ik dat het beste kan aanpakken. Wat vind jij daarvan, en heb je misschien tips?", en: "I notice that I spend quite a lot of time on my phone, especially on social media. I'd actually like to do that less, but I don't really know how best to approach it. What do you think about that, and do you maybe have tips?" },
       {
         speaker: "you",
         options: [
@@ -621,21 +753,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Zet een tijdslimiet op je telefoon. Dat helpt echt.", en: "Set a time limit on your phone. That really helps." }
       }
+    ],
+    hints: [
+      "schermtijd (screen time)",
+      "afleiding (distraction)",
+      "bewust omgaan met (be mindful of)"
+    ],
+    glossary: [
+      { nl: "tijdslimiet", en: "time limit" },
+      { nl: "verveeld", en: "bored" },
+      { nl: "verleidelijk", en: "tempting" },
+      { nl: "apps", en: "apps" },
+      { nl: "vaste momenten", en: "fixed moments" }
     ]
   },
   {
     topic: "Kleding ruilen",
-    situation: {
-      nl: "Je hebt een paar dagen geleden een broek gekocht, maar hij blijkt te klein te zijn. Je gaat terug naar de winkel om hem om te ruilen.",
-      en: "You bought a pair of pants a few days ago, but they turn out to be too small. You go back to the store to exchange them."
-    },
+    situation: { nl: "Je hebt een paar dagen geleden een broek gekocht, maar hij blijkt te klein te zijn. Je gaat terug naar de winkel om hem om te ruilen.", en: "You bought a pair of pants a few days ago, but they turn out to be too small. You go back to the store to exchange them." },
     other: "Verkoopster",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, kan ik u ergens mee helpen?",
-        en: "Good afternoon, can I help you with something?"
-      },
+      { speaker: "other", nl: "Goedemiddag, kan ik u ergens mee helpen?", en: "Good afternoon, can I help you with something?" },
       {
         speaker: "you",
         options: [
@@ -645,21 +782,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Deze broek is te klein. Heeft u een grotere maat?", en: "These pants are too small. Do you have a bigger size?" }
       }
+    ],
+    hints: [
+      "passen (to try on)",
+      "ruilen (to exchange)",
+      "bonnetje (receipt)"
+    ],
+    glossary: [
+      { nl: "broek", en: "pants" },
+      { nl: "maatje groter", en: "a size bigger" },
+      { nl: "past helaas niet goed", en: "unfortunately doesn't fit well" },
+      { nl: "model", en: "model/style" },
+      { nl: "maat", en: "size" }
     ]
   },
   {
     topic: "Bibliotheek",
-    situation: {
-      nl: "Je hebt een boek van de bibliotheek te laat ingeleverd. Je gaat naar de balie om dit te bespreken.",
-      en: "You returned a library book late. You go to the desk to discuss this."
-    },
+    situation: { nl: "Je hebt een boek van de bibliotheek te laat ingeleverd. Je gaat naar de balie om dit te bespreken.", en: "You returned a library book late. You go to the desk to discuss this." },
     other: "Bibliothecaris",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, u wilt dit boek inleveren? Ik zie dat het al een week te laat is.",
-        en: "Good afternoon, you want to return this book? I see it's already a week overdue."
-      },
+      { speaker: "other", nl: "Goedemiddag, u wilt dit boek inleveren? Ik zie dat het al een week te laat is.", en: "Good afternoon, you want to return this book? I see it's already a week overdue." },
       {
         speaker: "you",
         options: [
@@ -669,21 +811,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Sorry, ik ben het boek vergeten. Moet ik een boete betalen?", en: "Sorry, I forgot about the book. Do I have to pay a fine?" }
       }
+    ],
+    hints: [
+      "verlengen (to renew/extend)",
+      "lidmaatschap (membership)",
+      "op tijd inleveren (return on time)"
+    ],
+    glossary: [
+      { nl: "boete", en: "fine" },
+      { nl: "inleverdatum", en: "return date" },
+      { nl: "contant", en: "in cash" },
+      { nl: "recht te zetten", en: "to fix/set right" },
+      { nl: "te laat", en: "too late" }
     ]
   },
   {
     topic: "Op het werk",
-    situation: {
-      nl: "Je laptop van het werk doet het opeens niet meer. Je belt de IT-afdeling om hulp te vragen.",
-      en: "Your work laptop suddenly stops working. You call the IT department for help."
-    },
+    situation: { nl: "Je laptop van het werk doet het opeens niet meer. Je belt de IT-afdeling om hulp te vragen.", en: "Your work laptop suddenly stops working. You call the IT department for help." },
     other: "IT-medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemorgen, met de IT-helpdesk. Waar loopt u tegenaan?",
-        en: "Good morning, IT helpdesk speaking. What's the problem you're running into?"
-      },
+      { speaker: "other", nl: "Goedemorgen, met de IT-helpdesk. Waar loopt u tegenaan?", en: "Good morning, IT helpdesk speaking. What's the problem you're running into?" },
       {
         speaker: "you",
         options: [
@@ -693,21 +840,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn laptop doet het niet. Kunt u mij helpen?", en: "My laptop isn't working. Can you help me?" }
       }
+    ],
+    hints: [
+      "een probleem melden (report a problem)",
+      "back-up maken (make a backup)",
+      "IT-afdeling (IT department)"
+    ],
+    glossary: [
+      { nl: "opstarten", en: "to start up" },
+      { nl: "herstart", en: "restart" },
+      { nl: "deadline", en: "deadline" },
+      { nl: "op afstand", en: "remotely" },
+      { nl: "scherm", en: "screen" }
     ]
   },
   {
     topic: "Op het werk",
-    situation: {
-      nl: "Er begint een nieuwe collega op je afdeling. Je manager vraagt of jij hem de eerste week wilt rondleiden.",
-      en: "A new colleague is starting in your department. Your manager asks if you'd like to show him around the first week."
-    },
+    situation: { nl: "Er begint een nieuwe collega op je afdeling. Je manager vraagt of jij hem de eerste week wilt rondleiden.", en: "A new colleague is starting in your department. Your manager asks if you'd like to show him around the first week." },
     other: "Manager",
     turns: [
-      {
-        speaker: "other",
-        nl: "We krijgen volgende week een nieuwe collega, en ik zoek iemand die hem de eerste dagen kan begeleiden. Zou jij dat op je willen nemen? Het hoeft niet de hele dag, maar wel af en toe.",
-        en: "We're getting a new colleague next week, and I'm looking for someone who can guide him the first few days. Would you be willing to take that on? It doesn't have to be all day, but every now and then."
-      },
+      { speaker: "other", nl: "We krijgen volgende week een nieuwe collega, en ik zoek iemand die hem de eerste dagen kan begeleiden. Zou jij dat op je willen nemen? Het hoeft niet de hele dag, maar wel af en toe.", en: "We're getting a new colleague next week, and I'm looking for someone who can guide him the first few days. Would you be willing to take that on? It doesn't have to be all day, but every now and then." },
       {
         speaker: "you",
         options: [
@@ -717,21 +869,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ja, ik help hem graag de eerste dagen.", en: "Yes, I'm happy to help him the first few days." }
       }
+    ],
+    hints: [
+      "wegwijs maken (show the ropes)",
+      "vragen stellen (ask questions)",
+      "welkom heten (welcome someone)"
+    ],
+    glossary: [
+      { nl: "begeleiden", en: "to guide" },
+      { nl: "inwerken", en: "to train/onboard" },
+      { nl: "onder mijn hoede", en: "under my wing" },
+      { nl: "bij mij terecht", en: "can turn to me" },
+      { nl: "rondleiden", en: "to show around" }
     ]
   },
   {
     topic: "Met de buren",
-    situation: {
-      nl: "Je buurvrouw is een paar dagen weg. Ze vraagt of jij haar pakketjes wilt aannemen.",
-      en: "Your neighbor is away for a few days. She asks if you can accept her packages."
-    },
+    situation: { nl: "Je buurvrouw is een paar dagen weg. Ze vraagt of jij haar pakketjes wilt aannemen.", en: "Your neighbor is away for a few days. She asks if you can accept her packages." },
     other: "Buurvrouw",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik ben volgende week een paar dagen op vakantie, en ik verwacht nog een paar pakketjes. Zou jij ze voor mij kunnen aannemen, als de bezorger langskomt?",
-        en: "I'm on vacation for a few days next week, and I'm still expecting a couple of packages. Could you accept them for me, when the delivery person comes by?"
-      },
+      { speaker: "other", nl: "Ik ben volgende week een paar dagen op vakantie, en ik verwacht nog een paar pakketjes. Zou jij ze voor mij kunnen aannemen, als de bezorger langskomt?", en: "I'm on vacation for a few days next week, and I'm still expecting a couple of packages. Could you accept them for me, when the delivery person comes by?" },
       {
         speaker: "you",
         options: [
@@ -741,21 +898,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Geen probleem, ik ben thuis. Ik neem ze wel aan.", en: "No problem, I'm home. I'll accept them." }
       }
+    ],
+    hints: [
+      "thuis bezorgen (deliver at home)",
+      "sleutel geven (give a key)",
+      "op tijd zijn (be on time)"
+    ],
+    glossary: [
+      { nl: "bezorger", en: "delivery person" },
+      { nl: "pakketjes", en: "packages" },
+      { nl: "veilig", en: "safe" },
+      { nl: "komt goed uit", en: "works out well" },
+      { nl: "geen probleem", en: "no problem" }
     ]
   },
   {
     topic: "Sociale afspraken",
-    situation: {
-      nl: "Je bent net verhuisd naar een nieuw huis. Je wilt een housewarming organiseren en vraagt een vriendin om mee te helpen.",
-      en: "You've just moved into a new house. You want to organize a housewarming and ask a friend to help."
-    },
+    situation: { nl: "Je bent net verhuisd naar een nieuw huis. Je wilt een housewarming organiseren en vraagt een vriendin om mee te helpen.", en: "You've just moved into a new house. You want to organize a housewarming and ask a friend to help." },
     other: "Vriendin",
     turns: [
-{
-        speaker: "other",
-        nl: "Hé, hoe bevalt het nieuwe huis? Ben je al helemaal ingericht?",
-        en: "Hey, how do you like the new house? Are you all settled in yet?"
-      },
+      { speaker: "other", nl: "Hé, hoe bevalt het nieuwe huis? Ben je al helemaal ingericht?", en: "Hey, how do you like the new house? Are you all settled in yet?" },
       {
         speaker: "you",
         options: [
@@ -765,21 +927,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik geef binnenkort een feestje. Kun je me helpen met de voorbereiding?", en: "I'm having a party soon. Can you help me with the preparation?" }
       }
+    ],
+    hints: [
+      "gasten ontvangen (host guests)",
+      "hapjes maken (make snacks)",
+      "de boel inrichten (set up the place)"
+    ],
+    glossary: [
+      { nl: "housewarming", en: "housewarming party" },
+      { nl: "ingericht", en: "furnished/decorated" },
+      { nl: "versieren", en: "to decorate" },
+      { nl: "voorbereidingen", en: "preparations" },
+      { nl: "indeling", en: "layout/plan" }
     ]
   },
   {
     topic: "Onderweg",
-    situation: {
-      nl: "Je hebt je bus gemist en moet toch op tijd naar een afspraak. Je vraagt iemand op straat naar een alternatief.",
-      en: "You've missed your bus and still need to get to an appointment on time. You ask someone on the street for an alternative."
-    },
+    situation: { nl: "Je hebt je bus gemist en moet toch op tijd naar een afspraak. Je vraagt iemand op straat naar een alternatief.", en: "You've missed your bus and still need to get to an appointment on time. You ask someone on the street for an alternative." },
     other: "Voorbijganger",
     turns: [
-{
-        speaker: "other",
-        nl: "Kan ik u helpen? U kijkt behoorlijk gestrest.",
-        en: "Can I help you? You look quite stressed."
-      },
+      { speaker: "other", nl: "Kan ik u helpen? U kijkt behoorlijk gestrest.", en: "Can I help you? You look quite stressed." },
       {
         speaker: "you",
         options: [
@@ -789,21 +956,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik heb mijn bus gemist. Is er een andere bus?", en: "I missed my bus. Is there another bus?" }
       }
+    ],
+    hints: [
+      "een taxi nemen (take a taxi)",
+      "de volgende bus (the next bus)",
+      "je haasten (to hurry)"
+    ],
+    glossary: [
+      { nl: "gestrest", en: "stressed" },
+      { nl: "weggereden", en: "drove off" },
+      { nl: "voor mijn neus", en: "right in front of me" },
+      { nl: "lopen", en: "to walk" },
+      { nl: "op tijd", en: "on time" }
     ]
   },
   {
     topic: "Bij de tandarts",
-    situation: {
-      nl: "Je hebt al een paar dagen kiespijn. Je belt de tandarts om een afspraak te maken.",
-      en: "You've had a toothache for a few days. You call the dentist to make an appointment."
-    },
+    situation: { nl: "Je hebt al een paar dagen kiespijn. Je belt de tandarts om een afspraak te maken.", en: "You've had a toothache for a few days. You call the dentist to make an appointment." },
     other: "Assistente",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemorgen, met de tandartspraktijk. Waar kan ik u mee helpen?",
-        en: "Good morning, dental practice speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemorgen, met de tandartspraktijk. Waar kan ik u mee helpen?", en: "Good morning, dental practice speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -813,21 +985,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik heb kiespijn. Kan ik snel een afspraak krijgen?", en: "I have a toothache. Can I get an appointment soon?" }
       }
+    ],
+    hints: [
+      "ontsteking (infection)",
+      "pijnstiller (painkiller)",
+      "gevoelig zijn (be sensitive)"
+    ],
+    glossary: [
+      { nl: "kiespijn", en: "toothache" },
+      { nl: "spoedafspraak", en: "emergency appointment" },
+      { nl: "kies", en: "molar/tooth" },
+      { nl: "erger", en: "worse" },
+      { nl: "flinke", en: "significant/bad" }
     ]
   },
   {
     topic: "Ziekmelden",
-    situation: {
-      nl: "Je voelt je erg grieperig en kunt vandaag niet werken. Je belt je manager om je ziek te melden.",
-      en: "You feel very feverish and can't work today. You call your manager to report sick."
-    },
+    situation: { nl: "Je voelt je erg grieperig en kunt vandaag niet werken. Je belt je manager om je ziek te melden.", en: "You feel very feverish and can't work today. You call your manager to report sick." },
     other: "Manager",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemorgen, met mij. Alles goed? Ik zag dat je nog niet ingelogd bent.",
-        en: "Good morning, it's me. All good? I noticed you haven't logged in yet."
-      },
+      { speaker: "other", nl: "Goedemorgen, met mij. Alles goed? Ik zag dat je nog niet ingelogd bent.", en: "Good morning, it's me. All good? I noticed you haven't logged in yet." },
       {
         speaker: "you",
         options: [
@@ -837,21 +1014,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik ben ziek. Ik kan vandaag niet werken.", en: "I'm sick. I can't work today." }
       }
+    ],
+    hints: [
+      "uitzieken (to recover from illness)",
+      "beterschap (get well)",
+      "thuisblijven (stay home)"
+    ],
+    glossary: [
+      { nl: "grieperig", en: "feverish/flu-like" },
+      { nl: "koorts", en: "fever" },
+      { nl: "beroerd", en: "awful/unwell" },
+      { nl: "rusten", en: "to rest" },
+      { nl: "ingelogd", en: "logged in" }
     ]
   },
   {
     topic: "Loodgieter bellen",
-    situation: {
-      nl: "De kraan in je keuken lekt al een paar dagen. Je belt een loodgieter om het te laten repareren.",
-      en: "The tap in your kitchen has been leaking for a few days. You call a plumber to have it repaired."
-    },
+    situation: { nl: "De kraan in je keuken lekt al een paar dagen. Je belt een loodgieter om het te laten repareren.", en: "The tap in your kitchen has been leaking for a few days. You call a plumber to have it repaired." },
     other: "Loodgieter",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met loodgietersbedrijf Jansen. Waarmee kan ik u helpen?",
-        en: "Good afternoon, Jansen plumbing company speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met loodgietersbedrijf Jansen. Waarmee kan ik u helpen?", en: "Good afternoon, Jansen plumbing company speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -861,21 +1043,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn kraan lekt. Kan iemand komen kijken?", en: "My tap is leaking. Can someone come take a look?" }
       }
+    ],
+    hints: [
+      "een monteur inschakelen (call in a repairman)",
+      "waterschade (water damage)",
+      "repareren (to repair)"
+    ],
+    glossary: [
+      { nl: "lekt", en: "leaks" },
+      { nl: "druppelt", en: "drips" },
+      { nl: "langskomen", en: "to come by" },
+      { nl: "steeds erger", en: "worse and worse" },
+      { nl: "loodgietersbedrijf", en: "plumbing company" }
     ]
   },
   {
     topic: "Winkelen",
-    situation: {
-      nl: "Je ziet in een winkel een jas die je erg mooi vindt, maar hij is best duur. Je vraagt de verkoper of er binnenkort korting op komt.",
-      en: "You see a jacket in a store that you really like, but it's quite expensive. You ask the salesperson if there will be a discount soon."
-    },
+    situation: { nl: "Je ziet in een winkel een jas die je erg mooi vindt, maar hij is best duur. Je vraagt de verkoper of er binnenkort korting op komt.", en: "You see a jacket in a store that you really like, but it's quite expensive. You ask the salesperson if there will be a discount soon." },
     other: "Verkoper",
     turns: [
-{
-        speaker: "other",
-        nl: "Kan ik u ergens mee helpen? Ik zag u al een tijdje naar deze jas kijken.",
-        en: "Can I help you with something? I noticed you looking at this jacket for a while."
-      },
+      { speaker: "other", nl: "Kan ik u ergens mee helpen? Ik zag u al een tijdje naar deze jas kijken.", en: "Can I help you with something? I noticed you looking at this jacket for a while." },
       {
         speaker: "you",
         options: [
@@ -885,21 +1072,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Deze jas is mooi maar duur. Komt er nog korting?", en: "This jacket is nice but expensive. Will there be a discount?" }
       }
+    ],
+    hints: [
+      "afprijzen (to mark down)",
+      "prijskaartje (price tag)",
+      "een koopje (a bargain)"
+    ],
+    glossary: [
+      { nl: "uitverkoop", en: "sale" },
+      { nl: "actie", en: "promotion/sale" },
+      { nl: "studentenkorting", en: "student discount" },
+      { nl: "prijs", en: "price" },
+      { nl: "twijfel", en: "hesitation/doubt" }
     ]
   },
   {
     topic: "Op reis",
-    situation: {
-      nl: "Je hebt een kamer geboekt in een hotel, maar je reisplannen zijn veranderd. Je belt het hotel om de boeking aan te passen.",
-      en: "You've booked a room at a hotel, but your travel plans have changed. You call the hotel to adjust the booking."
-    },
+    situation: { nl: "Je hebt een kamer geboekt in een hotel, maar je reisplannen zijn veranderd. Je belt het hotel om de boeking aan te passen.", en: "You've booked a room at a hotel, but your travel plans have changed. You call the hotel to adjust the booking." },
     other: "Receptioniste",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met hotel De Zon. Waarmee kan ik u van dienst zijn?",
-        en: "Good afternoon, Hotel De Zon speaking. How can I be of service to you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met hotel De Zon. Waarmee kan ik u van dienst zijn?", en: "Good afternoon, Hotel De Zon speaking. How can I be of service to you?" },
       {
         speaker: "you",
         options: [
@@ -909,21 +1101,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn plannen zijn veranderd. Kan ik de boeking verzetten?", en: "My plans have changed. Can I move the booking?" }
       }
+    ],
+    hints: [
+      "reservering wijzigen (change reservation)",
+      "aanbetaling (deposit)",
+      "een latere datum (a later date)"
+    ],
+    glossary: [
+      { nl: "boeking", en: "booking" },
+      { nl: "annuleren", en: "to cancel" },
+      { nl: "verzetten", en: "to reschedule" },
+      { nl: "verblijf", en: "stay" },
+      { nl: "omstandigheden", en: "circumstances" }
     ]
   },
   {
     topic: "Op reis",
-    situation: {
-      nl: "Je vlucht heeft veel vertraging en je mist daardoor je aansluitende vlucht. Je gaat naar de balie van de luchtvaartmaatschappij.",
-      en: "Your flight is badly delayed and because of that you miss your connecting flight. You go to the airline's desk."
-    },
+    situation: { nl: "Je vlucht heeft veel vertraging en je mist daardoor je aansluitende vlucht. Je gaat naar de balie van de luchtvaartmaatschappij.", en: "Your flight is badly delayed and because of that you miss your connecting flight. You go to the airline's desk." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, waarmee kan ik u helpen?",
-        en: "Good afternoon, how can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, waarmee kan ik u helpen?", en: "Good afternoon, how can I help you?" },
       {
         speaker: "you",
         options: [
@@ -933,21 +1130,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik heb mijn vlucht gemist. Is er een andere vlucht vandaag?", en: "I missed my flight. Is there another flight today?" }
       }
+    ],
+    hints: [
+      "omboeken (to rebook)",
+      "instapkaart (boarding pass)",
+      "vertrektijd (departure time)"
+    ],
+    glossary: [
+      { nl: "aansluiting", en: "connection" },
+      { nl: "overstap", en: "connecting flight/transfer" },
+      { nl: "bestemming", en: "destination" },
+      { nl: "vliegveld", en: "airport" },
+      { nl: "vertraging", en: "delay" }
     ]
   },
   {
     topic: "Cursus volgen",
-    situation: {
-      nl: "Je wilt je inschrijven voor een schilderscursus bij het buurthuis. Je belt om te vragen naar de mogelijkheden.",
-      en: "You want to sign up for a painting course at the community center. You call to ask about the options."
-    },
+    situation: { nl: "Je wilt je inschrijven voor een schilderscursus bij het buurthuis. Je belt om te vragen naar de mogelijkheden.", en: "You want to sign up for a painting course at the community center. You call to ask about the options." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met het buurthuis. Waarmee kan ik u helpen?",
-        en: "Good afternoon, community center speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met het buurthuis. Waarmee kan ik u helpen?", en: "Good afternoon, community center speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -957,21 +1159,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik wil me inschrijven. Is er nog plek?", en: "I want to sign up. Is there still room?" }
       }
+    ],
+    hints: [
+      "materiaal meenemen (bring supplies)",
+      "creatief bezig zijn (be creative)",
+      "wekelijkse les (weekly lesson)"
+    ],
+    glossary: [
+      { nl: "schilderscursus", en: "painting course" },
+      { nl: "deelnemers", en: "participants" },
+      { nl: "beginners", en: "beginners" },
+      { nl: "plek vrij", en: "room available" },
+      { nl: "aanmelden", en: "to sign up" }
     ]
   },
   {
     topic: "Op het werk",
-    situation: {
-      nl: "Je werkt al twee jaar bij hetzelfde bedrijf en hebt veel nieuwe taken erbij gekregen. Je vraagt je manager om een gesprek over je salaris.",
-      en: "You've worked at the same company for two years and have taken on many new tasks. You ask your manager for a conversation about your salary."
-    },
+    situation: { nl: "Je werkt al twee jaar bij hetzelfde bedrijf en hebt veel nieuwe taken erbij gekregen. Je vraagt je manager om een gesprek over je salaris.", en: "You've worked at the same company for two years and have taken on many new tasks. You ask your manager for a conversation about your salary." },
     other: "Manager",
     turns: [
-{
-        speaker: "other",
-        nl: "Je wilde een gesprek met me? Waar zullen we het over hebben?",
-        en: "You wanted to have a conversation with me? What shall we talk about?"
-      },
+      { speaker: "other", nl: "Je wilde een gesprek met me? Waar zullen we het over hebben?", en: "You wanted to have a conversation with me? What shall we talk about?" },
       {
         speaker: "you",
         options: [
@@ -981,21 +1188,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik wil praten over mijn salaris. Heeft u tijd deze week?", en: "I want to talk about my salary. Do you have time this week?" }
       }
+    ],
+    hints: [
+      "loonsverhoging (pay raise)",
+      "functioneringsgesprek (performance review)",
+      "onderhandelen (to negotiate)"
+    ],
+    glossary: [
+      { nl: "salaris", en: "salary" },
+      { nl: "verantwoordelijkheid", en: "responsibility" },
+      { nl: "takenpakket", en: "workload/tasks" },
+      { nl: "aanpassing", en: "adjustment" },
+      { nl: "gegroeid", en: "grown" }
     ]
   },
   {
     topic: "Op het werk",
-    situation: {
-      nl: "Je hebt de afgelopen weken veel overuren gemaakt voor een project. Je bespreekt met je manager hoe dit gecompenseerd kan worden.",
-      en: "You've worked a lot of overtime recently for a project. You discuss with your manager how this can be compensated."
-    },
+    situation: { nl: "Je hebt de afgelopen weken veel overuren gemaakt voor een project. Je bespreekt met je manager hoe dit gecompenseerd kan worden.", en: "You've worked a lot of overtime recently for a project. You discuss with your manager how this can be compensated." },
     other: "Manager",
     turns: [
-{
-        speaker: "other",
-        nl: "Ik zag dat je de afgelopen weken flink wat overuren hebt gemaakt voor het project. Hoe gaat het ermee?",
-        en: "I noticed you've worked quite a lot of overtime for the project these past weeks. How's it going?"
-      },
+      { speaker: "other", nl: "Ik zag dat je de afgelopen weken flink wat overuren hebt gemaakt voor het project. Hoe gaat het ermee?", en: "I noticed you've worked quite a lot of overtime for the project these past weeks. How's it going?" },
       {
         speaker: "you",
         options: [
@@ -1005,21 +1217,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik heb veel overuren gemaakt. Mag ik die later opnemen als vrije tijd?", en: "I've worked a lot of overtime. Can I take those as time off later?" }
       }
+    ],
+    hints: [
+      "verlofuren (leave hours)",
+      "balans vinden (find balance)",
+      "opnemen (to take (time off))"
+    ],
+    glossary: [
+      { nl: "overuren", en: "overtime" },
+      { nl: "vrije tijd", en: "free time/time off" },
+      { nl: "gecompenseerd", en: "compensated" },
+      { nl: "op te tellen", en: "to add up" },
+      { nl: "moe", en: "tired" }
     ]
   },
   {
     topic: "Vriendschap",
-    situation: {
-      nl: "Je hebt vorige week ruzie gehad met een goede vriend over een misverstand. Je belt hem om het weer goed te maken.",
-      en: "You had an argument with a good friend last week over a misunderstanding. You call him to make up."
-    },
+    situation: { nl: "Je hebt vorige week ruzie gehad met een goede vriend over een misverstand. Je belt hem om het weer goed te maken.", en: "You had an argument with a good friend last week over a misunderstanding. You call him to make up." },
     other: "Vriend",
     turns: [
-{
-        speaker: "other",
-        nl: "Hé, met mij. Ik had eigenlijk niet verwacht dat je zou bellen na vorige week.",
-        en: "Hey, it's me. I actually hadn't expected you to call after last week."
-      },
+      { speaker: "other", nl: "Hé, met mij. Ik had eigenlijk niet verwacht dat je zou bellen na vorige week.", en: "Hey, it's me. I actually hadn't expected you to call after last week." },
       {
         speaker: "you",
         options: [
@@ -1029,21 +1246,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Het spijt me van vorige week. Zullen we praten?", en: "I'm sorry about last week. Shall we talk?" }
       }
+    ],
+    hints: [
+      "het goedmaken (to make up)",
+      "sorry zeggen (say sorry)",
+      "begrip tonen (show understanding)"
+    ],
+    glossary: [
+      { nl: "misverstand", en: "misunderstanding" },
+      { nl: "uit te praten", en: "to talk through" },
+      { nl: "nagedacht", en: "thought about" },
+      { nl: "het spijt me", en: "I'm sorry" },
+      { nl: "afspreken", en: "to arrange to meet" }
     ]
   },
   {
     topic: "Familie",
-    situation: {
-      nl: "Je zus vraagt of jij een avond kunt oppassen op haar dochtertje.",
-      en: "Your sister asks if you can babysit her daughter for an evening."
-    },
+    situation: { nl: "Je zus vraagt of jij een avond kunt oppassen op haar dochtertje.", en: "Your sister asks if you can babysit her daughter for an evening." },
     other: "Zus",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik heb volgende week vrijdag een etentje met collega's, maar ik heb nog niemand voor de oppas. Zou jij die avond misschien kunnen oppassen op Sophie?",
-        en: "I have a dinner with colleagues next Friday, but I don't have anyone for babysitting yet. Could you maybe babysit Sophie that evening?"
-      },
+      { speaker: "other", nl: "Ik heb volgende week vrijdag een etentje met collega's, maar ik heb nog niemand voor de oppas. Zou jij die avond misschien kunnen oppassen op Sophie?", en: "I have a dinner with colleagues next Friday, but I don't have anyone for babysitting yet. Could you maybe babysit Sophie that evening?" },
       {
         speaker: "you",
         options: [
@@ -1053,21 +1275,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ja, dat doe ik graag. Hoe laat moet ik komen?", en: "Yes, I'm happy to do that. What time should I come?" }
       }
+    ],
+    hints: [
+      "kinderen op bed leggen (put kids to bed)",
+      "verantwoordelijkheid nemen (take responsibility)",
+      "een avondje uit (a night out)"
+    ],
+    glossary: [
+      { nl: "oppassen", en: "to babysit" },
+      { nl: "etentje", en: "dinner" },
+      { nl: "avondroutine", en: "evening routine" },
+      { nl: "gezelschap", en: "company" },
+      { nl: "naar bed gaat", en: "goes to bed" }
     ]
   },
   {
     topic: "Met de buren",
-    situation: {
-      nl: "Je buurvrouw heeft haar been gebroken en kan haar hond even niet uitlaten. Ze vraagt of jij kunt helpen.",
-      en: "Your neighbor has broken her leg and can't walk her dog for a while. She asks if you can help."
-    },
+    situation: { nl: "Je buurvrouw heeft haar been gebroken en kan haar hond even niet uitlaten. Ze vraagt of jij kunt helpen.", en: "Your neighbor has broken her leg and can't walk her dog for a while. She asks if you can help." },
     other: "Buurvrouw",
     turns: [
-      {
-        speaker: "other",
-        nl: "Ik heb helaas mijn been gebroken en kan de komende weken niet met mijn hond wandelen. Zou jij hem misschien af en toe kunnen uitlaten? Hij heeft niet veel nodig, gewoon een rondje om het blok.",
-        en: "Unfortunately I've broken my leg and can't walk my dog for the coming weeks. Could you maybe walk him every now and then? He doesn't need much, just a walk around the block."
-      },
+      { speaker: "other", nl: "Ik heb helaas mijn been gebroken en kan de komende weken niet met mijn hond wandelen. Zou jij hem misschien af en toe kunnen uitlaten? Hij heeft niet veel nodig, gewoon een rondje om het blok.", en: "Unfortunately I've broken my leg and can't walk my dog for the coming weeks. Could you maybe walk him every now and then? He doesn't need much, just a walk around the block." },
       {
         speaker: "you",
         options: [
@@ -1077,21 +1304,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Natuurlijk help ik. Ik laat hem 's ochtends uit.", en: "Of course I'll help. I'll walk him in the morning." }
       }
+    ],
+    hints: [
+      "hond uitlaten (walk the dog)",
+      "herstellen (to recover)",
+      "op de been (back on your feet)"
+    ],
+    glossary: [
+      { nl: "been gebroken", en: "broken leg" },
+      { nl: "uitlaten", en: "to walk (a dog)" },
+      { nl: "rondje om het blok", en: "a walk around the block" },
+      { nl: "beterschap", en: "get well soon" },
+      { nl: "plezier", en: "pleasure" }
     ]
   },
   {
     topic: "Gezondheid & sport",
-    situation: {
-      nl: "Je wilt graag beginnen met hardlopen, maar vindt het lastig om het alleen vol te houden. Je vraagt een collega of ze zin heeft om samen te sporten.",
-      en: "You'd like to start running, but find it hard to keep it up alone. You ask a colleague if she'd like to exercise together."
-    },
+    situation: { nl: "Je wilt graag beginnen met hardlopen, maar vindt het lastig om het alleen vol te houden. Je vraagt een collega of ze zin heeft om samen te sporten.", en: "You'd like to start running, but find it hard to keep it up alone. You ask a colleague if she'd like to exercise together." },
     other: "Collega",
     turns: [
-{
-        speaker: "other",
-        nl: "Hé, ik zag op je bureau een hardloopschoen liggen. Ben je begonnen met hardlopen?",
-        en: "Hey, I saw a running shoe on your desk. Have you started running?"
-      },
+      { speaker: "other", nl: "Hé, ik zag op je bureau een hardloopschoen liggen. Ben je begonnen met hardlopen?", en: "Hey, I saw a running shoe on your desk. Have you started running?" },
       {
         speaker: "you",
         options: [
@@ -1101,21 +1333,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Zullen we samen gaan hardlopen? Dat is leuker dan alleen.", en: "Shall we go running together? That's more fun than alone." }
       }
+    ],
+    hints: [
+      "een hardloopschema (running schedule)",
+      "conditie (fitness/stamina)",
+      "elkaar aanmoedigen (encourage each other)"
+    ],
+    glossary: [
+      { nl: "hardloopschoen", en: "running shoe" },
+      { nl: "vol te houden", en: "to keep it up" },
+      { nl: "gemotiveerd", en: "motivated" },
+      { nl: "gezelschap", en: "company" },
+      { nl: "saai", en: "boring" }
     ]
   },
   {
     topic: "Gezond eten",
-    situation: {
-      nl: "Een collega heeft een heerlijk gerecht meegenomen voor de lunch. Je vraagt naar het recept.",
-      en: "A colleague brought a delicious dish for lunch. You ask about the recipe."
-    },
+    situation: { nl: "Een collega heeft een heerlijk gerecht meegenomen voor de lunch. Je vraagt naar het recept.", en: "A colleague brought a delicious dish for lunch. You ask about the recipe." },
     other: "Collega",
     turns: [
-      {
-        speaker: "other",
-        nl: "Wil je proeven? Ik heb gisteravond deze pastasalade gemaakt, met verse groente uit mijn tuin.",
-        en: "Do you want to try some? I made this pasta salad last night, with fresh vegetables from my garden."
-      },
+      { speaker: "other", nl: "Wil je proeven? Ik heb gisteravond deze pastasalade gemaakt, met verse groente uit mijn tuin.", en: "Do you want to try some? I made this pasta salad last night, with fresh vegetables from my garden." },
       {
         speaker: "you",
         options: [
@@ -1125,21 +1362,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Dit ziet er lekker uit! Mag ik het recept?", en: "This looks delicious! Can I have the recipe?" }
       }
+    ],
+    hints: [
+      "op smaak brengen (season to taste)",
+      "een gerecht bereiden (prepare a dish)",
+      "verse producten (fresh produce)"
+    ],
+    glossary: [
+      { nl: "pastasalade", en: "pasta salad" },
+      { nl: "tuin", en: "garden" },
+      { nl: "ingrediënten", en: "ingredients" },
+      { nl: "proeven", en: "to taste" },
+      { nl: "recept", en: "recipe" }
     ]
   },
   {
     topic: "Advies geven",
-    situation: {
-      nl: "Je oude telefoon is stuk en je wilt een nieuwe kopen. Je vraagt een vriend die veel van technologie weet om advies.",
-      en: "Your old phone is broken and you want to buy a new one. You ask a friend who knows a lot about technology for advice."
-    },
+    situation: { nl: "Je oude telefoon is stuk en je wilt een nieuwe kopen. Je vraagt een vriend die veel van technologie weet om advies.", en: "Your old phone is broken and you want to buy a new one. You ask a friend who knows a lot about technology for advice." },
     other: "Vriend",
     turns: [
-{
-        speaker: "other",
-        nl: "Ik hoorde dat je telefoon kapot is. Wat vervelend! Weet je al wat voor telefoon je wilt kopen?",
-        en: "I heard your phone is broken. How annoying! Do you already know what kind of phone you want to buy?"
-      },
+      { speaker: "other", nl: "Ik hoorde dat je telefoon kapot is. Wat vervelend! Weet je al wat voor telefoon je wilt kopen?", en: "I heard your phone is broken. How annoying! Do you already know what kind of phone you want to buy?" },
       {
         speaker: "you",
         options: [
@@ -1149,21 +1391,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik gebruik mijn telefoon voor foto's en berichten. Wat is een goede, niet te dure telefoon?", en: "I use my phone for photos and messages. What's a good, not too expensive phone?" }
       }
+    ],
+    hints: [
+      "prijs-kwaliteitverhouding (value for money)",
+      "opslagruimte (storage space)",
+      "tweedehands toestel (second-hand device)"
+    ],
+    glossary: [
+      { nl: "budget", en: "budget" },
+      { nl: "merk", en: "brand" },
+      { nl: "batterij", en: "battery" },
+      { nl: "foto's maken", en: "to take photos" },
+      { nl: "berichten", en: "messages" }
     ]
   },
   {
     topic: "Bij de bank",
-    situation: {
-      nl: "Je wilt een nieuwe bankrekening openen bij een andere bank. Je gaat naar het kantoor om informatie te vragen.",
-      en: "You want to open a new bank account at a different bank. You go to the office to ask for information."
-    },
+    situation: { nl: "Je wilt een nieuwe bankrekening openen bij een andere bank. Je gaat naar het kantoor om informatie te vragen.", en: "You want to open a new bank account at a different bank. You go to the office to ask for information." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, waarmee kan ik u helpen?",
-        en: "Good afternoon, how can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, waarmee kan ik u helpen?", en: "Good afternoon, how can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1173,21 +1420,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik wil een rekening openen. Kost dat geld per maand?", en: "I want to open an account. Does that cost money per month?" }
       }
+    ],
+    hints: [
+      "rente (interest)",
+      "een spaarrekening (savings account)",
+      "afschrijvingen (bank debits/statements)"
+    ],
+    glossary: [
+      { nl: "rekening", en: "account" },
+      { nl: "maandelijkse kosten", en: "monthly costs" },
+      { nl: "bankpas", en: "bank card" },
+      { nl: "online bankieren", en: "online banking" },
+      { nl: "overweeg", en: "considering" }
     ]
   },
   {
     topic: "Bij de gemeente",
-    situation: {
-      nl: "Je paspoort verloopt binnenkort. Je belt de gemeente om een afspraak te maken voor een nieuw paspoort.",
-      en: "Your passport is expiring soon. You call the municipality to make an appointment for a new passport."
-    },
+    situation: { nl: "Je paspoort verloopt binnenkort. Je belt de gemeente om een afspraak te maken voor een nieuw paspoort.", en: "Your passport is expiring soon. You call the municipality to make an appointment for a new passport." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemorgen, met de gemeente. Waarmee kan ik u helpen?",
-        en: "Good morning, municipality speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemorgen, met de gemeente. Waarmee kan ik u helpen?", en: "Good morning, municipality speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1197,21 +1449,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn paspoort is bijna verlopen. Kan ik snel een nieuwe aanvragen?", en: "My passport is almost expired. Can I apply for a new one soon?" }
       }
+    ],
+    hints: [
+      "identiteitsbewijs (ID document)",
+      "pasfoto (passport photo)",
+      "geldig tot (valid until)"
+    ],
+    glossary: [
+      { nl: "paspoort", en: "passport" },
+      { nl: "verloopt", en: "expires" },
+      { nl: "aanvragen", en: "to apply for" },
+      { nl: "zo snel mogelijk", en: "as soon as possible" },
+      { nl: "reis", en: "trip" }
     ]
   },
   {
     topic: "Nieuwe buurt",
-    situation: {
-      nl: "Je wilt weten welke activiteiten er in het buurthuis worden georganiseerd. Je belt om informatie te vragen.",
-      en: "You want to know what activities are organized at the community center. You call to ask for information."
-    },
+    situation: { nl: "Je wilt weten welke activiteiten er in het buurthuis worden georganiseerd. Je belt om informatie te vragen.", en: "You want to know what activities are organized at the community center. You call to ask for information." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met het buurthuis. Waarmee kan ik u helpen?",
-        en: "Good afternoon, community center speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met het buurthuis. Waarmee kan ik u helpen?", en: "Good afternoon, community center speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1221,21 +1478,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik ben nieuw hier. Welke activiteiten zijn er in het weekend?", en: "I'm new here. What activities are there on weekends?" }
       }
+    ],
+    hints: [
+      "deelnemen aan (participate in)",
+      "een cursus volgen (take a course)",
+      "sociale contacten (social contacts)"
+    ],
+    glossary: [
+      { nl: "activiteiten", en: "activities" },
+      { nl: "organiseren", en: "to organize" },
+      { nl: "programma", en: "program" },
+      { nl: "mensen leren kennen", en: "get to know people" },
+      { nl: "nieuw", en: "new" }
     ]
   },
   {
     topic: "Familie",
-    situation: {
-      nl: "Je zoon wordt binnenkort zes jaar. Je vraagt je partner om hulp bij het organiseren van zijn verjaardagsfeest.",
-      en: "Your son is turning six soon. You ask your partner for help organizing his birthday party."
-    },
+    situation: { nl: "Je zoon wordt binnenkort zes jaar. Je vraagt je partner om hulp bij het organiseren van zijn verjaardagsfeest.", en: "Your son is turning six soon. You ask your partner for help organizing his birthday party." },
     other: "Partner",
     turns: [
-      {
-        speaker: "other",
-        nl: "Hoe gaat het eigenlijk met de plannen voor het verjaardagsfeest van Tim? Weet je al wat je wilt doen?",
-        en: "How are the plans for Tim's birthday party going actually? Do you already know what you want to do?"
-      },
+      { speaker: "other", nl: "Hoe gaat het eigenlijk met de plannen voor het verjaardagsfeest van Tim? Weet je al wat je wilt doen?", en: "How are the plans for Tim's birthday party going actually? Do you already know what you want to do?" },
       {
         speaker: "you",
         options: [
@@ -1245,21 +1507,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik wil een feestje in de tuin. Kun je helpen met de uitnodigingen?", en: "I want a party in the garden. Can you help with the invitations?" }
       }
+    ],
+    hints: [
+      "ballonnen ophangen (hang balloons)",
+      "cadeautjes (small gifts)",
+      "een thema kiezen (choose a theme)"
+    ],
+    glossary: [
+      { nl: "verjaardagsfeest", en: "birthday party" },
+      { nl: "uitnodigingen", en: "invitations" },
+      { nl: "versieren", en: "to decorate" },
+      { nl: "taart", en: "cake" },
+      { nl: "spelletjes", en: "games" }
     ]
   },
   {
     topic: "Wasmachine kapot",
-    situation: {
-      nl: "Je wasmachine doet het niet meer. Je belt een reparatieservice om iemand langs te laten komen.",
-      en: "Your washing machine has stopped working. You call a repair service to have someone come by."
-    },
+    situation: { nl: "Je wasmachine doet het niet meer. Je belt een reparatieservice om iemand langs te laten komen.", en: "Your washing machine has stopped working. You call a repair service to have someone come by." },
     other: "Monteur",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met de reparatieservice. Waarmee kan ik u helpen?",
-        en: "Good afternoon, repair service speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met de reparatieservice. Waarmee kan ik u helpen?", en: "Good afternoon, repair service speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1269,21 +1536,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn wasmachine is kapot. Kan iemand deze week komen?", en: "My washing machine is broken. Can someone come this week?" }
       }
+    ],
+    hints: [
+      "storing verhelpen (fix a malfunction)",
+      "onderdeel vervangen (replace a part)",
+      "garantie (warranty)"
+    ],
+    glossary: [
+      { nl: "wasmachine", en: "washing machine" },
+      { nl: "raar geluid", en: "strange noise" },
+      { nl: "monteur", en: "technician" },
+      { nl: "start niet meer op", en: "won't start anymore" },
+      { nl: "knop", en: "button" }
     ]
   },
   {
     topic: "Cadeau terugbrengen",
-    situation: {
-      nl: "Je hebt van een vriendin een trui gekregen, maar hij past niet goed. Je vraagt of je hem mag omruilen in de winkel waar ze hem gekocht heeft.",
-      en: "You got a sweater from a friend, but it doesn't fit well. You ask if you can exchange it at the store where she bought it."
-    },
+    situation: { nl: "Je hebt van een vriendin een trui gekregen, maar hij past niet goed. Je vraagt of je hem mag omruilen in de winkel waar ze hem gekocht heeft.", en: "You got a sweater from a friend, but it doesn't fit well. You ask if you can exchange it at the store where she bought it." },
     other: "Vriendin",
     turns: [
-{
-        speaker: "other",
-        nl: "Vond je de trui mooi die ik je gegeven heb? Ik was even bang dat de kleur niet zou passen bij jou.",
-        en: "Did you like the sweater I gave you? I was a bit worried the color wouldn't suit you."
-      },
+      { speaker: "other", nl: "Vond je de trui mooi die ik je gegeven heb? Ik was even bang dat de kleur niet zou passen bij jou.", en: "Did you like the sweater I gave you? I was a bit worried the color wouldn't suit you." },
       {
         speaker: "you",
         options: [
@@ -1293,21 +1565,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "De trui is te klein. Weet je waar je hem gekocht hebt?", en: "The sweater is too small. Do you know where you bought it?" }
       }
+    ],
+    hints: [
+      "ruilen zonder bon (exchange without receipt)",
+      "een maatje kleiner/groter (a size smaller/bigger)",
+      "goed staan (look good on someone)"
+    ],
+    glossary: [
+      { nl: "trui", en: "sweater" },
+      { nl: "kleur", en: "color" },
+      { nl: "maatje groter", en: "a size bigger" },
+      { nl: "past", en: "fits" },
+      { nl: "gegeven", en: "given" }
     ]
   },
   {
     topic: "Weer & afspraken",
-    situation: {
-      nl: "Er wordt zwaar onweer verwacht op de dag dat je met een vriend zou gaan wandelen. Je stelt voor om de afspraak te verzetten.",
-      en: "Heavy thunderstorms are expected on the day you were going to go for a walk with a friend. You suggest rescheduling."
-    },
+    situation: { nl: "Er wordt zwaar onweer verwacht op de dag dat je met een vriend zou gaan wandelen. Je stelt voor om de afspraak te verzetten.", en: "Heavy thunderstorms are expected on the day you were going to go for a walk with a friend. You suggest rescheduling." },
     other: "Vriend",
     turns: [
-{
-        speaker: "other",
-        nl: "Heb je zin om morgen die lange wandeling te maken die we gepland hadden? Ik kijk er al naar uit.",
-        en: "Do you feel like doing that long walk we planned tomorrow? I'm already looking forward to it."
-      },
+      { speaker: "other", nl: "Heb je zin om morgen die lange wandeling te maken die we gepland hadden? Ik kijk er al naar uit.", en: "Do you feel like doing that long walk we planned tomorrow? I'm already looking forward to it." },
       {
         speaker: "you",
         options: [
@@ -1317,21 +1594,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Er komt morgen onweer. Zullen we naar zaterdag verzetten?", en: "There's a thunderstorm coming tomorrow. Shall we move it to Saturday?" }
       }
+    ],
+    hints: [
+      "stormachtig (stormy)",
+      "buiten actief zijn (be active outside)",
+      "een andere dag prikken (pick another day)"
+    ],
+    glossary: [
+      { nl: "onweer", en: "thunderstorm" },
+      { nl: "weerbericht", en: "weather forecast" },
+      { nl: "verzetten", en: "to reschedule" },
+      { nl: "droge dag", en: "dry day" },
+      { nl: "uitstellen", en: "to postpone" }
     ]
   },
   {
     topic: "Autopech",
-    situation: {
-      nl: "Je auto slaat af op de snelweg en start niet meer. Je belt de wegenwacht om hulp.",
-      en: "Your car stalls on the highway and won't start again. You call roadside assistance for help."
-    },
+    situation: { nl: "Je auto slaat af op de snelweg en start niet meer. Je belt de wegenwacht om hulp.", en: "Your car stalls on the highway and won't start again. You call roadside assistance for help." },
     other: "Wegenwacht",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met de wegenwacht. Waar bevindt u zich, en wat is het probleem?",
-        en: "Good afternoon, roadside assistance speaking. Where are you located, and what's the problem?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met de wegenwacht. Waar bevindt u zich, en wat is het probleem?", en: "Good afternoon, roadside assistance speaking. Where are you located, and what's the problem?" },
       {
         speaker: "you",
         options: [
@@ -1341,21 +1623,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn auto start niet. Hoe lang duurt het voor er hulp komt?", en: "My car won't start. How long until help arrives?" }
       }
+    ],
+    hints: [
+      "accu leeg (dead battery)",
+      "pech onderweg (breakdown on the way)",
+      "sleepwagen (tow truck)"
+    ],
+    glossary: [
+      { nl: "motorkap", en: "hood (of a car)" },
+      { nl: "afslag", en: "exit (highway)" },
+      { nl: "snelweg", en: "highway" },
+      { nl: "wegenwacht", en: "roadside assistance" },
+      { nl: "slaat af", en: "stalls" }
     ]
   },
   {
     topic: "Rijschool",
-    situation: {
-      nl: "Je wilt je rijbewijs gaan halen. Je belt een rijschool om te vragen naar de mogelijkheden.",
-      en: "You want to get your driver's license. You call a driving school to ask about the options."
-    },
+    situation: { nl: "Je wilt je rijbewijs gaan halen. Je belt een rijschool om te vragen naar de mogelijkheden.", en: "You want to get your driver's license. You call a driving school to ask about the options." },
     other: "Rijschool",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met rijschool Van Dijk. Waarmee kan ik u helpen?",
-        en: "Good afternoon, Van Dijk driving school speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met rijschool Van Dijk. Waarmee kan ik u helpen?", en: "Good afternoon, Van Dijk driving school speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1365,21 +1652,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik wil mijn rijbewijs halen. Hoeveel lessen heb ik nodig?", en: "I want to get my driver's license. How many lessons do I need?" }
       }
+    ],
+    hints: [
+      "theorie-examen (theory exam)",
+      "rijvaardigheid (driving skill)",
+      "een rijles inplannen (schedule a driving lesson)"
+    ],
+    glossary: [
+      { nl: "rijbewijs", en: "driver's license" },
+      { nl: "stuur", en: "steering wheel" },
+      { nl: "lespakket", en: "lesson package" },
+      { nl: "lessen", en: "lessons" },
+      { nl: "beginner", en: "beginner" }
     ]
   },
   {
     topic: "Sollicitatiegesprek",
-    situation: {
-      nl: "Je hebt volgende week een sollicitatiegesprek voor een nieuwe baan. Je vraagt een vriend die hier ervaring mee heeft om advies.",
-      en: "You have a job interview next week for a new job. You ask a friend with experience for advice."
-    },
+    situation: { nl: "Je hebt volgende week een sollicitatiegesprek voor een nieuwe baan. Je vraagt een vriend die hier ervaring mee heeft om advies.", en: "You have a job interview next week for a new job. You ask a friend with experience for advice." },
     other: "Vriend",
     turns: [
-{
-        speaker: "other",
-        nl: "Ik hoorde dat je volgende week een sollicitatiegesprek hebt. Hoe voel je je erbij? Ben je een beetje zenuwachtig?",
-        en: "I heard you have a job interview next week. How are you feeling about it? Are you a bit nervous?"
-      },
+      { speaker: "other", nl: "Ik hoorde dat je volgende week een sollicitatiegesprek hebt. Hoe voel je je erbij? Ben je een beetje zenuwachtig?", en: "I heard you have a job interview next week. How are you feeling about it? Are you a bit nervous?" },
       {
         speaker: "you",
         options: [
@@ -1389,21 +1681,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik ben een beetje zenuwachtig. Heb je tips voor het gesprek?", en: "I'm a bit nervous. Do you have tips for the interview?" }
       }
+    ],
+    hints: [
+      "zelfverzekerd overkomen (come across confident)",
+      "cv (resume/CV)",
+      "sterke punten (strong points)"
+    ],
+    glossary: [
+      { nl: "sollicitatiegesprek", en: "job interview" },
+      { nl: "zenuwachtig", en: "nervous" },
+      { nl: "lastige vragen", en: "difficult questions" },
+      { nl: "overkom", en: "come across" },
+      { nl: "ervaring", en: "experience" }
     ]
   },
   {
     topic: "Verhuisbedrijf",
-    situation: {
-      nl: "Je gaat binnenkort verhuizen naar een groter huis. Je belt een verhuisbedrijf om een offerte te vragen.",
-      en: "You're moving to a bigger house soon. You call a moving company to ask for a quote."
-    },
+    situation: { nl: "Je gaat binnenkort verhuizen naar een groter huis. Je belt een verhuisbedrijf om een offerte te vragen.", en: "You're moving to a bigger house soon. You call a moving company to ask for a quote." },
     other: "Verhuisbedrijf",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemorgen, met verhuisbedrijf Snel. Waarmee kan ik u helpen?",
-        en: "Good morning, Snel moving company speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemorgen, met verhuisbedrijf Snel. Waarmee kan ik u helpen?", en: "Good morning, Snel moving company speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1413,21 +1710,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik ga verhuizen. Kunt u een offerte maken?", en: "I'm moving. Can you make a quote?" }
       }
+    ],
+    hints: [
+      "verhuisdatum (moving date)",
+      "inpakmateriaal (packing material)",
+      "transport regelen (arrange transport)"
+    ],
+    glossary: [
+      { nl: "verhuisbedrijf", en: "moving company" },
+      { nl: "offerte", en: "quote" },
+      { nl: "meubels", en: "furniture" },
+      { nl: "prijsopgave", en: "price quote" },
+      { nl: "zware", en: "heavy" }
     ]
   },
   {
     topic: "Kinderopvang",
-    situation: {
-      nl: "Je gaat binnenkort weer werken en zoekt kinderopvang voor je zoontje. Je belt een kinderdagverblijf om informatie te vragen.",
-      en: "You're going back to work soon and are looking for childcare for your son. You call a daycare center for information."
-    },
+    situation: { nl: "Je gaat binnenkort weer werken en zoekt kinderopvang voor je zoontje. Je belt een kinderdagverblijf om informatie te vragen.", en: "You're going back to work soon and are looking for childcare for your son. You call a daycare center for information." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met kinderdagverblijf De Regenboog. Waarmee kan ik u helpen?",
-        en: "Good afternoon, De Regenboog daycare speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met kinderdagverblijf De Regenboog. Waarmee kan ik u helpen?", en: "Good afternoon, De Regenboog daycare speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1437,21 +1739,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik zoek opvang voor mijn zoontje. Heeft u nog plek?", en: "I'm looking for care for my son. Do you have room?" }
       }
+    ],
+    hints: [
+      "aanmelden (to register)",
+      "openingstijden (opening hours)",
+      "groepsgrootte (group size)"
+    ],
+    glossary: [
+      { nl: "kinderdagverblijf", en: "daycare center" },
+      { nl: "wachtlijst", en: "waiting list" },
+      { nl: "opvang", en: "childcare" },
+      { nl: "rondleiding", en: "tour" },
+      { nl: "beschikbaar", en: "available" }
     ]
   },
   {
     topic: "Met de buren",
-    situation: {
-      nl: "De schutting tussen jouw tuin en die van de buurman is kapot gewaaid. Je bespreekt met hem wie dit gaat repareren.",
-      en: "The fence between your garden and your neighbor's has blown over. You discuss with him who will fix it."
-    },
+    situation: { nl: "De schutting tussen jouw tuin en die van de buurman is kapot gewaaid. Je bespreekt met hem wie dit gaat repareren.", en: "The fence between your garden and your neighbor's has blown over. You discuss with him who will fix it." },
     other: "Buurman",
     turns: [
-{
-        speaker: "other",
-        nl: "Heb je gezien dat de schutting tussen onze tuinen kapot is gewaaid? Volgens mij was het de storm van afgelopen week.",
-        en: "Did you see that the fence between our gardens blew over? I think it was the storm from last week."
-      },
+      { speaker: "other", nl: "Heb je gezien dat de schutting tussen onze tuinen kapot is gewaaid? Volgens mij was het de storm van afgelopen week.", en: "Did you see that the fence between our gardens blew over? I think it was the storm from last week." },
       {
         speaker: "you",
         options: [
@@ -1461,21 +1768,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "De schutting is kapot. Zullen we de kosten samen betalen?", en: "The fence is broken. Shall we split the cost together?" }
       }
+    ],
+    hints: [
+      "een vakman inhuren (hire a professional)",
+      "de helft betalen (pay half)",
+      "schade melden (report damage)"
+    ],
+    glossary: [
+      { nl: "schutting", en: "fence" },
+      { nl: "storm", en: "storm" },
+      { nl: "beschadigd", en: "damaged" },
+      { nl: "kosten", en: "costs" },
+      { nl: "delen", en: "to share" }
     ]
   },
   {
     topic: "Fitnessabonnement",
-    situation: {
-      nl: "Je wilt je abonnement bij de sportschool opzeggen omdat je gaat verhuizen. Je belt de klantenservice.",
-      en: "You want to cancel your gym membership because you're moving. You call customer service."
-    },
+    situation: { nl: "Je wilt je abonnement bij de sportschool opzeggen omdat je gaat verhuizen. Je belt de klantenservice.", en: "You want to cancel your gym membership because you're moving. You call customer service." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met de klantenservice van FitClub. Waarmee kan ik u helpen?",
-        en: "Good afternoon, FitClub customer service speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met de klantenservice van FitClub. Waarmee kan ik u helpen?", en: "Good afternoon, FitClub customer service speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1485,21 +1797,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik ga verhuizen. Ik wil mijn abonnement opzeggen.", en: "I'm moving. I want to cancel my membership." }
       }
+    ],
+    hints: [
+      "opzegtermijn (notice period)",
+      "contract beëindigen (end a contract)",
+      "bevestiging ontvangen (receive confirmation)"
+    ],
+    glossary: [
+      { nl: "abonnement", en: "membership/subscription" },
+      { nl: "opzeggen", en: "to cancel" },
+      { nl: "voorwaarden", en: "conditions" },
+      { nl: "lidmaatschap", en: "membership" },
+      { nl: "verhuizen", en: "to move house" }
     ]
   },
   {
     topic: "Energierekening",
-    situation: {
-      nl: "Je energierekening is de laatste maanden flink gestegen. Je belt je energieleverancier om te vragen waarom.",
-      en: "Your energy bill has risen significantly in recent months. You call your energy provider to ask why."
-    },
+    situation: { nl: "Je energierekening is de laatste maanden flink gestegen. Je belt je energieleverancier om te vragen waarom.", en: "Your energy bill has risen significantly in recent months. You call your energy provider to ask why." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met de klantenservice. Waarmee kan ik u helpen?",
-        en: "Good afternoon, customer service speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met de klantenservice. Waarmee kan ik u helpen?", en: "Good afternoon, customer service speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1509,21 +1826,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn rekening is hoger geworden. Waarom is dat, en kunt u het aanpassen?", en: "My bill has gone up. Why is that, and can you adjust it?" }
       }
+    ],
+    hints: [
+      "energieverbruik (energy usage)",
+      "voorschotbedrag (advance payment)",
+      "meterstand doorgeven (submit meter reading)"
+    ],
+    glossary: [
+      { nl: "energierekening", en: "energy bill" },
+      { nl: "gestegen", en: "risen" },
+      { nl: "maandbedrag", en: "monthly amount" },
+      { nl: "opnieuw berekend", en: "recalculated" },
+      { nl: "gebruiken", en: "to use" }
     ]
   },
   {
     topic: "Pakket kwijt",
-    situation: {
-      nl: "Je hebt online iets besteld, maar het pakket is nooit aangekomen. Je belt de klantenservice van de bezorgdienst.",
-      en: "You ordered something online, but the package never arrived. You call the delivery service's customer service."
-    },
+    situation: { nl: "Je hebt online iets besteld, maar het pakket is nooit aangekomen. Je belt de klantenservice van de bezorgdienst.", en: "You ordered something online, but the package never arrived. You call the delivery service's customer service." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met de klantenservice. Waarmee kan ik u helpen?",
-        en: "Good afternoon, customer service speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met de klantenservice. Waarmee kan ik u helpen?", en: "Good afternoon, customer service speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1533,21 +1855,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn pakket is niet aangekomen. Kunt u dit uitzoeken?", en: "My package hasn't arrived. Can you look into this?" }
       }
+    ],
+    hints: [
+      "zoekraken (to get lost in transit)",
+      "schadevergoeding (compensation)",
+      "bezorgbewijs (proof of delivery)"
+    ],
+    glossary: [
+      { nl: "tracking", en: "tracking" },
+      { nl: "bezorgd", en: "delivered" },
+      { nl: "ontvangen", en: "received" },
+      { nl: "vervolgstappen", en: "next steps" },
+      { nl: "navragen", en: "to look into/inquire" }
     ]
   },
   {
     topic: "Nederlands leren",
-    situation: {
-      nl: "Je hebt je taalcursus bijna afgerond. Je vraagt de docent naar het examen en het certificaat.",
-      en: "You've almost finished your language course. You ask the teacher about the exam and the certificate."
-    },
+    situation: { nl: "Je hebt je taalcursus bijna afgerond. Je vraagt de docent naar het examen en het certificaat.", en: "You've almost finished your language course. You ask the teacher about the exam and the certificate." },
     other: "Docent",
     turns: [
-{
-        speaker: "other",
-        nl: "We zijn bijna aan het einde van de cursus. Heb je nog vragen over de laatste weken, of over het examen?",
-        en: "We're almost at the end of the course. Do you have any questions about the last few weeks, or about the exam?"
-      },
+      { speaker: "other", nl: "We zijn bijna aan het einde van de cursus. Heb je nog vragen over de laatste weken, of over het examen?", en: "We're almost at the end of the course. Do you have any questions about the last few weeks, or about the exam?" },
       {
         speaker: "you",
         options: [
@@ -1557,21 +1884,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Hoe ziet het examen eruit? Krijg ik daarna een certificaat?", en: "What does the exam look like? Do I get a certificate afterwards?" }
       }
+    ],
+    hints: [
+      "oefenexamen (practice exam)",
+      "slagen voor (pass an exam)",
+      "diploma behalen (obtain a diploma)"
+    ],
+    glossary: [
+      { nl: "examen", en: "exam" },
+      { nl: "certificaat", en: "certificate" },
+      { nl: "aanmelden", en: "to sign up" },
+      { nl: "uitslag", en: "result" },
+      { nl: "getoetst", en: "tested" }
     ]
   },
   {
     topic: "Sociale afspraken",
-    situation: {
-      nl: "Een vriend heeft je vorige week geholpen met verhuizen. Je belt hem om te bedanken en stelt voor om samen te eten.",
-      en: "A friend helped you move last week. You call him to thank him and suggest having dinner together."
-    },
+    situation: { nl: "Een vriend heeft je vorige week geholpen met verhuizen. Je belt hem om te bedanken en stelt voor om samen te eten.", en: "A friend helped you move last week. You call him to thank him and suggest having dinner together." },
     other: "Vriend",
     turns: [
-{
-        speaker: "other",
-        nl: "Hoi! Hoe bevalt het nieuwe huis inmiddels? Is alles al een beetje op zijn plek?",
-        en: "Hi! How do you like the new house so far? Is everything a bit in place already?"
-      },
+      { speaker: "other", nl: "Hoi! Hoe bevalt het nieuwe huis inmiddels? Is alles al een beetje op zijn plek?", en: "Hi! How do you like the new house so far? Is everything a bit in place already?" },
       {
         speaker: "you",
         options: [
@@ -1581,21 +1913,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Dank je voor je hulp! Zullen we samen eten?", en: "Thank you for your help! Shall we have dinner together?" }
       }
+    ],
+    hints: [
+      "dankbaar zijn (be grateful)",
+      "iets terugdoen (return the favor)",
+      "een etentje aanbieden (offer a dinner)"
+    ],
+    glossary: [
+      { nl: "bedanken", en: "to thank" },
+      { nl: "trakteer", en: "treat (someone)" },
+      { nl: "op zijn plek", en: "in place" },
+      { nl: "nogmaals", en: "again" },
+      { nl: "drinken", en: "to drink" }
     ]
   },
   {
     topic: "Bouwoverlast",
-    situation: {
-      nl: "Er wordt al weken vroeg in de ochtend hard geboord bij de verbouwing naast je huis. Je spreekt de aannemer erop aan.",
-      en: "There's been loud drilling early in the morning for weeks from the renovation next door. You address it with the contractor."
-    },
+    situation: { nl: "Er wordt al weken vroeg in de ochtend hard geboord bij de verbouwing naast je huis. Je spreekt de aannemer erop aan.", en: "There's been loud drilling early in the morning for weeks from the renovation next door. You address it with the contractor." },
     other: "Aannemer",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemorgen, kan ik iets voor u doen?",
-        en: "Good morning, can I do something for you?"
-      },
+      { speaker: "other", nl: "Goedemorgen, kan ik iets voor u doen?", en: "Good morning, can I do something for you?" },
       {
         speaker: "you",
         options: [
@@ -1605,21 +1942,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Het boren is erg vroeg. Kunt u later beginnen?", en: "The drilling is very early. Can you start later?" }
       }
+    ],
+    hints: [
+      "geluidsoverlast (noise nuisance)",
+      "werktijden aanpassen (adjust working hours)",
+      "begrip vragen (ask for understanding)"
+    ],
+    glossary: [
+      { nl: "verbouwing", en: "renovation" },
+      { nl: "boren", en: "to drill" },
+      { nl: "wakker", en: "awake" },
+      { nl: "aanspreken", en: "to address/talk to" },
+      { nl: "nachtrust", en: "night's sleep" }
     ]
   },
   {
     topic: "Museum",
-    situation: {
-      nl: "Je wilt met een groep vrienden een rondleiding boeken bij een museum. Je belt om de mogelijkheden te bespreken.",
-      en: "You want to book a guided tour at a museum with a group of friends. You call to discuss the options."
-    },
+    situation: { nl: "Je wilt met een groep vrienden een rondleiding boeken bij een museum. Je belt om de mogelijkheden te bespreken.", en: "You want to book a guided tour at a museum with a group of friends. You call to discuss the options." },
     other: "Medewerker",
     turns: [
-{
-        speaker: "other",
-        nl: "Goedemiddag, met het museum. Waarmee kan ik u helpen?",
-        en: "Good afternoon, museum speaking. How can I help you?"
-      },
+      { speaker: "other", nl: "Goedemiddag, met het museum. Waarmee kan ik u helpen?", en: "Good afternoon, museum speaking. How can I help you?" },
       {
         speaker: "you",
         options: [
@@ -1629,21 +1971,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "We zijn met acht vrienden. Kunnen we een rondleiding boeken?", en: "We're with eight friends. Can we book a guided tour?" }
       }
+    ],
+    hints: [
+      "toegangsprijs (admission price)",
+      "gids (tour guide)",
+      "openingstijden (opening hours)"
+    ],
+    glossary: [
+      { nl: "rondleiding", en: "guided tour" },
+      { nl: "reserveren", en: "to reserve" },
+      { nl: "groep", en: "group" },
+      { nl: "tour", en: "tour" },
+      { nl: "verplicht", en: "mandatory" }
     ]
   },
   {
     topic: "Sociale afspraken",
-    situation: {
-      nl: "Je favoriete band komt binnenkort optreden. Je vraagt een vriendin of ze mee wil naar het concert.",
-      en: "Your favorite band is performing soon. You ask a friend if she wants to come to the concert with you."
-    },
+    situation: { nl: "Je favoriete band komt binnenkort optreden. Je vraagt een vriendin of ze mee wil naar het concert.", en: "Your favorite band is performing soon. You ask a friend if she wants to come to the concert with you." },
     other: "Vriendin",
     turns: [
-{
-        speaker: "other",
-        nl: "Hé, heb je al iets leuks gepland voor volgende maand?",
-        en: "Hey, do you already have something fun planned for next month?"
-      },
+      { speaker: "other", nl: "Hé, heb je al iets leuks gepland voor volgende maand?", en: "Hey, do you already have something fun planned for next month?" },
       {
         speaker: "you",
         options: [
@@ -1653,21 +2000,26 @@ const SCENARIOS = [
         ],
         simple: { nl: "Mijn favoriete band speelt binnenkort. Ga je mee?", en: "My favorite band is playing soon. Will you come with me?" }
       }
+    ],
+    hints: [
+      "een optreden bijwonen (attend a performance)",
+      "kaartjes bemachtigen (get hold of tickets)",
+      "live muziek (live music)"
+    ],
+    glossary: [
+      { nl: "optreedt", en: "performs" },
+      { nl: "kaartjes", en: "tickets" },
+      { nl: "show", en: "show" },
+      { nl: "concert", en: "concert" },
+      { nl: "band", en: "band" }
     ]
   },
   {
     topic: "Tweedehands meubels",
-    situation: {
-      nl: "Je hebt online een tweedehands bank gezien die je graag wilt kopen. Je belt de verkoper om een afspraak te maken om hem op te halen.",
-      en: "You saw a second-hand couch online that you'd like to buy. You call the seller to arrange picking it up."
-    },
+    situation: { nl: "Je hebt online een tweedehands bank gezien die je graag wilt kopen. Je belt de verkoper om een afspraak te maken om hem op te halen.", en: "You saw a second-hand couch online that you'd like to buy. You call the seller to arrange picking it up." },
     other: "Verkoper",
     turns: [
-{
-        speaker: "other",
-        nl: "Hallo, met wie spreek ik?",
-        en: "Hello, who am I speaking with?"
-      },
+      { speaker: "other", nl: "Hallo, met wie spreek ik?", en: "Hello, who am I speaking with?" },
       {
         speaker: "you",
         options: [
@@ -1677,6 +2029,18 @@ const SCENARIOS = [
         ],
         simple: { nl: "Ik wil de bank kopen. Kan ik hem dit weekend ophalen?", en: "I want to buy the couch. Can I pick it up this weekend?" }
       }
+    ],
+    hints: [
+      "staat van het meubel (condition of the furniture)",
+      "afhalen (to pick up)",
+      "prijs onderhandelen (negotiate price)"
+    ],
+    glossary: [
+      { nl: "bank", en: "couch" },
+      { nl: "beschikbaar", en: "available" },
+      { nl: "ophalen", en: "to pick up" },
+      { nl: "advertentie", en: "listing/ad" },
+      { nl: "geïnteresseerd", en: "interested" }
     ]
   }
 ];
