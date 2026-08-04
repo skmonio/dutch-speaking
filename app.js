@@ -570,7 +570,7 @@ function speakNow(text, btn, voices) {
       "Geen Nederlandse stem gevonden op dit toestel. Voeg er een toe via Instellingen → Toegankelijkheid → Gesproken content → Stemmen.";
   }
   if (btn) {
-    document.querySelectorAll(".speak-btn.speaking").forEach(b => b.classList.remove("speaking"));
+    document.querySelectorAll(".speak-btn.speaking, .alt-speak-btn.speaking").forEach(b => b.classList.remove("speaking"));
     btn.classList.add("speaking");
     currentlySpeakingBtn = btn;
     utter.onend = () => {
@@ -589,7 +589,7 @@ function speakNow(text, btn, voices) {
 
 function stopSpeaking() {
   window.speechSynthesis.cancel();
-  document.querySelectorAll(".speak-btn.speaking").forEach(b => b.classList.remove("speaking"));
+  document.querySelectorAll(".speak-btn.speaking, .alt-speak-btn.speaking").forEach(b => b.classList.remove("speaking"));
   currentlySpeakingBtn = null;
 }
 
