@@ -40,9 +40,15 @@
   .en-toggle-btn{font-size:.64rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:3px 9px;border-radius:10px;cursor:pointer;transition:background .12s,border-color .12s,color .12s;margin-left:auto}
   .en-toggle-btn:hover{border-color:var(--accent);color:var(--accent)}
   .en-toggle-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
-  .situation{font-family:'IBM Plex Serif',serif;font-style:italic;font-size:.9rem;color:var(--muted);line-height:1.5;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed var(--divider)}
+  .situation{font-family:'IBM Plex Serif',serif;font-style:italic;font-size:.9rem;color:var(--muted);line-height:1.5;margin-bottom:14px;padding-bottom:14px;border-bottom:1px dashed var(--divider)}
   .situation .situation-en{font-style:normal;font-size:.8rem;color:var(--label);margin-top:5px;display:none}
   .situation .situation-en.show{display:block}
+  .hints-box{background:var(--accent-light);border:1px dashed var(--accent);border-radius:6px;padding:8px 12px;font-size:.8rem;color:var(--text);margin-bottom:16px;line-height:1.5}
+  .hints-box[hidden]{display:none}
+  .hints-label{font-weight:600;color:var(--accent);margin-right:4px}
+  .gloss{border-bottom:1.5px dotted var(--accent);cursor:help;position:relative}
+  .gloss::after{content:attr(data-gloss);position:absolute;left:50%;bottom:100%;transform:translateX(-50%) translateY(-6px);background:var(--text);color:var(--bg);padding:4px 8px;border-radius:4px;font-size:.72rem;opacity:0;visibility:hidden;transition:opacity .12s;pointer-events:none;z-index:5;max-width:220px;white-space:normal;text-align:center}
+  .gloss:hover::after,.gloss.active::after,.gloss:focus-visible::after{opacity:1;visibility:visible}
   .chat{display:flex;flex-direction:column;gap:14px}
   .bubble-row{display:flex;gap:8px;align-items:flex-start}
   .bubble-row.you{flex-direction:row-reverse}
@@ -72,23 +78,22 @@
   .answer-box .reveal-btn{align-self:flex-start}
   .timer-track{height:7px;border-radius:4px;background:var(--border);overflow:hidden}
   .timer-fill{height:100%;width:100%;background:var(--accent);border-radius:4px}
-  .record-area{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   .rec-btn{display:inline-flex;align-items:center;gap:6px}
   .rec-btn span{font-variant-numeric:tabular-nums}
   .rec-btn.recording{background:#fbeaea;border-color:#b23b3b;color:#b23b3b;animation:recPulse 1.4s ease-in-out infinite}
   @keyframes recPulse{0%,100%{opacity:1}50%{opacity:.55}}
-  .record-area audio{height:32px;max-width:220px}
-  .rec-delete-btn{background:none;border:1px solid var(--border);color:var(--label);border-radius:3px;padding:5px 10px;font-size:.78rem;cursor:pointer;transition:border-color .12s,color .12s}
-  .rec-delete-btn:hover{border-color:#b23b3b;color:#b23b3b}
-  .written-answer-box{margin-top:6px;display:flex;flex-direction:column;gap:6px;padding-top:10px;border-top:1px dashed var(--divider)}
-  .written-answer-label{font-size:.78rem;color:var(--muted)}
-  .written-answer-box textarea{width:100%;min-height:64px;padding:8px 10px;border:1px solid var(--border);border-radius:4px;font-family:'IBM Plex Sans',sans-serif;font-size:.85rem;line-height:1.4;background:var(--surface);color:var(--text);resize:vertical}
-  .written-answer-box textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
-  .written-answer-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .written-answer-actions button{background:none;border:1px solid var(--border);color:var(--label);border-radius:3px;padding:5px 10px;font-family:'IBM Plex Sans',sans-serif;font-size:.78rem;cursor:pointer;transition:border-color .12s,color .12s}
-  .written-answer-actions button:hover{border-color:var(--accent);color:var(--accent)}
-  .written-answer-actions .written-delete-btn:hover{border-color:#b23b3b;color:#b23b3b}
-  .written-answer-status{font-size:.72rem;color:var(--accent);font-weight:600}
+  .message-thread{display:flex;flex-direction:column;gap:8px}
+  .own-message{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+  .own-message audio{height:32px;max-width:220px}
+  .own-message-text{background:var(--bubble-you);padding:8px 12px;border-radius:12px;border-bottom-right-radius:3px;font-size:.85rem;line-height:1.4;max-width:75%;word-break:break-word}
+  .own-message-delete{background:none;border:none;color:var(--label);font-size:.85rem;cursor:pointer;padding:2px 4px;flex-shrink:0}
+  .own-message-delete:hover{color:#b23b3b}
+  .composer{display:flex;flex-direction:column;gap:8px;margin-top:2px;padding-top:10px;border-top:1px dashed var(--divider)}
+  .composer-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .composer-row textarea{flex:1;min-width:140px;padding:8px 10px;border:1px solid var(--border);border-radius:4px;font-family:'IBM Plex Sans',sans-serif;font-size:.85rem;line-height:1.4;background:var(--surface);color:var(--text);resize:vertical;min-height:40px}
+  .composer-row textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .send-btn{background:var(--accent);color:#fff;border:none;padding:9px 16px;border-radius:20px;font-family:'IBM Plex Sans',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:opacity .15s}
+  .send-btn:hover{opacity:.85}
   .option-cycle-btn{display:block;margin-top:8px;background:none;border:none;color:var(--muted);font-family:'IBM Plex Sans',sans-serif;font-size:.76rem;font-weight:600;cursor:pointer;padding:0}
   .option-cycle-btn:hover{color:var(--accent);text-decoration:underline}
   .alt-toggle-btn{display:block;margin-top:6px;background:none;border:none;color:var(--accent);font-family:'IBM Plex Sans',sans-serif;font-size:.76rem;font-weight:600;cursor:pointer;padding:0}
@@ -118,8 +123,8 @@
   </div>
   <div class="topic-dots" id="topicDots"></div>
   <div class="dots-legend">
-    <span><i class="rec-pending"></i>Antwoord opgeslagen</span>
-    <span><i class="rec-done"></i>Antwoord opgeslagen + getoond</span>
+    <span><i class="rec-pending"></i>Bericht(en) gestuurd</span>
+    <span><i class="rec-done"></i>Bericht(en) gestuurd + antwoord getoond</span>
     <span><i class="visited"></i>Bekeken</span>
   </div>
   <div class="scenario-card">
@@ -128,6 +133,7 @@
       <button class="en-toggle-btn" id="enBtn" onclick="toggleEN()">EN</button>
     </div>
     <div class="situation" id="situation"></div>
+    <div class="hints-box" id="hintsBox" hidden></div>
     <div class="chat" id="chat"></div>
   </div>
   <div class="controls" id="controls"></div>
@@ -137,9 +143,9 @@
     <button class="btn-secondary" id="refreshVoicesBtn" type="button">Vernieuw stemmen</button>
   </div>
   <p class="tts-note" id="ttsNote"></p>
-  <footer>Tik op &#128264; om een zin te beluisteren (nogmaals tikken stopt hem), neem je antwoord op of typ het &middot; alles blijft op je eigen toestel</footer>
+  <footer>Tik op &#128264; om een zin te beluisteren (nogmaals tikken stopt hem), stuur berichten (spreek in of typ), tik op een gestippeld woord voor de betekenis &middot; alles blijft op je eigen toestel</footer>
 </div>
-<script src="scenarios.js?v=11"></script>
-<script src="app.js?v=11"></script>
+<script src="scenarios.js?v=12"></script>
+<script src="app.js?v=12"></script>
 </body>
 </html>
