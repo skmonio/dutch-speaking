@@ -629,11 +629,17 @@ function renderChat() {
       : "";
     const aKey = altKey(currentIdx, i);
     const altExpanded = expandedAlts.has(aKey);
-    const altBlock = t.speaker === "you" && t.simple
-      ? `<button class="alt-toggle-btn" data-turn-idx="${i}">${altExpanded ? "Verberg eenvoudig antwoord" : "+ Toon eenvoudig antwoord"}</button>
+    const altBlock = t.speaker === "you" && t.simple && t.simple.length
+      ? `<button class="alt-toggle-btn" data-turn-idx="${i}">${altExpanded ? "Verberg eenvoudige antwoorden" : "+ Toon eenvoudige antwoorden"}</button>
          <div class="alt-answer${altExpanded ? " show" : ""}">
-           ${glossify(t.simple.nl, s.glossary)}
-           <div class="bubble-en${showEN ? " show" : ""}">${escapeHtml(t.simple.en)}</div>
+           ${t.simple.map((alt, ai) => `
+             <div class="alt-answer-item">
+               <button class="alt-speak-btn" data-turn-idx="${i}" data-alt-idx="${ai}" title="Beluister">&#128264;</button>
+               <div class="alt-answer-text">
+                 ${glossify(alt.nl, s.glossary)}
+                 <div class="bubble-en${showEN ? " show" : ""}">${escapeHtml(alt.en)}</div>
+               </div>
+             </div>`).join("")}
          </div>`
       : "";
     html += `
@@ -657,6 +663,14 @@ function renderChat() {
       const t = s.turns[turnIdx];
       const key = recordingKey(currentIdx, turnIdx);
       speak(currentAnswerText(t, key).nl, btn);
+    });
+  });
+  chat.querySelectorAll(".alt-speak-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const turnIdx = Number(btn.dataset.turnIdx);
+      const altIdx = Number(btn.dataset.altIdx);
+      const alt = s.turns[turnIdx].simple[altIdx];
+      speak(alt.nl, btn);
     });
   });
   chat.querySelectorAll(".alt-toggle-btn").forEach(btn => {

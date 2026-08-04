@@ -61,9 +61,9 @@
   .bubble-row.you .bubble{background:var(--bubble-you);border-bottom-right-radius:3px}
   .bubble-en{font-size:.78rem;color:var(--label);margin-top:6px;font-style:italic;display:none;line-height:1.4}
   .bubble-en.show{display:block}
-  .speak-btn{background:none;border:1px solid var(--border);color:var(--muted);width:26px;height:26px;min-width:26px;border-radius:50%;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;transition:border-color .12s,color .12s,background .12s}
-  .speak-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
-  .speak-btn.speaking{background:var(--accent);border-color:var(--accent);color:#fff}
+  .speak-btn,.alt-speak-btn{background:none;border:1px solid var(--border);color:var(--muted);width:26px;height:26px;min-width:26px;border-radius:50%;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;transition:border-color .12s,color .12s,background .12s}
+  .speak-btn:hover,.alt-speak-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+  .speak-btn.speaking,.alt-speak-btn.speaking{background:var(--accent);border-color:var(--accent);color:#fff}
   .bubble-hidden{display:flex;align-items:center;gap:10px;padding:6px 2px}
   .reveal-btn{background:var(--accent-light);color:var(--accent);border:1.5px solid var(--accent);padding:9px 16px;border-radius:16px;font-family:'IBM Plex Sans',sans-serif;font-size:.84rem;font-weight:600;cursor:pointer;transition:background .15s}
   .reveal-btn:hover{background:#d0e5d8}
@@ -100,6 +100,9 @@
   .alt-toggle-btn:hover{text-decoration:underline}
   .alt-answer{display:none;margin-top:6px;padding:9px 12px;background:var(--bg);border:1px dashed var(--divider);border-radius:8px;font-size:.85rem;line-height:1.5}
   .alt-answer.show{display:block}
+  .alt-answer-item{display:flex;align-items:flex-start;gap:8px}
+  .alt-answer-item+.alt-answer-item{margin-top:8px;padding-top:8px;border-top:1px dashed var(--divider)}
+  .alt-answer-text{flex:1}
   .voice-picker{margin-top:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
   .voice-picker select{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:5px 8px;border-radius:3px;font-family:'IBM Plex Sans',sans-serif;font-size:.8rem;max-width:220px}
   .voice-picker .btn-secondary{padding:5px 12px;font-size:.78rem}
@@ -145,7 +148,7 @@
   <p class="tts-note" id="ttsNote"></p>
   <footer>Tik op &#128264; om een zin te beluisteren (nogmaals tikken stopt hem), stuur berichten (spreek in of typ), tik op een gestippeld woord voor de betekenis &middot; alles blijft op je eigen toestel</footer>
 </div>
-<script src="scenarios.js?v=13"></script>
-<script src="app.js?v=13"></script>
+<script src="scenarios.js?v=14"></script>
+<script src="app.js?v=14"></script>
 </body>
 </html>
