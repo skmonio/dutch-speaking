@@ -13,7 +13,9 @@ const SCENARIOS = [
           { nl: "Je zou ook kunnen zwemmen in het buitenzwembad, dat is vaak niet duur. En werk in de tuin, dat is ook goede beweging.", en: "You could also swim at the outdoor pool, that's often not expensive. And work in the garden, that's good exercise too." }
         ],
         simple: [
-          { nl: "Je kunt ook gewoon buiten wandelen of fietsen. Dat is gratis en heel gezond.", en: "You can also just walk or bike outside. That's free and very healthy." }
+          { nl: "Je kunt ook gewoon buiten wandelen of fietsen. Dat is gratis en heel gezond.", en: "You can also just walk or bike outside. That's free and very healthy." },
+          { nl: "Je kunt thuis sporten met filmpjes op internet. Dat kost niets.", en: "You can exercise at home with videos online. That costs nothing." },
+          { nl: "Sport samen met vrienden buiten. Dat is ook leuk en gratis.", en: "Exercise together with friends outside. That's also fun and free." }
         ]
       }
     ],
@@ -46,7 +48,8 @@ const SCENARIOS = [
           { nl: "Het spijt me, maar ik moet morgen verzetten. Heeft u toevallig deze week nog een ander moment vrij?", en: "I'm sorry, but I need to reschedule tomorrow. Do you happen to have another time free this week?" }
         ],
         simple: [
-          { nl: "Ik kan morgen niet komen. Kan het ook donderdag?", en: "I can't come tomorrow. Can it also be Thursday?" }
+          { nl: "Ik kan morgen niet komen. Kan het ook donderdag?", en: "I can't come tomorrow. Can it also be Thursday?" },
+          { nl: "Ik heb morgen geen tijd. Mag het een andere dag zijn?", en: "I don't have time tomorrow. Can it be a different day?" }
         ]
       }
     ],
@@ -79,7 +82,8 @@ const SCENARIOS = [
           { nl: "Ik heb een belangrijke familiegebeurtenis volgende week vrijdag. Zou ik die dag vrij kunnen nemen, ook al is het kort van tevoren?", en: "I have an important family event next Friday. Could I take that day off, even though it's short notice?" }
         ],
         simple: [
-          { nl: "Mag ik vrijdag vrij? Mijn zus trouwt die dag.", en: "May I have Friday off? My sister is getting married that day." }
+          { nl: "Mag ik vrijdag vrij? Mijn zus trouwt die dag.", en: "May I have Friday off? My sister is getting married that day." },
+          { nl: "Ik heb vrijdag een trouwerij. Mag ik die dag vrij nemen?", en: "I have a wedding on Friday. May I take that day off?" }
         ]
       }
     ],
@@ -111,7 +115,8 @@ const SCENARIOS = [
           { nl: "Ik hoor je muziek elke avond door de muur. Zou het lukken om het volume 's avonds wat lager te houden?", en: "I hear your music through the wall every evening. Would it be possible to keep the volume lower in the evening?" }
         ],
         simple: [
-          { nl: "De muziek is 's avonds erg hard. Kun je het zachter zetten?", en: "The music is very loud in the evening. Can you turn it down?" }
+          { nl: "De muziek is 's avonds erg hard. Kun je het zachter zetten?", en: "The music is very loud in the evening. Can you turn it down?" },
+          { nl: "Ik hoor de muziek 's avonds. Kan het wat stiller?", en: "I hear the music in the evening. Can it be a bit quieter?" }
         ]
       }
     ],
@@ -143,7 +148,8 @@ const SCENARIOS = [
           { nl: "Sorry, ik ben hier niet bekend. Weet u misschien hoe ik snel bij het station kom?", en: "Sorry, I'm not familiar with this area. Do you know how I can get to the station quickly?" }
         ],
         simple: [
-          { nl: "Ik zoek het station. Weet u de weg?", en: "I'm looking for the station. Do you know the way?" }
+          { nl: "Ik zoek het station. Weet u de weg?", en: "I'm looking for the station. Do you know the way?" },
+          { nl: "Hoe kom ik bij het station? Is het ver?", en: "How do I get to the station? Is it far?" }
         ]
       }
     ],
@@ -175,7 +181,9 @@ const SCENARIOS = [
           { nl: "Sorry, ik moet afzeggen voor vanavond, ik voel me niet fit. Kunnen we snel een nieuwe datum plannen?", en: "Sorry, I have to cancel for tonight, I don't feel well. Can we quickly plan a new date?" }
         ],
         simple: [
-          { nl: "Ik voel me niet goed. Kunnen we een andere dag afspreken?", en: "I don't feel well. Can we meet on another day?" }
+          { nl: "Ik voel me niet goed. Kunnen we een andere dag afspreken?", en: "I don't feel well. Can we meet on another day?" },
+          { nl: "Ik ben ziek. Mogen we een andere avond eten?", en: "I'm sick. Can we have dinner another evening?" },
+          { nl: "Sorry, ik kan vanavond niet. Zullen we snel een nieuwe dag zoeken?", en: "Sorry, I can't tonight. Shall we find a new day soon?" }
         ]
       }
     ],
@@ -207,7 +215,8 @@ const SCENARIOS = [
           { nl: "Controleer of de wielen recht lopen en of het zadel nog goed is. Onderhandel ook altijd even over de prijs.", en: "Check whether the wheels run straight and whether the saddle is still good. Also always negotiate a bit on the price." }
         ],
         simple: [
-          { nl: "Kijk goed naar de banden en de remmen. En fiets er even mee voordat je koopt.", en: "Look carefully at the tires and the brakes. And ride it a bit before you buy." }
+          { nl: "Kijk goed naar de banden en de remmen. En fiets er even mee voordat je koopt.", en: "Look carefully at the tires and the brakes. And ride it a bit before you buy." },
+          { nl: "Kijk of de fiets niet kapot is. Probeer hem ook even uit.", en: "Check that the bike isn't broken. Also try it out for a bit." }
         ]
       }
     ],
@@ -240,7 +249,8 @@ const SCENARIOS = [
           { nl: "Ik hou van fietstochtjes in het weekend. Misschien is een dagje naar een andere stad ook wat voor jou?", en: "I love bike rides on the weekend. Maybe a day trip to another city is something for you too." }
         ],
         simple: [
-          { nl: "Ik ga wandelen en naar de markt. Ook lees ik graag een boek.", en: "I'm going for a walk and to the market. I also like reading a book." }
+          { nl: "Ik ga wandelen en naar de markt. Ook lees ik graag een boek.", en: "I'm going for a walk and to the market. I also like reading a book." },
+          { nl: "In het weekend ga ik graag naar buiten. Fietsen is ook leuk.", en: "On the weekend I like to go outside. Cycling is fun too." }
         ]
       }
     ],
@@ -272,7 +282,8 @@ const SCENARIOS = [
           { nl: "Het apparaat is helaas defect geraakt. Kan ik hem inleveren voor een exemplaar dat wel werkt?", en: "The appliance unfortunately broke down. Can I return it for one that does work?" }
         ],
         simple: [
-          { nl: "Deze broodrooster is kapot. Mag ik hem omruilen?", en: "This toaster is broken. Can I exchange it?" }
+          { nl: "Deze broodrooster is kapot. Mag ik hem omruilen?", en: "This toaster is broken. Can I exchange it?" },
+          { nl: "Dit apparaat doet het niet meer. Kan ik mijn geld terugkrijgen?", en: "This appliance doesn't work anymore. Can I get my money back?" }
         ]
       }
     ],
@@ -304,7 +315,8 @@ const SCENARIOS = [
           { nl: "Excuses, ik zit vast door een treinstoring. Kunnen jullie alvast starten, ik sluit later aan.", en: "Apologies, I'm stuck because of a train disruption. Can you all start, I'll join later." }
         ],
         simple: [
-          { nl: "Mijn trein heeft vertraging. Ik kom later.", en: "My train is delayed. I'll arrive later." }
+          { nl: "Mijn trein heeft vertraging. Ik kom later.", en: "My train is delayed. I'll arrive later." },
+          { nl: "Mijn trein is laat. Begin de vergadering maar zonder mij.", en: "My train is late. Just start the meeting without me." }
         ]
       }
     ],
@@ -336,7 +348,8 @@ const SCENARIOS = [
           { nl: "Ik snap de grammatica nog niet helemaal goed. Heb jij misschien een handige manier om dat te leren?", en: "I don't fully understand the grammar yet. Do you maybe have a handy way to learn that?" }
         ],
         simple: [
-          { nl: "Grammatica is moeilijk voor mij. Kun je me helpen?", en: "Grammar is difficult for me. Can you help me?" }
+          { nl: "Grammatica is moeilijk voor mij. Kun je me helpen?", en: "Grammar is difficult for me. Can you help me?" },
+          { nl: "Ik snap de werkwoorden niet goed. Kun je dat uitleggen?", en: "I don't understand the verbs well. Can you explain that?" }
         ]
       }
     ],
@@ -368,7 +381,8 @@ const SCENARIOS = [
           { nl: "Zaterdag geef ik een feestje bij mij thuis, met wat vrienden. Zou je ook langs willen komen?", en: "Saturday I'm having a party at my place, with some friends. Would you like to come along too?" }
         ],
         simple: [
-          { nl: "Ik geef zaterdag een feestje. Kom je ook?", en: "I'm having a party Saturday. Are you coming too?" }
+          { nl: "Ik geef zaterdag een feestje. Kom je ook?", en: "I'm having a party Saturday. Are you coming too?" },
+          { nl: "Zaterdag ben ik jarig. Ik hoop dat je komt.", en: "Saturday is my birthday. I hope you'll come." }
         ]
       }
     ],
@@ -399,7 +413,8 @@ const SCENARIOS = [
           { nl: "Dat appartement op uw website spreekt me erg aan. Is er deze week nog een moment om het te bekijken?", en: "That apartment on your website appeals to me a lot. Is there a time this week to see it?" }
         ],
         simple: [
-          { nl: "Ik wil het appartement bekijken. Kan dat deze week?", en: "I want to view the apartment. Is that possible this week?" }
+          { nl: "Ik wil het appartement bekijken. Kan dat deze week?", en: "I want to view the apartment. Is that possible this week?" },
+          { nl: "Mag ik het huis komen bekijken? Ik ben deze week vrij.", en: "May I come see the house? I'm free this week." }
         ]
       }
     ],
@@ -430,7 +445,8 @@ const SCENARIOS = [
           { nl: "Ik probeer meestal gezonde keuzes te maken met verse ingrediënten. Snelle maaltijden bewaar ik voor speciale momenten.", en: "I usually try to make healthy choices with fresh ingredients. I save quick meals for special occasions." }
         ],
         simple: [
-          { nl: "Ik kook meestal gezond. Fastfood eet ik niet vaak.", en: "I usually cook healthy. I don't eat fast food often." }
+          { nl: "Ik kook meestal gezond. Fastfood eet ik niet vaak.", en: "I usually cook healthy. I don't eat fast food often." },
+          { nl: "Ik eet liever groente en fruit. Fastfood is niet zo gezond.", en: "I prefer to eat vegetables and fruit. Fast food isn't very healthy." }
         ]
       }
     ],
@@ -461,7 +477,8 @@ const SCENARIOS = [
           { nl: "Wat dacht je van sieraden of iets persoonlijks? Anders is een etentje samen ook altijd een goed idee.", en: "What about jewelry or something personal? Otherwise having dinner together is always a good idea too." }
         ],
         simple: [
-          { nl: "Een cadeaubon is een goed idee. Of een boek dat ze leuk vindt.", en: "A gift card is a good idea. Or a book she'd like." }
+          { nl: "Een cadeaubon is een goed idee. Of een boek dat ze leuk vindt.", en: "A gift card is a good idea. Or a book she'd like." },
+          { nl: "Misschien een boek? Of ga samen iets leuks doen.", en: "Maybe a book? Or do something fun together." }
         ]
       }
     ],
@@ -492,7 +509,9 @@ const SCENARIOS = [
           { nl: "Denk aan een bestemming met natuur én een gezellig centrum, zoals in Oostenrijk. Zo kun je zowel wandelen als de stad in.", en: "Think of a destination with nature and also a cozy center, like in Austria. That way you can both hike and enjoy the city." }
         ],
         simple: [
-          { nl: "Ga naar een stad aan zee. Daar kun je rusten en ook musea bezoeken.", en: "Go to a coastal city. There you can rest and also visit museums." }
+          { nl: "Ga naar een stad aan zee. Daar kun je rusten en ook musea bezoeken.", en: "Go to a coastal city. There you can rest and also visit museums." },
+          { nl: "Misschien een strandvakantie? Dan kun je rusten en zwemmen.", en: "Maybe a beach vacation? Then you can rest and swim." },
+          { nl: "Of kies een rustig dorpje in de bergen. Daar kun je goed uitrusten.", en: "Or choose a quiet village in the mountains. You can rest well there." }
         ]
       }
     ],
@@ -523,7 +542,8 @@ const SCENARIOS = [
           { nl: "Laten we het gewoon per week afspreken wie rijdt. Zo delen we de kosten eerlijk.", en: "Let's just agree per week who drives. That way we share the costs fairly." }
         ],
         simple: [
-          { nl: "Goed idee! We kunnen om de beurt rijden.", en: "Good idea! We can take turns driving." }
+          { nl: "Goed idee! We kunnen om de beurt rijden.", en: "Good idea! We can take turns driving." },
+          { nl: "Dat is fijn. Dan rijden we samen naar het werk.", en: "That's nice. Then we'll drive to work together." }
         ]
       }
     ],
@@ -554,7 +574,8 @@ const SCENARIOS = [
           { nl: "Ik zoek nog mijn weg in deze buurt. Is er een markt of winkelstraat die u kunt aanbevelen?", en: "I'm still finding my way in this neighborhood. Is there a market or shopping street you can recommend?" }
         ],
         simple: [
-          { nl: "Ik zoek een supermarkt en een markt. Weet u waar die zijn?", en: "I'm looking for a supermarket and a market. Do you know where they are?" }
+          { nl: "Ik zoek een supermarkt en een markt. Weet u waar die zijn?", en: "I'm looking for a supermarket and a market. Do you know where they are?" },
+          { nl: "Ik ben hier nieuw. Is er een supermarkt dichtbij?", en: "I'm new here. Is there a supermarket nearby?" }
         ]
       }
     ],
@@ -585,7 +606,8 @@ const SCENARIOS = [
           { nl: "Er is al een week een probleem met mijn internet thuis. Zou er een monteur langs kunnen komen?", en: "There's been a problem with my home internet for a week now. Could a technician come by?" }
         ],
         simple: [
-          { nl: "Mijn internet werkt niet goed. Kunt u dit repareren?", en: "My internet isn't working well. Can you fix this?" }
+          { nl: "Mijn internet werkt niet goed. Kunt u dit repareren?", en: "My internet isn't working well. Can you fix this?" },
+          { nl: "Mijn internet valt steeds uit. Kan iemand dit oplossen?", en: "My internet keeps dropping out. Can someone fix this?" }
         ]
       }
     ],
@@ -616,7 +638,8 @@ const SCENARIOS = [
           { nl: "Dat spreekt me wel aan, al twijfel ik over de tijd die het kost. Hoeveel uur per week ben jij er ongeveer mee bezig?", en: "That does appeal to me, though I'm unsure about the time it takes. How many hours a week are you roughly busy with it?" }
         ],
         simple: [
-          { nl: "Dat is leuk! Ik wil dat ook wel eens proberen.", en: "That's nice! I'd like to try that sometime too." }
+          { nl: "Dat is leuk! Ik wil dat ook wel eens proberen.", en: "That's nice! I'd like to try that sometime too." },
+          { nl: "Wat goed van jou! Misschien doe ik dat ook.", en: "Good for you! Maybe I'll do that too." }
         ]
       }
     ],
@@ -647,7 +670,9 @@ const SCENARIOS = [
           { nl: "Het spijt me, maar dit gerecht is koud aangekomen. Kan het opnieuw opgewarmd worden?", en: "I'm sorry, but this dish arrived cold. Can it be reheated?" }
         ],
         simple: [
-          { nl: "Mijn soep is koud. Mag ik een warme, nieuwe portie?", en: "My soup is cold. Can I get a warm, new portion?" }
+          { nl: "Mijn soep is koud. Mag ik een warme, nieuwe portie?", en: "My soup is cold. Can I get a warm, new portion?" },
+          { nl: "Dit is koud. Kan het opnieuw opgewarmd worden?", en: "This is cold. Can it be reheated?" },
+          { nl: "Sorry, maar dit gerecht is koud. Kan de keuken het opnieuw maken?", en: "Sorry, but this dish is cold. Can the kitchen make it again?" }
         ]
       }
     ],
@@ -678,7 +703,8 @@ const SCENARIOS = [
           { nl: "Kunt u mij uitleggen wat het verschil is tussen de pakketten? Ik ben vooral benieuwd naar de tandartsvergoeding.", en: "Could you explain the difference between the packages? I'm especially curious about the dentist coverage." }
         ],
         simple: [
-          { nl: "Ik wil een verzekering afsluiten. Wat kost dat, en wat is inbegrepen?", en: "I want to take out insurance. What does it cost, and what's included?" }
+          { nl: "Ik wil een verzekering afsluiten. Wat kost dat, en wat is inbegrepen?", en: "I want to take out insurance. What does it cost, and what's included?" },
+          { nl: "Ik zoek een zorgverzekering. Wat vergoedt u allemaal?", en: "I'm looking for health insurance. What all do you cover?" }
         ]
       }
     ],
@@ -709,7 +735,8 @@ const SCENARIOS = [
           { nl: "Kan ik me aanmelden zonder ervaring? Ik hoor graag of er begeleiding is voor nieuwe leden.", en: "Can I sign up without experience? I'd love to hear if there's guidance for new members." }
         ],
         simple: [
-          { nl: "Ik ben een beginner. Zijn er ook lessen voor mij?", en: "I'm a beginner. Are there also lessons for me?" }
+          { nl: "Ik ben een beginner. Zijn er ook lessen voor mij?", en: "I'm a beginner. Are there also lessons for me?" },
+          { nl: "Ik heb nog nooit getennist. Kan ik toch meedoen?", en: "I've never played tennis. Can I join anyway?" }
         ]
       }
     ],
@@ -740,7 +767,8 @@ const SCENARIOS = [
           { nl: "Er komt iets tussen voor morgen. Zou donderdag of vrijdag mogelijk zijn in plaats daarvan?", en: "Something has come up for tomorrow. Would Thursday or Friday be possible instead?" }
         ],
         simple: [
-          { nl: "Ik moet morgen werken. Kan mijn afspraak naar donderdag?", en: "I have to work tomorrow. Can my appointment move to Thursday?" }
+          { nl: "Ik moet morgen werken. Kan mijn afspraak naar donderdag?", en: "I have to work tomorrow. Can my appointment move to Thursday?" },
+          { nl: "Ik kan morgen niet komen. Heeft u een andere dag?", en: "I can't come tomorrow. Do you have another day?" }
         ]
       }
     ],
@@ -771,7 +799,8 @@ const SCENARIOS = [
           { nl: "Tuurlijk help ik mee met verhuizen. Ik kan 's ochtends komen, is dat handig voor je?", en: "Sure, I'll help with the move. I can come in the morning, does that work for you?" }
         ],
         simple: [
-          { nl: "Ik help graag 's ochtends. 's Middags kan ik helaas niet.", en: "I'm happy to help in the morning. In the afternoon I unfortunately can't." }
+          { nl: "Ik help graag 's ochtends. 's Middags kan ik helaas niet.", en: "I'm happy to help in the morning. In the afternoon I unfortunately can't." },
+          { nl: "Ik kan een paar uur helpen met dragen. Zeg maar hoe laat.", en: "I can help carry things for a few hours. Just tell me the time." }
         ]
       }
     ],
@@ -802,7 +831,8 @@ const SCENARIOS = [
           { nl: "Je zou vaste momenten kunnen instellen waarop je even kijkt, in plaats van de hele dag. Dat werkt vaak goed.", en: "You could set fixed moments to check, instead of all day. That often works well." }
         ],
         simple: [
-          { nl: "Zet een tijdslimiet op je telefoon. Dat helpt echt.", en: "Set a time limit on your phone. That really helps." }
+          { nl: "Zet een tijdslimiet op je telefoon. Dat helpt echt.", en: "Set a time limit on your phone. That really helps." },
+          { nl: "Leg je telefoon 's avonds weg. Dan kijk je minder vaak.", en: "Put your phone away in the evening. Then you'll check it less." }
         ]
       }
     ],
@@ -833,7 +863,8 @@ const SCENARIOS = [
           { nl: "De maat is jammer genoeg fout. Heeft u dit model ook in een grotere maat?", en: "The size is unfortunately wrong. Do you have this model in a bigger size too?" }
         ],
         simple: [
-          { nl: "Deze broek is te klein. Heeft u een grotere maat?", en: "These pants are too small. Do you have a bigger size?" }
+          { nl: "Deze broek is te klein. Heeft u een grotere maat?", en: "These pants are too small. Do you have a bigger size?" },
+          { nl: "Deze maat past niet goed. Mag ik een andere maat proberen?", en: "This size doesn't fit well. May I try a different size?" }
         ]
       }
     ],
@@ -864,7 +895,8 @@ const SCENARIOS = [
           { nl: "Ik ben de inleverdatum vergeten, sorry daarvoor. Wat moet ik nu doen om het recht te zetten?", en: "I forgot about the return date, sorry about that. What should I do now to fix it?" }
         ],
         simple: [
-          { nl: "Sorry, ik ben het boek vergeten. Moet ik een boete betalen?", en: "Sorry, I forgot about the book. Do I have to pay a fine?" }
+          { nl: "Sorry, ik ben het boek vergeten. Moet ik een boete betalen?", en: "Sorry, I forgot about the book. Do I have to pay a fine?" },
+          { nl: "Het boek is te laat. Wat moet ik nu doen?", en: "The book is late. What should I do now?" }
         ]
       }
     ],
@@ -895,7 +927,8 @@ const SCENARIOS = [
           { nl: "Het scherm blijft zwart, zelfs na opnieuw opstarten. Is er iemand die er snel naar kan kijken?", en: "The screen stays black, even after restarting. Is there someone who can take a look quickly?" }
         ],
         simple: [
-          { nl: "Mijn laptop doet het niet. Kunt u mij helpen?", en: "My laptop isn't working. Can you help me?" }
+          { nl: "Mijn laptop doet het niet. Kunt u mij helpen?", en: "My laptop isn't working. Can you help me?" },
+          { nl: "Mijn laptop start niet op. Kan iemand dit snel maken?", en: "My laptop won't start. Can someone fix this quickly?" }
         ]
       }
     ],
@@ -926,7 +959,8 @@ const SCENARIOS = [
           { nl: "Geen probleem, ik neem hem graag onder mijn hoede. Ik zorg dat hij zich snel thuis voelt.", en: "No problem, I'll gladly take him under my wing. I'll make sure he feels at home quickly." }
         ],
         simple: [
-          { nl: "Ja, ik help hem graag de eerste dagen.", en: "Yes, I'm happy to help him the first few days." }
+          { nl: "Ja, ik help hem graag de eerste dagen.", en: "Yes, I'm happy to help him the first few days." },
+          { nl: "Natuurlijk, ik laat hem graag alles zien.", en: "Of course, I'm happy to show him everything." }
         ]
       }
     ],
@@ -957,7 +991,8 @@ const SCENARIOS = [
           { nl: "Natuurlijk regel ik dat voor je. Ik zorg dat ze veilig bij mij blijven staan.", en: "Of course I'll arrange that for you. I'll make sure they stay safe with me." }
         ],
         simple: [
-          { nl: "Geen probleem, ik ben thuis. Ik neem ze wel aan.", en: "No problem, I'm home. I'll accept them." }
+          { nl: "Geen probleem, ik ben thuis. Ik neem ze wel aan.", en: "No problem, I'm home. I'll accept them." },
+          { nl: "Dat is goed. Ik ben veel thuis, dus dat lukt prima.", en: "That's fine. I'm home a lot, so that works well." }
         ]
       }
     ],
@@ -988,7 +1023,8 @@ const SCENARIOS = [
           { nl: "Ik plan een housewarming, maar heb nog geen idee waar ik moet beginnen. Kun je me helpen met de boodschappen?", en: "I'm planning a housewarming, but have no idea where to start. Can you help me with the groceries?" }
         ],
         simple: [
-          { nl: "Ik geef binnenkort een feestje. Kun je me helpen met de voorbereiding?", en: "I'm having a party soon. Can you help me with the preparation?" }
+          { nl: "Ik geef binnenkort een feestje. Kun je me helpen met de voorbereiding?", en: "I'm having a party soon. Can you help me with the preparation?" },
+          { nl: "Ik wil een feestje geven in mijn nieuwe huis. Help je mee?", en: "I want to have a party in my new house. Will you help?" }
         ]
       }
     ],
@@ -1019,7 +1055,8 @@ const SCENARIOS = [
           { nl: "Ik ben net te laat voor de bus. Is lopen naar mijn afspraak een optie, denkt u?", en: "I'm just too late for the bus. Is walking to my appointment an option, do you think?" }
         ],
         simple: [
-          { nl: "Ik heb mijn bus gemist. Is er een andere bus?", en: "I missed my bus. Is there another bus?" }
+          { nl: "Ik heb mijn bus gemist. Is er een andere bus?", en: "I missed my bus. Is there another bus?" },
+          { nl: "Mijn bus is net weg. Kan ik ook lopen naar mijn afspraak?", en: "My bus just left. Can I also walk to my appointment?" }
         ]
       }
     ],
@@ -1050,7 +1087,8 @@ const SCENARIOS = [
           { nl: "De pijn wordt steeds erger. Is er misschien een spoedafspraak mogelijk?", en: "The pain keeps getting worse. Is an emergency appointment maybe possible?" }
         ],
         simple: [
-          { nl: "Ik heb kiespijn. Kan ik snel een afspraak krijgen?", en: "I have a toothache. Can I get an appointment soon?" }
+          { nl: "Ik heb kiespijn. Kan ik snel een afspraak krijgen?", en: "I have a toothache. Can I get an appointment soon?" },
+          { nl: "Mijn kies doet al dagen pijn. Kan ik snel langskomen?", en: "My tooth has hurt for days. Can I come by soon?" }
         ]
       }
     ],
@@ -1081,7 +1119,9 @@ const SCENARIOS = [
           { nl: "Helaas voel ik me te ziek om te werken. Ik hoop morgen weer aan de slag te kunnen.", en: "Unfortunately I feel too sick to work. I hope to be back at it tomorrow." }
         ],
         simple: [
-          { nl: "Ik ben ziek. Ik kan vandaag niet werken.", en: "I'm sick. I can't work today." }
+          { nl: "Ik ben ziek. Ik kan vandaag niet werken.", en: "I'm sick. I can't work today." },
+          { nl: "Ik heb koorts. Ik blijf vandaag thuis.", en: "I have a fever. I'm staying home today." },
+          { nl: "Ik voel me niet goed. Ik ga vandaag rusten.", en: "I don't feel well. I'm going to rest today." }
         ]
       }
     ],
@@ -1112,7 +1152,8 @@ const SCENARIOS = [
           { nl: "Mijn keukenkraan lekt steeds meer. Is het mogelijk om deze week nog langs te komen?", en: "My kitchen tap keeps leaking more and more. Is it possible to come by this week still?" }
         ],
         simple: [
-          { nl: "Mijn kraan lekt. Kan iemand komen kijken?", en: "My tap is leaking. Can someone come take a look?" }
+          { nl: "Mijn kraan lekt. Kan iemand komen kijken?", en: "My tap is leaking. Can someone come take a look?" },
+          { nl: "Er druppelt water uit mijn kraan. Kunt u dit repareren?", en: "Water is dripping from my tap. Can you repair this?" }
         ]
       }
     ],
@@ -1143,7 +1184,8 @@ const SCENARIOS = [
           { nl: "Ik twijfel door de prijs van deze jas. Is er misschien een studentenkorting of iets dergelijks?", en: "I'm hesitant because of the price of this jacket. Is there maybe a student discount or something like that?" }
         ],
         simple: [
-          { nl: "Deze jas is mooi maar duur. Komt er nog korting?", en: "This jacket is nice but expensive. Will there be a discount?" }
+          { nl: "Deze jas is mooi maar duur. Komt er nog korting?", en: "This jacket is nice but expensive. Will there be a discount?" },
+          { nl: "Ik vind deze jas mooi, maar duur. Is er binnenkort een uitverkoop?", en: "I like this jacket, but it's expensive. Is there a sale coming up soon?" }
         ]
       }
     ],
@@ -1174,7 +1216,8 @@ const SCENARIOS = [
           { nl: "Ik moet mijn verblijf verschuiven door omstandigheden. Is een andere week mogelijk zonder extra kosten?", en: "I need to shift my stay due to circumstances. Is another week possible without extra costs?" }
         ],
         simple: [
-          { nl: "Mijn plannen zijn veranderd. Kan ik de boeking verzetten?", en: "My plans have changed. Can I move the booking?" }
+          { nl: "Mijn plannen zijn veranderd. Kan ik de boeking verzetten?", en: "My plans have changed. Can I move the booking?" },
+          { nl: "Ik kan dit weekend niet komen. Mag het een andere datum zijn?", en: "I can't come this weekend. Can it be a different date?" }
         ]
       }
     ],
@@ -1205,7 +1248,8 @@ const SCENARIOS = [
           { nl: "Door de vertraging zit ik nu vast op het vliegveld. Kunt u mij op een latere vlucht zetten?", en: "Because of the delay I'm now stuck at the airport. Can you put me on a later flight?" }
         ],
         simple: [
-          { nl: "Ik heb mijn vlucht gemist. Is er een andere vlucht vandaag?", en: "I missed my flight. Is there another flight today?" }
+          { nl: "Ik heb mijn vlucht gemist. Is er een andere vlucht vandaag?", en: "I missed my flight. Is there another flight today?" },
+          { nl: "Mijn vlucht had vertraging. Kunt u mij op een andere vlucht zetten?", en: "My flight was delayed. Can you put me on another flight?" }
         ]
       }
     ],
@@ -1236,7 +1280,8 @@ const SCENARIOS = [
           { nl: "De cursus voor beginners lijkt me leuk. Kunt u vertellen hoeveel de cursus ongeveer kost?", en: "The beginner course sounds nice to me. Could you tell me roughly what the course costs?" }
         ],
         simple: [
-          { nl: "Ik wil me inschrijven. Is er nog plek?", en: "I want to sign up. Is there still room?" }
+          { nl: "Ik wil me inschrijven. Is er nog plek?", en: "I want to sign up. Is there still room?" },
+          { nl: "Ik wil de schilderscursus doen. Wanneer begint die?", en: "I want to take the painting course. When does it start?" }
         ]
       }
     ],
@@ -1267,7 +1312,8 @@ const SCENARIOS = [
           { nl: "Mijn takenpakket is flink gegroeid sinds vorig jaar. Is er ruimte om dit te bespreken?", en: "My workload has grown a lot since last year. Is there room to discuss this?" }
         ],
         simple: [
-          { nl: "Ik wil praten over mijn salaris. Heeft u tijd deze week?", en: "I want to talk about my salary. Do you have time this week?" }
+          { nl: "Ik wil praten over mijn salaris. Heeft u tijd deze week?", en: "I want to talk about my salary. Do you have time this week?" },
+          { nl: "Ik doe nu meer werk. Kunnen we praten over mijn salaris?", en: "I do more work now. Can we talk about my salary?" }
         ]
       }
     ],
@@ -1298,7 +1344,8 @@ const SCENARIOS = [
           { nl: "Ik heb veel extra tijd in het project gestoken. Kan dit gecompenseerd worden met vrije tijd?", en: "I've put a lot of extra time into the project. Can this be compensated with time off?" }
         ],
         simple: [
-          { nl: "Ik heb veel overuren gemaakt. Mag ik die later opnemen als vrije tijd?", en: "I've worked a lot of overtime. Can I take those as time off later?" }
+          { nl: "Ik heb veel overuren gemaakt. Mag ik die later opnemen als vrije tijd?", en: "I've worked a lot of overtime. Can I take those as time off later?" },
+          { nl: "Ik heb veel extra uren gewerkt. Kan ik daarvoor vrije dagen krijgen?", en: "I've worked a lot of extra hours. Can I get days off for that?" }
         ]
       }
     ],
@@ -1329,7 +1376,9 @@ const SCENARIOS = [
           { nl: "Het voelde niet goed om het zo te laten. Kunnen we binnenkort afspreken om het uit te praten?", en: "It didn't feel right to leave it like that. Can we meet up soon to talk it through?" }
         ],
         simple: [
-          { nl: "Het spijt me van vorige week. Zullen we praten?", en: "I'm sorry about last week. Shall we talk?" }
+          { nl: "Het spijt me van vorige week. Zullen we praten?", en: "I'm sorry about last week. Shall we talk?" },
+          { nl: "Het was een misverstand. Zullen we snel afspreken?", en: "It was a misunderstanding. Shall we meet up soon?" },
+          { nl: "Ik denk dat het gewoon een misverstand was. Wil jij ook praten?", en: "I think it was just a misunderstanding. Do you want to talk too?" }
         ]
       }
     ],
@@ -1360,7 +1409,8 @@ const SCENARIOS = [
           { nl: "Natuurlijk kan ik oppassen. Stuur me even door hoe laat ik moet zijn.", en: "Of course I can babysit. Just send me what time I should be there." }
         ],
         simple: [
-          { nl: "Ja, dat doe ik graag. Hoe laat moet ik komen?", en: "Yes, I'm happy to do that. What time should I come?" }
+          { nl: "Ja, dat doe ik graag. Hoe laat moet ik komen?", en: "Yes, I'm happy to do that. What time should I come?" },
+          { nl: "Natuurlijk pas ik op Sophie. Stuur me de tijd.", en: "Of course I'll babysit Sophie. Send me the time." }
         ]
       }
     ],
@@ -1391,7 +1441,8 @@ const SCENARIOS = [
           { nl: "Beterschap gewenst. Ik kan hem elke dag even meenemen tot je weer kunt lopen.", en: "Get well soon. I can take him out every day until you can walk again." }
         ],
         simple: [
-          { nl: "Natuurlijk help ik. Ik laat hem 's ochtends uit.", en: "Of course I'll help. I'll walk him in the morning." }
+          { nl: "Natuurlijk help ik. Ik laat hem 's ochtends uit.", en: "Of course I'll help. I'll walk him in the morning." },
+          { nl: "Ik loop graag met je hond. Beterschap met je been!", en: "I'm happy to walk your dog. Get well soon with your leg!" }
         ]
       }
     ],
@@ -1422,7 +1473,8 @@ const SCENARIOS = [
           { nl: "Alleen hardlopen vind ik saai. Zullen we samen een vast moment in de week afspreken?", en: "Running alone is boring to me. Shall we agree on a fixed time during the week together?" }
         ],
         simple: [
-          { nl: "Zullen we samen gaan hardlopen? Dat is leuker dan alleen.", en: "Shall we go running together? That's more fun than alone." }
+          { nl: "Zullen we samen gaan hardlopen? Dat is leuker dan alleen.", en: "Shall we go running together? That's more fun than alone." },
+          { nl: "Ik hardloop liever met iemand samen. Heb je zin?", en: "I prefer running with someone. Do you feel like it?" }
         ]
       }
     ],
@@ -1453,7 +1505,9 @@ const SCENARIOS = [
           { nl: "Wat lekker gemaakt, zeg! Mag ik het recept van je overnemen?", en: "What a delicious dish! Can I get the recipe from you?" }
         ],
         simple: [
-          { nl: "Dit ziet er lekker uit! Mag ik het recept?", en: "This looks delicious! Can I have the recipe?" }
+          { nl: "Dit ziet er lekker uit! Mag ik het recept?", en: "This looks delicious! Can I have the recipe?" },
+          { nl: "Wat ruikt dit lekker! Hoe heb je dit gemaakt?", en: "This smells so good! How did you make this?" },
+          { nl: "Ik wil dit ook een keer koken. Welke ingrediënten gebruik je?", en: "I'd like to cook this myself sometime. Which ingredients do you use?" }
         ]
       }
     ],
@@ -1484,7 +1538,8 @@ const SCENARIOS = [
           { nl: "Een simpele telefoon met een goede batterij is genoeg voor mij. Heb jij een tip binnen mijn budget?", en: "A simple phone with a good battery is enough for me. Do you have a tip within my budget?" }
         ],
         simple: [
-          { nl: "Ik gebruik mijn telefoon voor foto's en berichten. Wat is een goede, niet te dure telefoon?", en: "I use my phone for photos and messages. What's a good, not too expensive phone?" }
+          { nl: "Ik gebruik mijn telefoon voor foto's en berichten. Wat is een goede, niet te dure telefoon?", en: "I use my phone for photos and messages. What's a good, not too expensive phone?" },
+          { nl: "Mijn telefoon is kapot. Welke telefoon is goed en niet duur?", en: "My phone is broken. Which phone is good and not expensive?" }
         ]
       }
     ],
@@ -1515,7 +1570,8 @@ const SCENARIOS = [
           { nl: "Ik wil graag meer weten over jullie rekeningen. Hoe snel kan ik online bankieren gebruiken?", en: "I'd like to know more about your accounts. How quickly can I start using online banking?" }
         ],
         simple: [
-          { nl: "Ik wil een rekening openen. Kost dat geld per maand?", en: "I want to open an account. Does that cost money per month?" }
+          { nl: "Ik wil een rekening openen. Kost dat geld per maand?", en: "I want to open an account. Does that cost money per month?" },
+          { nl: "Ik wil een nieuwe bankrekening. Wanneer krijg ik een pas?", en: "I want a new bank account. When do I get a card?" }
         ]
       }
     ],
@@ -1546,7 +1602,8 @@ const SCENARIOS = [
           { nl: "Ik heb een nieuw paspoort nodig voor mijn reis. Is er deze week nog een afspraak mogelijk?", en: "I need a new passport for my trip. Is there an appointment possible this week still?" }
         ],
         simple: [
-          { nl: "Mijn paspoort is bijna verlopen. Kan ik snel een nieuwe aanvragen?", en: "My passport is almost expired. Can I apply for a new one soon?" }
+          { nl: "Mijn paspoort is bijna verlopen. Kan ik snel een nieuwe aanvragen?", en: "My passport is almost expired. Can I apply for a new one soon?" },
+          { nl: "Ik heb snel een nieuw paspoort nodig. Wanneer kan ik langskomen?", en: "I need a new passport soon. When can I come by?" }
         ]
       }
     ],
@@ -1577,7 +1634,8 @@ const SCENARIOS = [
           { nl: "Ik hoorde goede dingen over het buurthuis. Wat voor programma bieden jullie zoal aan?", en: "I heard good things about the community center. What kind of program do you offer?" }
         ],
         simple: [
-          { nl: "Ik ben nieuw hier. Welke activiteiten zijn er in het weekend?", en: "I'm new here. What activities are there on weekends?" }
+          { nl: "Ik ben nieuw hier. Welke activiteiten zijn er in het weekend?", en: "I'm new here. What activities are there on weekends?" },
+          { nl: "Ik woon hier net. Wat kan ik hier allemaal doen?", en: "I just moved here. What can I do here?" }
         ]
       }
     ],
@@ -1608,7 +1666,8 @@ const SCENARIOS = [
           { nl: "Een feestje met spelletjes lijkt me leuk voor Tim. Kun jij de uitnodigingen regelen?", en: "A party with games sounds nice for Tim. Could you arrange the invitations?" }
         ],
         simple: [
-          { nl: "Ik wil een feestje in de tuin. Kun je helpen met de uitnodigingen?", en: "I want a party in the garden. Can you help with the invitations?" }
+          { nl: "Ik wil een feestje in de tuin. Kun je helpen met de uitnodigingen?", en: "I want a party in the garden. Can you help with the invitations?" },
+          { nl: "Ik plan een feestje voor Tim. Kun je meehelpen?", en: "I'm planning a party for Tim. Can you help?" }
         ]
       }
     ],
@@ -1639,7 +1698,8 @@ const SCENARIOS = [
           { nl: "Er is iets mis met mijn wasmachine, hij doet het gewoon niet meer. Wanneer zou een monteur kunnen komen?", en: "Something is wrong with my washing machine, it just stopped working. When could a technician come?" }
         ],
         simple: [
-          { nl: "Mijn wasmachine is kapot. Kan iemand deze week komen?", en: "My washing machine is broken. Can someone come this week?" }
+          { nl: "Mijn wasmachine is kapot. Kan iemand deze week komen?", en: "My washing machine is broken. Can someone come this week?" },
+          { nl: "Mijn wasmachine start niet meer op. Kunt u dit repareren?", en: "My washing machine won't start anymore. Can you repair this?" }
         ]
       }
     ],
@@ -1670,7 +1730,8 @@ const SCENARIOS = [
           { nl: "Ik hou van de kleur, maar de maat klopt niet. Kun je me vertellen waar je hem gekocht hebt?", en: "I love the color, but the size isn't right. Can you tell me where you bought it?" }
         ],
         simple: [
-          { nl: "De trui is te klein. Weet je waar je hem gekocht hebt?", en: "The sweater is too small. Do you know where you bought it?" }
+          { nl: "De trui is te klein. Weet je waar je hem gekocht hebt?", en: "The sweater is too small. Do you know where you bought it?" },
+          { nl: "Deze trui past niet goed. In welke winkel heb je hem gekocht?", en: "This sweater doesn't fit well. Which store did you buy it at?" }
         ]
       }
     ],
@@ -1701,7 +1762,8 @@ const SCENARIOS = [
           { nl: "Met dit weer lijkt wandelen morgen geen goed idee. Kunnen we het uitstellen tot het weekend?", en: "With this weather, walking tomorrow doesn't seem like a good idea. Can we postpone it to the weekend?" }
         ],
         simple: [
-          { nl: "Er komt morgen onweer. Zullen we naar zaterdag verzetten?", en: "There's a thunderstorm coming tomorrow. Shall we move it to Saturday?" }
+          { nl: "Er komt morgen onweer. Zullen we naar zaterdag verzetten?", en: "There's a thunderstorm coming tomorrow. Shall we move it to Saturday?" },
+          { nl: "Het weer wordt slecht morgen. Kunnen we een andere dag wandelen?", en: "The weather will be bad tomorrow. Can we walk on a different day?" }
         ]
       }
     ],
@@ -1732,7 +1794,9 @@ const SCENARIOS = [
           { nl: "Ik sta stil met autopech op de snelweg. Hoe snel kan er hulp zijn?", en: "I'm stuck with car trouble on the highway. How soon can help arrive?" }
         ],
         simple: [
-          { nl: "Mijn auto start niet. Hoe lang duurt het voor er hulp komt?", en: "My car won't start. How long until help arrives?" }
+          { nl: "Mijn auto start niet. Hoe lang duurt het voor er hulp komt?", en: "My car won't start. How long until help arrives?" },
+          { nl: "Mijn auto doet het niet meer. Kunt u snel komen?", en: "My car has stopped working. Can you come quickly?" },
+          { nl: "Ik sta vast op de snelweg. Komt er snel iemand?", en: "I'm stuck on the highway. Is someone coming soon?" }
         ]
       }
     ],
@@ -1763,7 +1827,8 @@ const SCENARIOS = [
           { nl: "Ik heb nog nooit gereden en wil starten met lessen. Is er deze maand nog ruimte?", en: "I've never driven before and want to start with lessons. Is there room this month still?" }
         ],
         simple: [
-          { nl: "Ik wil mijn rijbewijs halen. Hoeveel lessen heb ik nodig?", en: "I want to get my driver's license. How many lessons do I need?" }
+          { nl: "Ik wil mijn rijbewijs halen. Hoeveel lessen heb ik nodig?", en: "I want to get my driver's license. How many lessons do I need?" },
+          { nl: "Ik heb nog nooit gereden. Kan ik bij u lessen nemen?", en: "I've never driven before. Can I take lessons with you?" }
         ]
       }
     ],
@@ -1794,7 +1859,8 @@ const SCENARIOS = [
           { nl: "Het is lang geleden dat ik een gesprek had. Wat vind jij het belangrijkste om te laten zien?", en: "It's been a long time since I had an interview. What do you think is most important to show?" }
         ],
         simple: [
-          { nl: "Ik ben een beetje zenuwachtig. Heb je tips voor het gesprek?", en: "I'm a bit nervous. Do you have tips for the interview?" }
+          { nl: "Ik ben een beetje zenuwachtig. Heb je tips voor het gesprek?", en: "I'm a bit nervous. Do you have tips for the interview?" },
+          { nl: "Ik heb volgende week een sollicitatiegesprek. Heb je advies voor mij?", en: "I have a job interview next week. Do you have advice for me?" }
         ]
       }
     ],
@@ -1825,7 +1891,8 @@ const SCENARIOS = [
           { nl: "Voor mijn verhuizing zoek ik professionele hulp. Wanneer kunt u langskomen voor een offerte?", en: "For my move I'm looking for professional help. When could you come by for a quote?" }
         ],
         simple: [
-          { nl: "Ik ga verhuizen. Kunt u een offerte maken?", en: "I'm moving. Can you make a quote?" }
+          { nl: "Ik ga verhuizen. Kunt u een offerte maken?", en: "I'm moving. Can you make a quote?" },
+          { nl: "Ik ga binnenkort verhuizen. Wat kost uw hulp?", en: "I'm moving soon. What does your help cost?" }
         ]
       }
     ],
@@ -1856,7 +1923,8 @@ const SCENARIOS = [
           { nl: "Mijn zoontje heeft opvang nodig zodra ik weer ga werken. Kan ik een rondleiding krijgen?", en: "My son will need care once I'm back at work. Could I get a tour?" }
         ],
         simple: [
-          { nl: "Ik zoek opvang voor mijn zoontje. Heeft u nog plek?", en: "I'm looking for care for my son. Do you have room?" }
+          { nl: "Ik zoek opvang voor mijn zoontje. Heeft u nog plek?", en: "I'm looking for care for my son. Do you have room?" },
+          { nl: "Ik ga weer werken. Ik zoek opvang voor mijn kind.", en: "I'm going back to work. I'm looking for childcare for my child." }
         ]
       }
     ],
@@ -1887,7 +1955,8 @@ const SCENARIOS = [
           { nl: "Het hek tussen onze tuinen is stuk. Kunnen we de reparatie samen regelen?", en: "The fence between our gardens is broken. Can we arrange the repair together?" }
         ],
         simple: [
-          { nl: "De schutting is kapot. Zullen we de kosten samen betalen?", en: "The fence is broken. Shall we split the cost together?" }
+          { nl: "De schutting is kapot. Zullen we de kosten samen betalen?", en: "The fence is broken. Shall we split the cost together?" },
+          { nl: "Het hek is stuk door de storm. Zullen we dit samen oplossen?", en: "The fence is broken because of the storm. Shall we solve this together?" }
         ]
       }
     ],
@@ -1918,7 +1987,8 @@ const SCENARIOS = [
           { nl: "Door mijn verhuizing wil ik het abonnement beëindigen. Wat zijn de voorwaarden hiervoor?", en: "Because of my move I want to end the membership. What are the conditions for that?" }
         ],
         simple: [
-          { nl: "Ik ga verhuizen. Ik wil mijn abonnement opzeggen.", en: "I'm moving. I want to cancel my membership." }
+          { nl: "Ik ga verhuizen. Ik wil mijn abonnement opzeggen.", en: "I'm moving. I want to cancel my membership." },
+          { nl: "Ik verhuis naar een andere stad. Kan ik stoppen met mijn abonnement?", en: "I'm moving to another city. Can I stop my membership?" }
         ]
       }
     ],
@@ -1949,7 +2019,8 @@ const SCENARIOS = [
           { nl: "Ik betaal nu veel meer dan vorig jaar. Kan het bedrag opnieuw berekend worden?", en: "I'm now paying much more than last year. Can the amount be recalculated?" }
         ],
         simple: [
-          { nl: "Mijn rekening is hoger geworden. Waarom is dat, en kunt u het aanpassen?", en: "My bill has gone up. Why is that, and can you adjust it?" }
+          { nl: "Mijn rekening is hoger geworden. Waarom is dat, en kunt u het aanpassen?", en: "My bill has gone up. Why is that, and can you adjust it?" },
+          { nl: "Ik betaal nu veel meer. Kunt u uitleggen waarom?", en: "I'm now paying much more. Can you explain why?" }
         ]
       }
     ],
@@ -1980,7 +2051,8 @@ const SCENARIOS = [
           { nl: "Er is iets misgegaan met de levering van mijn pakket. Wat zijn de vervolgstappen?", en: "Something went wrong with the delivery of my package. What are the next steps?" }
         ],
         simple: [
-          { nl: "Mijn pakket is niet aangekomen. Kunt u dit uitzoeken?", en: "My package hasn't arrived. Can you look into this?" }
+          { nl: "Mijn pakket is niet aangekomen. Kunt u dit uitzoeken?", en: "My package hasn't arrived. Can you look into this?" },
+          { nl: "Ik heb mijn pakket nooit gekregen. Wat kunt u doen?", en: "I never received my package. What can you do?" }
         ]
       }
     ],
@@ -2011,7 +2083,8 @@ const SCENARIOS = [
           { nl: "Kunt u vertellen wat er precies getoetst wordt? En wanneer ontvangen we de uitslag?", en: "Could you tell me exactly what's being tested? And when do we get the results?" }
         ],
         simple: [
-          { nl: "Hoe ziet het examen eruit? Krijg ik daarna een certificaat?", en: "What does the exam look like? Do I get a certificate afterwards?" }
+          { nl: "Hoe ziet het examen eruit? Krijg ik daarna een certificaat?", en: "What does the exam look like? Do I get a certificate afterwards?" },
+          { nl: "Ik heb een vraag over het examen. Wanneer is het?", en: "I have a question about the exam. When is it?" }
         ]
       }
     ],
@@ -2042,7 +2115,9 @@ const SCENARIOS = [
           { nl: "Ik wilde je nogmaals bedanken voor afgelopen week. Heb je zin om samen iets te gaan drinken?", en: "I wanted to thank you again for last week. Do you feel like getting a drink together?" }
         ],
         simple: [
-          { nl: "Dank je voor je hulp! Zullen we samen eten?", en: "Thank you for your help! Shall we have dinner together?" }
+          { nl: "Dank je voor je hulp! Zullen we samen eten?", en: "Thank you for your help! Shall we have dinner together?" },
+          { nl: "Bedankt voor je hulp met verhuizen! Ik trakteer op eten.", en: "Thanks for your help moving! I'll treat you to dinner." },
+          { nl: "Wat fijn dat je hebt geholpen! Zullen we snel iets drinken?", en: "How nice that you helped! Shall we get a drink soon?" }
         ]
       }
     ],
@@ -2073,7 +2148,8 @@ const SCENARIOS = [
           { nl: "Ik word elke ochtend wakker van het lawaai. Is een latere starttijd mogelijk?", en: "I wake up to the noise every morning. Is a later start time possible?" }
         ],
         simple: [
-          { nl: "Het boren is erg vroeg. Kunt u later beginnen?", en: "The drilling is very early. Can you start later?" }
+          { nl: "Het boren is erg vroeg. Kunt u later beginnen?", en: "The drilling is very early. Can you start later?" },
+          { nl: "Ik word wakker van het lawaai. Kunt u iets later starten?", en: "I wake up from the noise. Could you start a bit later?" }
         ]
       }
     ],
@@ -2104,7 +2180,8 @@ const SCENARIOS = [
           { nl: "Voor acht personen zoeken we een gezamenlijke tour. Wat zijn de tijden in het weekend?", en: "For eight people we're looking for a joint tour. What are the times on the weekend?" }
         ],
         simple: [
-          { nl: "We zijn met acht vrienden. Kunnen we een rondleiding boeken?", en: "We're with eight friends. Can we book a guided tour?" }
+          { nl: "We zijn met acht vrienden. Kunnen we een rondleiding boeken?", en: "We're with eight friends. Can we book a guided tour?" },
+          { nl: "We willen graag een rondleiding met een groep. Kan dat in het weekend?", en: "We'd like a guided tour with a group. Is that possible on the weekend?" }
         ]
       }
     ],
@@ -2135,7 +2212,9 @@ const SCENARIOS = [
           { nl: "Ik overweeg kaartjes te kopen voor een concert. Lijkt het je wat om samen te gaan?", en: "I'm considering buying tickets for a concert. Does it sound like something for you to go together?" }
         ],
         simple: [
-          { nl: "Mijn favoriete band speelt binnenkort. Ga je mee?", en: "My favorite band is playing soon. Will you come with me?" }
+          { nl: "Mijn favoriete band speelt binnenkort. Ga je mee?", en: "My favorite band is playing soon. Will you come with me?" },
+          { nl: "Er is binnenkort een leuk concert. Heb je zin om mee te gaan?", en: "There's a nice concert coming up soon. Do you feel like coming along?" },
+          { nl: "De kaartjes zijn niet duur. Zullen we samen gaan?", en: "The tickets aren't expensive. Shall we go together?" }
         ]
       }
     ],
@@ -2166,7 +2245,8 @@ const SCENARIOS = [
           { nl: "De bank op uw advertentie spreekt me aan. Zou ik hem dit weekend kunnen ophalen?", en: "The couch in your ad appeals to me. Could I pick it up this weekend?" }
         ],
         simple: [
-          { nl: "Ik wil de bank kopen. Kan ik hem dit weekend ophalen?", en: "I want to buy the couch. Can I pick it up this weekend?" }
+          { nl: "Ik wil de bank kopen. Kan ik hem dit weekend ophalen?", en: "I want to buy the couch. Can I pick it up this weekend?" },
+          { nl: "Is de bank nog te koop? Ik wil hem graag ophalen.", en: "Is the couch still for sale? I'd like to pick it up." }
         ]
       }
     ],
