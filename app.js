@@ -7,6 +7,7 @@ let answerUIShownFor = -1;
 const visited = new Set();
 const expandedAlts = new Set();
 const optionIndexByKey = {};
+const writtenAnswersByKey = {};
 
 function getRevealedCount(idx) {
   return revealedCountByScenario[idx] || 1;
@@ -91,7 +92,8 @@ function saveProgress() {
     db.transaction("state", "readwrite").objectStore("state").put({
       currentIdx,
       revealedCountByScenario,
-      visited: Array.from(visited)
+      visited: Array.from(visited),
+      writtenAnswersByKey
     }, "progress");
   });
 }
@@ -196,6 +198,63 @@ function lastYouTurnIndex(s) {
   return -1;
 }
 
+function buildWrittenAnswerBox(turnIdx) {
+  const key = recordingKey(currentIdx, turnIdx);
+  const wrap = document.createElement("div");
+  wrap.className = "written-answer-box";
+
+  const label = document.createElement("div");
+  label.className = "written-answer-label";
+  label.textContent = "Of typ je eigen antwoord:";
+  wrap.appendChild(label);
+
+  const textarea = document.createElement("textarea");
+  textarea.rows = 3;
+  textarea.placeholder = "Schrijf hier je antwoord in het Nederlands...";
+  textarea.value = writtenAnswersByKey[key] || "";
+  wrap.appendChild(textarea);
+
+  const actions = document.createElement("div");
+  actions.className = "written-answer-actions";
+
+  const status = document.createElement("span");
+  status.className = "written-answer-status";
+  status.textContent = writtenAnswersByKey[key] ? "Opgeslagen" : "";
+
+  const saveBtn = document.createElement("button");
+  saveBtn.type = "button";
+  saveBtn.textContent = "Bewaar antwoord";
+  saveBtn.addEventListener("click", () => {
+    const val = textarea.value.trim();
+    if (val) writtenAnswersByKey[key] = val;
+    else delete writtenAnswersByKey[key];
+    saveProgress();
+    renderDots();
+    status.textContent = val ? "Opgeslagen" : "";
+  });
+
+  const delBtn = document.createElement("button");
+  delBtn.type = "button";
+  delBtn.className = "written-delete-btn";
+  delBtn.innerHTML = "&#128465; Verwijder";
+  delBtn.addEventListener("click", () => {
+    textarea.value = "";
+    delete writtenAnswersByKey[key];
+    saveProgress();
+    renderDots();
+    status.textContent = "";
+  });
+
+  textarea.addEventListener("input", () => { status.textContent = ""; });
+
+  actions.appendChild(saveBtn);
+  actions.appendChild(delBtn);
+  actions.appendChild(status);
+  wrap.appendChild(actions);
+
+  return wrap;
+}
+
 // Renders the record/re-record/delete controls for a "you" turn. Used both
 // while answering (turn not yet revealed, alongside "Ik ben klaar") and after
 // the answer has been shown (alongside "Opnieuw oefenen"/"Volgende situatie") -
@@ -209,15 +268,15 @@ function renderRecordPanel(turnIdx, recordingRemaining) {
   answerUIShownFor = getRevealedCount(currentIdx);
   controls.innerHTML = "";
 
-  if (isPreReveal || micSupported()) {
+  {
     const box = document.createElement("div");
     box.className = "answer-box";
 
     const label = document.createElement("div");
     label.className = "answer-label";
     label.textContent = isPreReveal
-      ? "Spreek je antwoord nu hardop. Neem het op als je wilt (max. 20 seconden), of ga direct verder."
-      : "Je kunt je antwoord nog (opnieuw) inspreken.";
+      ? "Spreek je antwoord nu hardop of typ het hieronder. Neem het op als je wilt (max. 20 seconden), of ga direct verder."
+      : "Je kunt je antwoord nog (opnieuw) inspreken of typen.";
     box.appendChild(label);
 
     if (isRecording) {
@@ -269,6 +328,8 @@ function renderRecordPanel(turnIdx, recordingRemaining) {
       box.appendChild(recRow);
     }
 
+    box.appendChild(buildWrittenAnswerBox(turnIdx));
+
     if (isPreReveal) {
       const proceedBtn = document.createElement("button");
       proceedBtn.className = "reveal-btn";
@@ -302,8 +363,12 @@ function speakerLabel(turn, scenario) {
   return turn.speaker === "you" ? "Jij" : scenario.other;
 }
 
-function hasRecordingForScenario(idx) {
-  return SCENARIOS[idx].turns.some((t, ti) => t.speaker === "you" && !!recordingsByKey[recordingKey(idx, ti)]);
+function hasAttemptForScenario(idx) {
+  return SCENARIOS[idx].turns.some((t, ti) => {
+    if (t.speaker !== "you") return false;
+    const key = recordingKey(idx, ti);
+    return !!recordingsByKey[key] || !!writtenAnswersByKey[key];
+  });
 }
 
 function answerShownForScenario(idx) {
@@ -314,11 +379,11 @@ function renderDots() {
   const wrap = document.getElementById("topicDots");
   wrap.innerHTML = SCENARIOS.map((s, i) => {
     const cls = ["topic-dot"];
-    const recorded = hasRecordingForScenario(i);
+    const recorded = hasAttemptForScenario(i);
     const answered = answerShownForScenario(i);
     let statusLabel = "";
-    if (recorded && answered) { cls.push("rec-done"); statusLabel = " — opname + antwoord getoond"; }
-    else if (recorded) { cls.push("rec-pending"); statusLabel = " — opname gemaakt"; }
+    if (recorded && answered) { cls.push("rec-done"); statusLabel = " — antwoord opgeslagen + getoond"; }
+    else if (recorded) { cls.push("rec-pending"); statusLabel = " — antwoord opgeslagen"; }
     else if (visited.has(i)) { cls.push("visited"); statusLabel = " — bekeken"; }
     if (i === currentIdx) cls.push("active");
     return `<button class="${cls.join(" ")}" title="${escapeHtml(s.topic + statusLabel)}" onclick="goTo(${i})"></button>`;
@@ -629,7 +694,7 @@ if ("speechSynthesis" in window) {
 }
 
 async function resetCurrentScenario() {
-  const ok = confirm("Weet je zeker dat je de opname en voortgang van deze situatie wilt wissen?");
+  const ok = confirm("Weet je zeker dat je je antwoord (opname en/of tekst) en voortgang van deze situatie wilt wissen?");
   if (!ok) return;
   if (window.speechSynthesis) stopSpeaking();
   stopActiveRecordingIfAny();
@@ -643,6 +708,7 @@ async function resetCurrentScenario() {
     }
     idbDeleteRecording(key);
     delete optionIndexByKey[key];
+    delete writtenAnswersByKey[key];
     expandedAlts.delete(altKey(currentIdx, i));
   });
   delete revealedCountByScenario[currentIdx];
@@ -666,6 +732,7 @@ async function initApp() {
     }
     Object.assign(revealedCountByScenario, state.revealedCountByScenario || {});
     (state.visited || []).forEach(i => visited.add(i));
+    Object.assign(writtenAnswersByKey, state.writtenAnswersByKey || {});
   }
   renderDots();
   renderScenario();
