@@ -8,22 +8,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Je kunt altijd een lange wandeling maken of gaan hardlopen. Je kunt ook met de fiets gaan in plaats van met de auto. En neem de trap in plaats van de lift, dat helpt ook al.", en: "You can always go for a long walk or go running. You could also go by bike instead of by car. And take the stairs instead of the elevator, that already helps too." },
-          { nl: "Misschien kun je thuis sporten met gratis video's op internet. Of ga samen met vrienden buiten sporten, dat is ook motiverend.", en: "Maybe you can work out at home with free videos online. Or exercise outside with friends, that's motivating too." },
-          { nl: "Je zou ook kunnen zwemmen in het buitenzwembad, dat is vaak niet duur. En werk in de tuin, dat is ook goede beweging.", en: "You could also swim at the outdoor pool, that's often not expensive. And work in the garden, that's good exercise too." }
+          { nl: "Het is niet nodig om naar de sportschool te gaan. Je kunt ook gratis dingen doen, zoals fietsen, hardlopen, of zwemmen in de gracht. Of je kunt iets online vinden om thuis te oefenen.", en: "It's not necessary to go to the gym. You can also do free things, like cycling, running, or swimming in the canal. Or you can find something online to practice at home." }
         ],
-        simple: [
-          { nl: "Je kunt ook gewoon buiten wandelen of fietsen. Dat is gratis en heel gezond.", en: "You can also just walk or bike outside. That's free and very healthy." },
-          { nl: "Je kunt thuis sporten met filmpjes op internet. Dat kost niets.", en: "You can exercise at home with videos online. That costs nothing." },
-          { nl: "Sport samen met vrienden buiten. Dat is ook leuk en gratis.", en: "Exercise together with friends outside. That's also fun and free." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "goedkoop (affordable/cheap)",
-      "conditie opbouwen (build fitness)",
-      "buiten bewegen (exercise outdoors)"
-    ],
+    hints: [],
     glossary: [
       { nl: "sportschool", en: "gym" },
       { nl: "aanbevelen", en: "to recommend" },
@@ -43,21 +33,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemorgen. Ik kan morgen helaas niet komen, want ik heb net een dringende vergadering op mijn werk gekregen. Zou het mogelijk zijn om de afspraak te verzetten naar donderdagmiddag? Anders zoek ik gewoon een moment dat u het beste uitkomt.", en: "Good morning. Unfortunately I can't come tomorrow, because I've just been given an urgent meeting at work. Would it be possible to move the appointment to Thursday afternoon? Otherwise I'll just find a time that suits you best." },
-          { nl: "Ik heb helaas een dringende afspraak op mijn werk morgen. Misschien kan ik in plaats daarvan volgende week langskomen?", en: "Unfortunately I have an urgent appointment at work tomorrow. Could I maybe come next week instead?" },
-          { nl: "Het spijt me, maar ik moet morgen verzetten. Heeft u toevallig deze week nog een ander moment vrij?", en: "I'm sorry, but I need to reschedule tomorrow. Do you happen to have another time free this week?" }
+          { nl: "Hoi, ik heb morgen een afspraak, maar helaas kan ik niet komen, want ik heb een andere afspraak. Morgen ben ik vrij, dus kunt u een nieuwe afspraak voor mij maken?", en: "Hi, I have an appointment tomorrow, but unfortunately I can't come, because I have another appointment. Tomorrow I'm free, so could you make a new appointment for me?" }
         ],
-        simple: [
-          { nl: "Ik kan morgen niet komen. Kan het ook donderdag?", en: "I can't come tomorrow. Can it also be Thursday?" },
-          { nl: "Ik heb morgen geen tijd. Mag het een andere dag zijn?", en: "I don't have time tomorrow. Can it be a different day?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "omboeken (to rebook)",
-      "onverwachts (unexpectedly)",
-      "schikken (to suit/work for)"
-    ],
+    hints: [],
     glossary: [
       { nl: "verzetten", en: "to reschedule" },
       { nl: "controle", en: "check-up" },
@@ -77,21 +58,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ja, ik wilde iets vragen over volgende week. Mijn zus gaat trouwen op vrijdag en ik zou daar heel graag bij willen zijn. Ik weet dat het kort van tevoren is, maar zou ik die dag vrij mogen nemen? Ik kan mijn werk deze week ook extra vroeg oppakken, zodat alles op tijd af is.", en: "Yes, I wanted to ask about next week. My sister is getting married on Friday and I'd really like to be there. I know it's short notice, but could I take that day off? I can also start my work extra early this week, so that everything is finished on time." },
-          { nl: "Mijn zus trouwt volgende week vrijdag, en ik zou er graag bij zijn. Is het mogelijk om die dag vrij te krijgen?", en: "My sister is getting married next Friday, and I'd like to be there. Is it possible to get that day off?" },
-          { nl: "Ik heb een belangrijke familiegebeurtenis volgende week vrijdag. Zou ik die dag vrij kunnen nemen, ook al is het kort van tevoren?", en: "I have an important family event next Friday. Could I take that day off, even though it's short notice?" }
+          { nl: "Ik weet dat je niet veel tijd hebt, maar ik moet je iets vragen. Volgende week heb ik iets belangrijks met mijn familie, maar ik moet dan werken. Kun je me helpen? Misschien kan een collega dan voor mij werken.", en: "I know you don't have much time, but I need to ask you something. Next week I have something important with my family, but I have to work then. Can you help me? Maybe a colleague could work for me then." }
         ],
-        simple: [
-          { nl: "Mag ik vrijdag vrij? Mijn zus trouwt die dag.", en: "May I have Friday off? My sister is getting married that day." },
-          { nl: "Ik heb vrijdag een trouwerij. Mag ik die dag vrij nemen?", en: "I have a wedding on Friday. May I take that day off?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "toestemming vragen (ask permission)",
-      "verlof (leave/time off)",
-      "ruim van tevoren (well in advance)"
-    ],
+    hints: [],
     glossary: [
       { nl: "trouwen", en: "to get married" },
       { nl: "vrij mag nemen", en: "to be allowed time off" },
@@ -110,21 +82,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ja, goed hoor, dank je. Ik wilde je trouwens iets vragen. De laatste tijd hoor ik 's avonds laat vaak harde muziek uit jouw huis. Ik moet vroeg opstaan voor mijn werk en kan daardoor niet goed slapen. Zou je de muziek na een uur of tien wat zachter kunnen zetten? Dat zou echt schelen.", en: "Yes, good actually, thanks. I wanted to ask you something by the way. Lately I often hear loud music from your house late in the evening. I have to get up early for work and because of that I can't sleep well. Could you turn the music down a bit after around ten o'clock? That would really help." },
-          { nl: "Sorry dat ik het zeg, maar de muziek is 's avonds echt storend. Zou je hem misschien iets vroeger uit kunnen zetten?", en: "Sorry to say it, but the music is really disturbing in the evening. Could you maybe turn it off a bit earlier?" },
-          { nl: "Ik hoor je muziek elke avond door de muur. Zou het lukken om het volume 's avonds wat lager te houden?", en: "I hear your music through the wall every evening. Would it be possible to keep the volume lower in the evening?" }
+          { nl: "Hoi buurman. Ja, prima eigenlijk. Ik wil je iets vragen: waarom speel je 's avonds vaak zo harde muziek? Misschien vind jij het leuk, maar ik niet zo leuk. Kun je de volgende keer de muziek een beetje zachter zetten?", en: "Hi neighbor. Yes, actually fine. I want to ask you something: why do you often play such loud music in the evening? Maybe you like it, but I don't like it so much. Could you turn the music down a bit next time?" }
         ],
-        simple: [
-          { nl: "De muziek is 's avonds erg hard. Kun je het zachter zetten?", en: "The music is very loud in the evening. Can you turn it down?" },
-          { nl: "Ik hoor de muziek 's avonds. Kan het wat stiller?", en: "I hear the music in the evening. Can it be a bit quieter?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "geluidsoverlast (noise nuisance)",
-      "rustig houden (keep quiet)",
-      "begrip vragen (ask for understanding)"
-    ],
+    hints: [],
     glossary: [
       { nl: "storend", en: "disturbing" },
       { nl: "schelen", en: "to matter/help" },
@@ -143,21 +106,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ja, graag, dank u wel. Ik ben hier niet bekend en ik moet naar het station, maar ik weet niet precies welke kant ik op moet. Zou u mij de weg kunnen wijzen, en weet u misschien ook of het ver lopen is?", en: "Yes, please, thank you. I'm not familiar with this area and I need to get to the station, but I don't know exactly which way to go. Could you show me the way, and do you also know whether it's a long walk?" },
-          { nl: "Ik ben de weg hier kwijt en probeer het station te vinden. Kunt u mij vertellen welke straat ik moet nemen?", en: "I'm lost here and trying to find the station. Could you tell me which street I need to take?" },
-          { nl: "Sorry, ik ben hier niet bekend. Weet u misschien hoe ik snel bij het station kom?", en: "Sorry, I'm not familiar with this area. Do you know how I can get to the station quickly?" }
+          { nl: "Ja, graag. Ik zoek het treinstation, maar ik kan het niet vinden. Ik heb nog maar tien minuten voordat de trein gaat. Welke weg is het snelst?", en: "Yes, please. I'm looking for the train station, but I can't find it. I only have ten minutes left before the train leaves. Which way is the fastest?" }
         ],
-        simple: [
-          { nl: "Ik zoek het station. Weet u de weg?", en: "I'm looking for the station. Do you know the way?" },
-          { nl: "Hoe kom ik bij het station? Is het ver?", en: "How do I get to the station? Is it far?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "rechtdoor (straight ahead)",
-      "linksaf/rechtsaf (turn left/right)",
-      "hoe kom ik bij (how do I get to)"
-    ],
+    hints: [],
     glossary: [
       { nl: "verdwaald", en: "lost" },
       { nl: "bekend", en: "familiar" },
@@ -176,22 +130,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Hoi, ik bel je eigenlijk voor iets anders. Ik voel me de laatste uren niet zo lekker en ik denk dat het verstandiger is om vanavond rustig thuis te blijven. Zou je het erg vinden als we het etentje verzetten naar een andere avond? Dan kan ik ook lekker uitrusten.", en: "Hi, actually I'm calling about something else. I haven't felt very well the last few hours and I think it's wiser to stay home quietly tonight. Would you mind if we moved the dinner to another evening? That way I can also rest properly." },
-          { nl: "Ik voel me eigenlijk niet zo lekker vanavond. Zou het kunnen dat we het etentje verschuiven naar een andere dag?", en: "I actually don't feel very well tonight. Could we maybe move the dinner to another day?" },
-          { nl: "Sorry, ik moet afzeggen voor vanavond, ik voel me niet fit. Kunnen we snel een nieuwe datum plannen?", en: "Sorry, I have to cancel for tonight, I don't feel well. Can we quickly plan a new date?" }
+          { nl: "Hoi, sorry, maar ik kan vanavond niet. Ik voel me al de hele dag ziek en ik wil vanavond liever rusten. Hopelijk voel ik me over een paar dagen beter. Misschien kunnen we elkaar een andere avond zien.", en: "Hi, sorry, but I can't tonight. I've felt sick all day and I'd rather rest tonight. Hopefully I'll feel better in a few days. Maybe we can see each other another evening." }
         ],
-        simple: [
-          { nl: "Ik voel me niet goed. Kunnen we een andere dag afspreken?", en: "I don't feel well. Can we meet on another day?" },
-          { nl: "Ik ben ziek. Mogen we een andere avond eten?", en: "I'm sick. Can we have dinner another evening?" },
-          { nl: "Sorry, ik kan vanavond niet. Zullen we snel een nieuwe dag zoeken?", en: "Sorry, I can't tonight. Shall we find a new day soon?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "opknappen (to recover)",
-      "verkouden zijn (to have a cold)",
-      "een andere avond (another evening)"
-    ],
+    hints: [],
     glossary: [
       { nl: "verstandiger", en: "wiser" },
       { nl: "etentje", en: "dinner" },
@@ -210,21 +154,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goed dat je dat vraagt. Check in ieder geval altijd eerst de banden en de remmen, want die zijn duur om te vervangen. Kijk ook goed of het frame niet te veel roest heeft. En probeer de fiets altijd even uit voordat je hem koopt, dan voel je meteen of alles soepel rijdt.", en: "Good that you're asking. Always check the tires and the brakes first, because those are expensive to replace. Also check carefully that the frame doesn't have too much rust. And always try the bike out before you buy it, then you'll immediately feel whether everything rides smoothly." },
-          { nl: "Kijk vooral naar de staat van de ketting en de versnellingen. En vraag de verkoper hoe oud de fiets ongeveer is.", en: "Look especially at the condition of the chain and the gears. And ask the seller roughly how old the bike is." },
-          { nl: "Controleer of de wielen recht lopen en of het zadel nog goed is. Onderhandel ook altijd even over de prijs.", en: "Check whether the wheels run straight and whether the saddle is still good. Also always negotiate a bit on the price." }
+          { nl: "Koop iets dat niet te goedkoop en niet te duur is. Volgens mij is tweehonderd euro genoeg. Kijk goed naar de remmen, dat is belangrijk. Probeer de fiets uit voordat je hem koopt. En check ook op roest, soms is dat oké, maar niet te veel.", en: "Buy something that's not too cheap and not too expensive. I think two hundred euros is enough. Look carefully at the brakes, that's important. Try the bike out before you buy it. And also check for rust, sometimes that's okay, but not too much." }
         ],
-        simple: [
-          { nl: "Kijk goed naar de banden en de remmen. En fiets er even mee voordat je koopt.", en: "Look carefully at the tires and the brakes. And ride it a bit before you buy." },
-          { nl: "Kijk of de fiets niet kapot is. Probeer hem ook even uit.", en: "Check that the bike isn't broken. Also try it out for a bit." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "kilometerstand (mileage)",
-      "bandenspanning (tire pressure)",
-      "garantie (warranty)"
-    ],
+    hints: [],
     glossary: [
       { nl: "tweedehands", en: "second-hand" },
       { nl: "remmen", en: "brakes" },
@@ -244,21 +179,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ik doe zelf graag iets actiefs, zoals een wandeling maken of naar de markt gaan. Je zou ook een terrasje kunnen pakken als het weer goed is, of een museum bezoeken als je liever binnen bent. En anders is een filmavond met vrienden ook altijd gezellig.", en: "I myself like to do something active, like going for a walk or going to the market. You could also sit on a terrace if the weather is good, or visit a museum if you'd rather be indoors. Otherwise a movie night with friends is always nice too." },
-          { nl: "Zelf ga ik graag naar een park of doe ik iets creatiefs thuis. Je kunt ook een nieuwe hobby uitproberen dit weekend.", en: "I myself like going to a park or doing something creative at home. You could also try a new hobby this weekend." },
-          { nl: "Ik hou van fietstochtjes in het weekend. Misschien is een dagje naar een andere stad ook wat voor jou?", en: "I love bike rides on the weekend. Maybe a day trip to another city is something for you too." }
+          { nl: "Meestal doe ik niet zoveel. Lezen, slapen, eten — het is toch weekend, haha! In de zomer ga ik soms naar het meer om te zwemmen, of ik ga de stad in voor een koffie. Ik kan ook naar de sportschool gaan, maar vaak is het druk.", en: "Usually I don't do that much. Reading, sleeping, eating — it's the weekend after all, haha! In summer I sometimes go to the lake to swim, or I go into the city for a coffee. I can also go to the gym, but it's often busy." }
         ],
-        simple: [
-          { nl: "Ik ga wandelen en naar de markt. Ook lees ik graag een boek.", en: "I'm going for a walk and to the market. I also like reading a book." },
-          { nl: "In het weekend ga ik graag naar buiten. Fietsen is ook leuk.", en: "On the weekend I like to go outside. Cycling is fun too." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "ontspannen (to relax)",
-      "vrienden opzoeken (visit friends)",
-      "een dagtrip maken (take a day trip)"
-    ],
+    hints: [],
     glossary: [
       { nl: "terrasje", en: "outdoor cafe seat" },
       { nl: "filmavond", en: "movie night" },
@@ -277,21 +203,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemiddag. Ik heb hier twee weken geleden een broodrooster gekocht, maar sinds gisteren doet hij het niet meer. Ik heb geprobeerd hem opnieuw aan te sluiten, maar dat hielp niet. Kan ik hem omruilen voor een nieuwe, of krijg ik mijn geld terug?", en: "Good afternoon. I bought a toaster here two weeks ago, but since yesterday it doesn't work anymore. I've tried plugging it in again, but that didn't help. Can I exchange it for a new one, or do I get my money back?" },
-          { nl: "Deze broodrooster werkt niet meer sinds kort. Ik zou hem graag ruilen, als dat mogelijk is.", en: "This toaster has stopped working recently. I'd like to exchange it, if that's possible." },
-          { nl: "Het apparaat is helaas defect geraakt. Kan ik hem inleveren voor een exemplaar dat wel werkt?", en: "The appliance unfortunately broke down. Can I return it for one that does work?" }
+          { nl: "Goedemiddag. Ik heb hier twee weken geleden een broodrooster gekocht, maar hij werkt niet meer. Volgens mij is hij kapot. Ik heb alles geprobeerd, maar hij doet niks. Kan ik hem misschien terugbrengen en een andere broodrooster proberen?", en: "Good afternoon. I bought a toaster here two weeks ago, but it doesn't work anymore. I think it's broken. I've tried everything, but it doesn't do anything. Could I maybe bring it back and try a different toaster?" }
         ],
-        simple: [
-          { nl: "Deze broodrooster is kapot. Mag ik hem omruilen?", en: "This toaster is broken. Can I exchange it?" },
-          { nl: "Dit apparaat doet het niet meer. Kan ik mijn geld terugkrijgen?", en: "This appliance doesn't work anymore. Can I get my money back?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "kassabon (receipt)",
-      "garantie (warranty)",
-      "kapot (broken)"
-    ],
+    hints: [],
     glossary: [
       { nl: "broodrooster", en: "toaster" },
       { nl: "omruilen", en: "to exchange" },
@@ -310,21 +227,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Hoi, sorry dat ik het niet eerder heb gezegd! Mijn trein heeft opeens vertraging gekregen en ik sta al twintig minuten stil. Ik ben er waarschijnlijk over een halfuur. Kunnen jullie alvast beginnen zonder mij, en misschien iemand aantekeningen laten maken?", en: "Hi, sorry I didn't say it sooner! My train suddenly got delayed and I've already been standing still for twenty minutes. I'll probably be there in half an hour. Can you start without me, and maybe have someone take notes?" },
-          { nl: "Sorry voor de late melding, mijn trein staat al een tijd stil. Begin de vergadering maar vast zonder mij.", en: "Sorry for the late notice, my train has been standing still for a while. Just start the meeting without me." },
-          { nl: "Excuses, ik zit vast door een treinstoring. Kunnen jullie alvast starten, ik sluit later aan.", en: "Apologies, I'm stuck because of a train disruption. Can you all start, I'll join later." }
+          { nl: "Ik kom, maar er was een probleem met de trein. Ik ben er over ongeveer twintig minuten. Kunnen jullie op mij wachten?", en: "I'm coming, but there was a problem with the train. I'll be there in about twenty minutes. Can you wait for me?" }
         ],
-        simple: [
-          { nl: "Mijn trein heeft vertraging. Ik kom later.", en: "My train is delayed. I'll arrive later." },
-          { nl: "Mijn trein is laat. Begin de vergadering maar zonder mij.", en: "My train is late. Just start the meeting without me." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "oponthoud (delay)",
-      "bijpraten (catch up/fill in)",
-      "excuus aanbieden (apologize)"
-    ],
+    hints: [],
     glossary: [
       { nl: "vertraging", en: "delay" },
       { nl: "opeens", en: "suddenly" },
@@ -343,21 +251,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Het gaat wel goed, maar grammatica vind ik nog best lastig, vooral de werkwoordsvormen. Zou jij mij daar misschien een keer mee kunnen helpen? Of ken je anders een goede oefensite die je zelf hebt gebruikt?", en: "It's going alright, but I still find grammar quite difficult, especially the verb forms. Could you maybe help me with that sometime? Or do you know a good practice site that you've used yourself?" },
-          { nl: "De werkwoordsvormen vind ik echt ingewikkeld. Zou je me kunnen laten zien hoe jij ze oefent?", en: "I find the verb forms really complicated. Could you show me how you practice them?" },
-          { nl: "Ik snap de grammatica nog niet helemaal goed. Heb jij misschien een handige manier om dat te leren?", en: "I don't fully understand the grammar yet. Do you maybe have a handy way to learn that?" }
+          { nl: "Het gaat goed, maar soms is het moeilijk/lastig. Ik snap sommige woorden wel, andere niet. Ik moet meer oefenen om te verbeteren. Daarom spreek ik nu meer Nederlands op mijn werk.", en: "It's going well, but sometimes it's difficult. I understand some words, others not. I need to practice more to improve. That's why I now speak more Dutch at work." }
         ],
-        simple: [
-          { nl: "Grammatica is moeilijk voor mij. Kun je me helpen?", en: "Grammar is difficult for me. Can you help me?" },
-          { nl: "Ik snap de werkwoorden niet goed. Kun je dat uitleggen?", en: "I don't understand the verbs well. Can you explain that?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "vervoegen (to conjugate)",
-      "regelmatig oefenen (practice regularly)",
-      "een werkwoord (a verb)"
-    ],
+    hints: [],
     glossary: [
       { nl: "werkwoordsvormen", en: "verb forms" },
       { nl: "lastig", en: "difficult" },
@@ -376,21 +275,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ja, ik geef een klein feestje bij mij thuis, met een paar goede vrienden. Het is zaterdag om acht uur 's avonds. Heb je zin om ook te komen? Het wordt vast gezellig.", en: "Yes, I'm having a small party at my place, with a few good friends. It's Saturday at eight in the evening. Do you feel like coming too? It'll definitely be fun." },
-          { nl: "Ik vier het met een klein feestje thuis, zaterdagavond. Je bent van harte welkom als je zin hebt.", en: "I'm celebrating with a small party at home, Saturday evening. You're very welcome if you feel like it." },
-          { nl: "Zaterdag geef ik een feestje bij mij thuis, met wat vrienden. Zou je ook langs willen komen?", en: "Saturday I'm having a party at my place, with some friends. Would you like to come along too?" }
+          { nl: "Ja, ik geef een klein feestje voor mijn verjaardag — eten, drankjes, spelletjes, zoiets. Ben je vrij? Wil je bij mij komen? Vind je dat leuk?", en: "Yes, I'm having a small party for my birthday — food, drinks, games, something like that. Are you free? Do you want to come to my place? Would you like that?" }
         ],
-        simple: [
-          { nl: "Ik geef zaterdag een feestje. Kom je ook?", en: "I'm having a party Saturday. Are you coming too?" },
-          { nl: "Zaterdag ben ik jarig. Ik hoop dat je komt.", en: "Saturday is my birthday. I hope you'll come." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "een cadeau meenemen (bring a gift)",
-      "verjaardag vieren (celebrate a birthday)",
-      "gasten uitnodigen (invite guests)"
-    ],
+    hints: [],
     glossary: [
       { nl: "jarig", en: "having a birthday" },
       { nl: "feestje", en: "party" },
@@ -408,21 +298,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemorgen. Ik heb op uw website een appartement gezien dat mij erg aanspreekt, in de Molenstraat. Zou ik een afspraak kunnen maken om het van binnen te bekijken? Ik ben deze week eigenlijk elke dag beschikbaar.", en: "Good morning. I saw an apartment on your website that I like a lot, on the Molenstraat. Could I make an appointment to view the inside? I'm actually available every day this week." },
-          { nl: "Ik heb interesse in het appartement in de Molenstraat. Wanneer zou ik het kunnen bezichtigen?", en: "I'm interested in the apartment on the Molenstraat. When could I view it?" },
-          { nl: "Dat appartement op uw website spreekt me erg aan. Is er deze week nog een moment om het te bekijken?", en: "That apartment on your website appeals to me a lot. Is there a time this week to see it?" }
+          { nl: "Ja, hoi, met Steve. Ik heb een mooi appartement van u op internet gezien. Kan ik daarvoor een afspraak maken? Welke datum heeft u? Het is op [straatnaam]. Dicht bij het bos.", en: "Yes, hi, this is Steve. I saw a nice apartment of yours online. Can I make an appointment for that? What date do you have available? It's on [street name]. Close to the forest." }
         ],
-        simple: [
-          { nl: "Ik wil het appartement bekijken. Kan dat deze week?", en: "I want to view the apartment. Is that possible this week?" },
-          { nl: "Mag ik het huis komen bekijken? Ik ben deze week vrij.", en: "May I come see the house? I'm free this week." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "huurcontract (rental contract)",
-      "bezichtiging (viewing)",
-      "kale huur (base rent)"
-    ],
+    hints: [],
     glossary: [
       { nl: "makelaar", en: "estate agent" },
       { nl: "aanspreekt", en: "appeals to" },
@@ -440,21 +321,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ik snap wel dat het makkelijk is, maar ik probeer het zelf niet te vaak te doen. Meestal kook ik met verse groente en fruit, dat voelt gewoon beter voor mijn lichaam. Af en toe iets lekkers is prima, zolang het niet elke dag is.", en: "I do understand that it's easy, but I try not to do it too often myself. I usually cook with fresh vegetables and fruit, that just feels better for my body. Something tasty now and then is fine, as long as it's not every day." },
-          { nl: "Zelf let ik liever op wat ik eet en kook ik vaak vers. Fastfood neem ik alleen af en toe, als uitzondering.", en: "I myself prefer to watch what I eat and often cook fresh. I only have fast food occasionally, as an exception." },
-          { nl: "Ik probeer meestal gezonde keuzes te maken met verse ingrediënten. Snelle maaltijden bewaar ik voor speciale momenten.", en: "I usually try to make healthy choices with fresh ingredients. I save quick meals for special occasions." }
+          { nl: "Ik vind fastfood ook lekker, maar niet elke dag. Je moet ook groente en fruit eten. Snackbar-eten is niet zo gezond — er zit altijd veel zout in. Als je geen tijd hebt, is dat oké. Maar als je wel tijd hebt, kun je beter iets maken dat goed is voor je lichaam.", en: "I like fast food too, but not every day. You should also eat vegetables and fruit. Snack bar food isn't very healthy — it always has a lot of salt in it. If you don't have time, that's okay. But if you do have time, it's better to make something that's good for your body." }
         ],
-        simple: [
-          { nl: "Ik kook meestal gezond. Fastfood eet ik niet vaak.", en: "I usually cook healthy. I don't eat fast food often." },
-          { nl: "Ik eet liever groente en fruit. Fastfood is niet zo gezond.", en: "I prefer to eat vegetables and fruit. Fast food isn't very healthy." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "evenwichtig eten (eat balanced)",
-      "vezels (fiber)",
-      "maaltijd bereiden (prepare a meal)"
-    ],
+    hints: [],
     glossary: [
       { nl: "snackbar", en: "snack bar" },
       { nl: "verse groente", en: "fresh vegetables" },
@@ -472,21 +344,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Nee, ik heb ook nog geen idee, eerlijk gezegd. Ik dacht aan een cadeaubon voor een restaurant, want ze houdt van lekker eten. Je zou ook een boek van haar favoriete schrijver kunnen geven, of gewoon een leuke dag samen plannen in plaats van een cadeau.", en: "No, I don't have an idea yet either, to be honest. I was thinking of a gift card for a restaurant, because she loves good food. You could also give a book by her favorite writer, or just plan a fun day together instead of a gift." },
-          { nl: "Misschien kun je haar meenemen naar een leuke workshop of activiteit. Dat is vaak leuker dan een gewoon cadeau.", en: "Maybe you could take her to a nice workshop or activity. That's often more fun than a regular gift." },
-          { nl: "Wat dacht je van sieraden of iets persoonlijks? Anders is een etentje samen ook altijd een goed idee.", en: "What about jewelry or something personal? Otherwise having dinner together is always a good idea too." }
+          { nl: "Geld is altijd een goed idee voor een cadeautje, of een cadeaubon — dan kan ze zelf iets kopen wat ze wil. Of je kunt ook iets geven dat je zelf gemaakt hebt, zoals een toetje of iets handgemaakt.", en: "Money is always a good idea for a gift, or a gift card — then she can buy something herself that she wants. Or you can also give something you made yourself, like a dessert or something handmade." }
         ],
-        simple: [
-          { nl: "Een cadeaubon is een goed idee. Of een boek dat ze leuk vindt.", en: "A gift card is a good idea. Or a book she'd like." },
-          { nl: "Misschien een boek? Of ga samen iets leuks doen.", en: "Maybe a book? Or do something fun together." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "verrassen (to surprise)",
-      "smaak kennen (know someone's taste)",
-      "iets origineels (something original)"
-    ],
+    hints: [],
     glossary: [
       { nl: "cadeaubon", en: "gift card" },
       { nl: "schrijver", en: "writer" },
