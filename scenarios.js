@@ -367,22 +367,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Wat leuk dat je dat zelf gaat doen! Als je van rust én cultuur houdt, zou je aan een stad aan zee kunnen denken, zoals Lissabon of Barcelona. Je kunt er overdag musea bezoeken en 's avonds gewoon ontspannen op het strand. Een andere optie is een klein dorp in de bergen, als je liever helemaal tot rust komt.", en: "How nice that you're doing that yourself! If you like both peace and culture, you could think of a coastal city, like Lisbon or Barcelona. You can visit museums during the day and just relax on the beach in the evening. Another option is a small village in the mountains, if you'd rather completely unwind." },
-          { nl: "Een reis naar Italië combineert vaak strand, eten en cultuur heel goed. Je kunt ook een rondreis maken langs meerdere steden.", en: "A trip to Italy often combines beach, food, and culture well. You could also make a tour along several cities." },
-          { nl: "Denk aan een bestemming met natuur én een gezellig centrum, zoals in Oostenrijk. Zo kun je zowel wandelen als de stad in.", en: "Think of a destination with nature and also a cozy center, like in Austria. That way you can both hike and enjoy the city." }
+          { nl: "Europa heeft veel landen die perfect zijn voor jouw vakantie. Je kunt misschien een auto huren, verschillende plekken bezoeken, en blijven waar je het leukst vindt. Of als je niet graag zelf rijdt, kies je een tour en dan brengen ze je naar alle plekjes. Zo heb je meer tijd voor jezelf tijdens de reis.", en: "Europe has many countries that are perfect for your vacation. You could maybe rent a car, visit different places, and stay wherever you like best. Or if you don't like driving yourself, you choose a tour and then they take you to all the spots. That way you have more time for yourself during the trip." }
         ],
-        simple: [
-          { nl: "Ga naar een stad aan zee. Daar kun je rusten en ook musea bezoeken.", en: "Go to a coastal city. There you can rest and also visit museums." },
-          { nl: "Misschien een strandvakantie? Dan kun je rusten en zwemmen.", en: "Maybe a beach vacation? Then you can rest and swim." },
-          { nl: "Of kies een rustig dorpje in de bergen. Daar kun je goed uitrusten.", en: "Or choose a quiet village in the mountains. You can rest well there." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "een reis boeken (book a trip)",
-      "cultuur opsnuiven (soak up culture)",
-      "een rustige plek (a quiet place)"
-    ],
+    hints: [],
     glossary: [
       { nl: "bestemming", en: "destination" },
       { nl: "rondreis", en: "tour/round trip" },
@@ -400,21 +390,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Dat is eigenlijk een heel goed idee, daar had ik zelf nog niet aan gedacht. We zouden bijvoorbeeld om de week kunnen wisselen, of gewoon per dag afspreken wie er rijdt. Het scheelt ons dan ook nog eens file-stress, want dan kunnen we om de beurt rusten in de auto.", en: "That's actually a really good idea, I hadn't thought of that myself yet. We could for example switch every week, or just agree per day who drives. It also saves us traffic stress, because then we can take turns resting in the car." },
-          { nl: "Zullen we een rooster maken, zodat we allebei weten wanneer wie rijdt? Dat scheelt ons echt geld.", en: "Shall we make a schedule, so we both know when who drives? That really saves us money." },
-          { nl: "Laten we het gewoon per week afspreken wie rijdt. Zo delen we de kosten eerlijk.", en: "Let's just agree per week who drives. That way we share the costs fairly." }
+          { nl: "Dat is een goed idee. Dat had ik niet bedacht. Waarom hebben we dit niet eerder gedaan? Zal ik beginnen en morgen bij jou langskomen om je op te halen? Ik ben benieuwd hoe dat gaat.", en: "That's a good idea. I hadn't thought of that. Why didn't we do this before? Shall I start and come by tomorrow to pick you up? I'm curious how that goes." }
         ],
-        simple: [
-          { nl: "Goed idee! We kunnen om de beurt rijden.", en: "Good idea! We can take turns driving." },
-          { nl: "Dat is fijn. Dan rijden we samen naar het werk.", en: "That's nice. Then we'll drive to work together." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "carpoolen (to carpool)",
-      "brandstofkosten (fuel costs)",
-      "afwisselen (to alternate)"
-    ],
+    hints: [],
     glossary: [
       { nl: "benzine", en: "gas/petrol" },
       { nl: "om de beurt", en: "taking turns" },
@@ -432,21 +413,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Dank u wel, wat aardig! Ik ken de buurt eigenlijk nog helemaal niet zo goed. Ik zoek nog een goede supermarkt in de buurt, en ik hoorde dat er ergens een leuke markt is. Weet u misschien waar ik die kan vinden?", en: "Thank you, how kind! I actually don't know the neighborhood very well yet. I'm still looking for a good supermarket nearby, and I heard there's a nice market somewhere. Do you maybe know where I can find it?" },
-          { nl: "Ik ben hier pas komen wonen en mis nog een vaste supermarkt. Kunt u me een goede aanraden?", en: "I just moved here and still miss a regular supermarket. Could you recommend a good one?" },
-          { nl: "Ik zoek nog mijn weg in deze buurt. Is er een markt of winkelstraat die u kunt aanbevelen?", en: "I'm still finding my way in this neighborhood. Is there a market or shopping street you can recommend?" }
+          { nl: "Ja, hoi, ik ben Steve. Ik kom uit Engeland. Ik weet nog niet waar de winkels zijn, of de bushalte. En waar brengen we ons afval en glas naartoe? Oh, en wat is jouw naam?", en: "Yes, hi, I'm Steve. I'm from England. I don't know yet where the shops are, or the bus stop. And where do we take our trash and glass? Oh, and what's your name?" }
         ],
-        simple: [
-          { nl: "Ik zoek een supermarkt en een markt. Weet u waar die zijn?", en: "I'm looking for a supermarket and a market. Do you know where they are?" },
-          { nl: "Ik ben hier nieuw. Is er een supermarkt dichtbij?", en: "I'm new here. Is there a supermarket nearby?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "zich thuis voelen (feel at home)",
-      "buurtgenoten (neighbors)",
-      "de omgeving verkennen (explore the area)"
-    ],
+    hints: [],
     glossary: [
       { nl: "supermarkt", en: "supermarket" },
       { nl: "aanraden", en: "to recommend" },
@@ -464,21 +436,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemiddag. Mijn internet thuis valt al een week lang steeds uit, soms wel drie of vier keer per dag. Ik werk veel thuis, dus dit is best vervelend voor mij. Kunt u kijken wat er aan de hand is, of eventueel iemand langssturen om het te repareren?", en: "Good afternoon. My internet at home has been dropping out for a week now, sometimes three or four times a day. I work from home a lot, so this is quite annoying for me. Could you check what's going on, or possibly send someone to fix it?" },
-          { nl: "Mijn internetverbinding valt regelmatig weg, ook meerdere keren per dag. Kan er iets aan gedaan worden?", en: "My internet connection drops regularly, even several times a day. Can something be done about it?" },
-          { nl: "Er is al een week een probleem met mijn internet thuis. Zou er een monteur langs kunnen komen?", en: "There's been a problem with my home internet for a week now. Could a technician come by?" }
+          { nl: "Ja, hoi, ik heb een klacht over mijn internet bij u. Sommige dagen werkt het goed, andere dagen werkt het niet zo goed. Ik heb veel online afspraken, dus dit probleem is erg vervelend voor mij.", en: "Yes, hi, I have a complaint about my internet with you. Some days it works fine, other days it doesn't work so well. I have a lot of online appointments, so this problem is very annoying for me." }
         ],
-        simple: [
-          { nl: "Mijn internet werkt niet goed. Kunt u dit repareren?", en: "My internet isn't working well. Can you fix this?" },
-          { nl: "Mijn internet valt steeds uit. Kan iemand dit oplossen?", en: "My internet keeps dropping out. Can someone fix this?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "storing (disruption/outage)",
-      "opnieuw opstarten (restart)",
-      "technische problemen (technical issues)"
-    ],
+    hints: [],
     glossary: [
       { nl: "internetverbinding", en: "internet connection" },
       { nl: "klantenservice", en: "customer service" },
@@ -496,21 +459,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Wat goed van je, zeg! Ik heb er zelf ook weleens over nagedacht, vooral omdat ik het belangrijk vind om iets voor anderen te doen. Ik zou het misschien combineren met mijn hobby, bijvoorbeeld door kinderen te helpen met sporten. Het enige is dat ik bang ben dat ik er de tijd niet voor heb naast mijn werk.", en: "Good for you! I've also thought about it myself sometimes, especially because I find it important to do something for others. I might combine it with my hobby, for example by helping children with sports. The only thing is that I'm afraid I won't have the time for it alongside my work." },
-          { nl: "Ik vind het idee eigenlijk heel mooi. Misschien kan ik ergens beginnen waar ik mijn eigen talenten kan gebruiken.", en: "I actually find the idea really nice. Maybe I could start somewhere where I can use my own talents." },
-          { nl: "Dat spreekt me wel aan, al twijfel ik over de tijd die het kost. Hoeveel uur per week ben jij er ongeveer mee bezig?", en: "That does appeal to me, though I'm unsure about the time it takes. How many hours a week are you roughly busy with it?" }
+          { nl: "Wat fijn! Ik vind vrijwilligerswerk ook leuk. Wat voor werk doe je als vrijwilliger? In het weekend heb ik vaak vrije tijd. Ik wil graag meer doen voor mijn buurt — vertel eens meer!", en: "How nice! I also like volunteer work. What kind of work do you do as a volunteer? On weekends I often have free time. I'd like to do more for my neighborhood — tell me more!" }
         ],
-        simple: [
-          { nl: "Dat is leuk! Ik wil dat ook wel eens proberen.", en: "That's nice! I'd like to try that sometime too." },
-          { nl: "Wat goed van jou! Misschien doe ik dat ook.", en: "Good for you! Maybe I'll do that too." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "iets terugdoen (give something back)",
-      "betrokken zijn (be involved)",
-      "vrije tijd besteden (spend free time)"
-    ],
+    hints: [],
     glossary: [
       { nl: "buurthuis", en: "community center" },
       { nl: "energie", en: "energy" },
@@ -528,22 +482,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedenavond. Eigenlijk niet helemaal, het spijt me dat ik het moet zeggen. Mijn soep is helaas koud aangekomen, terwijl de rest van het gerecht er wel goed uitziet. Zou het mogelijk zijn om een nieuwe, warme portie te krijgen?", en: "Good evening. Actually not entirely, I'm sorry to say. My soup unfortunately arrived cold, while the rest of the dish looks good. Would it be possible to get a new, warm portion?" },
-          { nl: "Helaas is mijn soep koud geserveerd. Zou de keuken een verse portie kunnen maken?", en: "Unfortunately my soup was served cold. Could the kitchen make a fresh portion?" },
-          { nl: "Het spijt me, maar dit gerecht is koud aangekomen. Kan het opnieuw opgewarmd worden?", en: "I'm sorry, but this dish arrived cold. Can it be reheated?" }
+          { nl: "Nee, alles is niet goed. Ons eten is koud, en alles ziet er niet goed uit. Waarom is dat? Kunt u het aan de kok vragen? Of wat kunt u anders doen? Ik ben helemaal niet blij, hoor.", en: "No, everything is not good. Our food is cold, and everything doesn't look good. Why is that? Could you ask the cook? Or what else can you do? I'm really not happy, you know." }
         ],
-        simple: [
-          { nl: "Mijn soep is koud. Mag ik een warme, nieuwe portie?", en: "My soup is cold. Can I get a warm, new portion?" },
-          { nl: "Dit is koud. Kan het opnieuw opgewarmd worden?", en: "This is cold. Can it be reheated?" },
-          { nl: "Sorry, maar dit gerecht is koud. Kan de keuken het opnieuw maken?", en: "Sorry, but this dish is cold. Can the kitchen make it again?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "opnieuw opwarmen (reheat)",
-      "een klacht indienen (file a complaint)",
-      "de rekening (the bill)"
-    ],
+    hints: [],
     glossary: [
       { nl: "soep", en: "soup" },
       { nl: "koud aangekomen", en: "arrived cold" },
@@ -561,21 +505,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemiddag. Ik overweeg om volgend jaar bij u een zorgverzekering af te sluiten, maar ik heb nog een paar vragen. Ik wil vooral weten wat er precies vergoed wordt voor de tandarts, en of ik zelf mijn huisarts mag kiezen.", en: "Good afternoon. I'm considering taking out health insurance with you next year, but I still have a few questions. I especially want to know what exactly is covered for the dentist, and whether I can choose my own doctor." },
-          { nl: "Ik wil graag weten welke pakketten jullie aanbieden. Vergoeden jullie ook fysiotherapie?", en: "I'd like to know which packages you offer. Do you also cover physiotherapy?" },
-          { nl: "Kunt u mij uitleggen wat het verschil is tussen de pakketten? Ik ben vooral benieuwd naar de tandartsvergoeding.", en: "Could you explain the difference between the packages? I'm especially curious about the dentist coverage." }
+          { nl: "Goedemiddag, ik bel u voor meer informatie. Waar kan ik meer informatie vinden? En wat is het beste pakket voor mij? Kunnen we een afspraak maken, zodat we erover kunnen praten?", en: "Good afternoon, I'm calling for more information. Where can I find more information? And what's the best package for me? Can we make an appointment, so we can talk about it?" }
         ],
-        simple: [
-          { nl: "Ik wil een verzekering afsluiten. Wat kost dat, en wat is inbegrepen?", en: "I want to take out insurance. What does it cost, and what's included?" },
-          { nl: "Ik zoek een zorgverzekering. Wat vergoedt u allemaal?", en: "I'm looking for health insurance. What all do you cover?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "eigen risico (deductible)",
-      "premie (premium)",
-      "dekking (coverage)"
-    ],
+    hints: [],
     glossary: [
       { nl: "zorgverzekering", en: "health insurance" },
       { nl: "vergoed", en: "reimbursed" },
@@ -593,21 +528,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemiddag. Ik wil graag lid worden, maar ik heb eigenlijk nog nooit getennist. Kan ik als beginner toch meedoen, en zijn er ook lessen voor mensen die net beginnen?", en: "Good afternoon. I'd like to become a member, but I've actually never played tennis before. Can I join as a beginner anyway, and are there also lessons for people who are just starting?" },
-          { nl: "Ik heb nog geen ervaring met tennis, maar wil het graag leren. Bieden jullie ook lessen voor volwassenen aan?", en: "I have no experience with tennis yet, but would like to learn. Do you also offer lessons for adults?" },
-          { nl: "Kan ik me aanmelden zonder ervaring? Ik hoor graag of er begeleiding is voor nieuwe leden.", en: "Can I sign up without experience? I'd love to hear if there's guidance for new members." }
+          { nl: "Goedemiddag, ik wil graag lid worden van uw tennisclub. Hoe kan ik dat doen? Wat voor abonnementen heeft u? Hoeveel kost het? Wanneer kan ik beginnen met sporten?", en: "Good afternoon, I'd like to become a member of your tennis club. How can I do that? What kind of memberships do you have? How much does it cost? When can I start playing?" }
         ],
-        simple: [
-          { nl: "Ik ben een beginner. Zijn er ook lessen voor mij?", en: "I'm a beginner. Are there also lessons for me?" },
-          { nl: "Ik heb nog nooit getennist. Kan ik toch meedoen?", en: "I've never played tennis. Can I join anyway?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "inschrijfgeld (registration fee)",
-      "trainingstijden (training times)",
-      "uitrusting (equipment)"
-    ],
+    hints: [],
     glossary: [
       { nl: "lid worden", en: "to become a member" },
       { nl: "beginner", en: "beginner" },
@@ -625,21 +551,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemorgen. Ik heb morgen om vier uur een afspraak bij u, maar ik moet die dag onverwacht werken. Zou ik de afspraak kunnen verzetten naar een avond later deze week, als dat mogelijk is?", en: "Good morning. I have an appointment with you tomorrow at four o'clock, but I unexpectedly have to work that day. Could I move the appointment to an evening later this week, if that's possible?" },
-          { nl: "Ik moet mijn afspraak van morgen helaas verzetten wegens werk. Heeft u deze week nog een andere avond vrij?", en: "I unfortunately need to move tomorrow's appointment because of work. Do you have another evening free this week?" },
-          { nl: "Er komt iets tussen voor morgen. Zou donderdag of vrijdag mogelijk zijn in plaats daarvan?", en: "Something has come up for tomorrow. Would Thursday or Friday be possible instead?" }
+          { nl: "Hallo, ik heb een afspraak bij u, maar ik kan niet komen, want ik moet werken, sorry. Is er iets vrij op maandagavond? Maandag heb ik de hele dag tijd.", en: "Hello, I have an appointment with you, but I can't come, because I have to work, sorry. Is anything free on Monday evening? On Monday I have time all day." }
         ],
-        simple: [
-          { nl: "Ik moet morgen werken. Kan mijn afspraak naar donderdag?", en: "I have to work tomorrow. Can my appointment move to Thursday?" },
-          { nl: "Ik kan morgen niet komen. Heeft u een andere dag?", en: "I can't come tomorrow. Do you have another day?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "een nieuwe afspraak maken (make a new appointment)",
-      "verplaatsen (to move/reschedule)",
-      "rooster (schedule)"
-    ],
+    hints: [],
     glossary: [
       { nl: "kapsalon", en: "hair salon" },
       { nl: "onverwacht", en: "unexpectedly" },
@@ -657,21 +574,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Dat wil ik best doen, al kan ik niet de hele dag, want ik heb 's middags al iets anders gepland. Ik kan wel de hele ochtend helpen met de zware spullen. Laat me weten welke dag jou het beste uitkomt.", en: "I'm happy to do that, although I can't do the whole day, because I already have something else planned in the afternoon. I can help with the heavy things all morning though. Let me know which day suits you best." },
-          { nl: "Ik kan zeker een paar uur komen helpen, vooral met de zware dozen. Laat me weten hoe laat je begint.", en: "I can definitely come help for a few hours, especially with the heavy boxes. Let me know what time you start." },
-          { nl: "Tuurlijk help ik mee met verhuizen. Ik kan 's ochtends komen, is dat handig voor je?", en: "Sure, I'll help with the move. I can come in the morning, does that work for you?" }
+          { nl: "Oh, pizza?! Oké, ja! Zeker, ik kan je helpen. Welke dag is het beste voor jou? Ik ben flexibel. Waar ga je naartoe?", en: "Oh, pizza?! Okay, yes! Sure, I can help you. Which day is best for you? I'm flexible. Where are you moving to?" }
         ],
-        simple: [
-          { nl: "Ik help graag 's ochtends. 's Middags kan ik helaas niet.", en: "I'm happy to help in the morning. In the afternoon I unfortunately can't." },
-          { nl: "Ik kan een paar uur helpen met dragen. Zeg maar hoe laat.", en: "I can help carry things for a few hours. Just tell me the time." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "een handje helpen (lend a hand)",
-      "inpakken (to pack)",
-      "verhuisdozen (moving boxes)"
-    ],
+    hints: [],
     glossary: [
       { nl: "verhuizen", en: "to move house" },
       { nl: "dragen", en: "to carry" },
