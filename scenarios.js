@@ -597,21 +597,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ik snap dat helemaal, dat merk ik zelf ook weleens bij mezelf. Je zou bijvoorbeeld een tijdslimiet op je apps kunnen instellen, of je telefoon 's avonds in een andere kamer kunnen leggen. Het helpt ook om een leuke hobby te zoeken, zodat je minder snel verveeld op je telefoon kijkt.", en: "I totally understand that, I notice that in myself sometimes too. You could for example set a time limit on your apps, or put your phone in another room in the evening. It also helps to find a fun hobby, so you're less likely to check your phone out of boredom." },
-          { nl: "Probeer misschien apps van je telefoon te verwijderen en alleen via de computer te kijken. Dat maakt het minder verleidelijk.", en: "Maybe try removing the apps from your phone and only checking on the computer. That makes it less tempting." },
-          { nl: "Je zou vaste momenten kunnen instellen waarop je even kijkt, in plaats van de hele dag. Dat werkt vaak goed.", en: "You could set fixed moments to check, instead of all day. That often works well." }
+          { nl: "Doe het niet meteen, maar langzaam, over een paar weken. Elke dag een beetje minder tijd. Begin met één sociale media-app en haal die weg van je telefoon. Zoek iets anders om te doen, zoals een hobby of een boek lezen. Zet voor jezelf een limiet: hoeveel tijd per dag mag je op sociale media zitten? Of zet je telefoon in een andere kamer.", en: "Don't do it right away, but slowly, over a few weeks. Each day a little less time. Start with one social media app and remove it from your phone. Find something else to do, like a hobby or reading a book. Set a limit for yourself: how much time per day are you allowed on social media? Or put your phone in another room." }
         ],
-        simple: [
-          { nl: "Zet een tijdslimiet op je telefoon. Dat helpt echt.", en: "Set a time limit on your phone. That really helps." },
-          { nl: "Leg je telefoon 's avonds weg. Dan kijk je minder vaak.", en: "Put your phone away in the evening. Then you'll check it less." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "schermtijd (screen time)",
-      "afleiding (distraction)",
-      "bewust omgaan met (be mindful of)"
-    ],
+    hints: [],
     glossary: [
       { nl: "tijdslimiet", en: "time limit" },
       { nl: "verveeld", en: "bored" },
@@ -629,21 +620,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemiddag. Ik heb hier een paar dagen geleden deze broek gekocht, maar hij is helaas net te klein. Zou ik hem kunnen omruilen voor een maatje groter, of krijg ik mijn geld terug als u die maat niet meer heeft?", en: "Good afternoon. I bought these pants here a few days ago, but unfortunately they're just too small. Could I exchange them for a size bigger, or do I get my money back if you don't have that size anymore?" },
-          { nl: "Deze broek past helaas niet goed. Zou ik een andere maat kunnen proberen?", en: "These pants unfortunately don't fit well. Could I try a different size?" },
-          { nl: "De maat is jammer genoeg fout. Heeft u dit model ook in een grotere maat?", en: "The size is unfortunately wrong. Do you have this model in a bigger size too?" }
+          { nl: "Hoi, ik heb deze broek gekocht, maar hij is te klein voor mij. Kan ik hem voor een andere maat wisselen?", en: "Hi, I bought these pants, but they're too small for me. Can I exchange them for a different size?" }
         ],
-        simple: [
-          { nl: "Deze broek is te klein. Heeft u een grotere maat?", en: "These pants are too small. Do you have a bigger size?" },
-          { nl: "Deze maat past niet goed. Mag ik een andere maat proberen?", en: "This size doesn't fit well. May I try a different size?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "passen (to try on)",
-      "ruilen (to exchange)",
-      "bonnetje (receipt)"
-    ],
+    hints: [],
     glossary: [
       { nl: "broek", en: "pants" },
       { nl: "maatje groter", en: "a size bigger" },
@@ -661,21 +643,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ja, dat klopt, en het spijt me. Ik was de afgelopen weken erg druk met werk en ben het helaas vergeten. Moet ik nu een boete betalen, en hoeveel zou dat dan ongeveer zijn?", en: "Yes, that's right, and I'm sorry. I've been very busy with work the past few weeks and unfortunately forgot about it. Do I have to pay a fine now, and how much would that be roughly?" },
-          { nl: "Het boek is inderdaad te laat, dat spijt me. Kan ik de boete meteen contant betalen?", en: "The book is indeed late, I'm sorry about that. Can I pay the fine in cash right away?" },
-          { nl: "Ik ben de inleverdatum vergeten, sorry daarvoor. Wat moet ik nu doen om het recht te zetten?", en: "I forgot about the return date, sorry about that. What should I do now to fix it?" }
+          { nl: "Ja, sorry, ik had geen tijd deze week om het terug te brengen. Moet ik iets betalen? Het was echt een goed boek. Kan ik een nieuw boek lenen / meenemen?", en: "Yes, sorry, I didn't have time this week to bring it back. Do I have to pay something? It was really a good book. Can I borrow / take a new book?" }
         ],
-        simple: [
-          { nl: "Sorry, ik ben het boek vergeten. Moet ik een boete betalen?", en: "Sorry, I forgot about the book. Do I have to pay a fine?" },
-          { nl: "Het boek is te laat. Wat moet ik nu doen?", en: "The book is late. What should I do now?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "verlengen (to renew/extend)",
-      "lidmaatschap (membership)",
-      "op tijd inleveren (return on time)"
-    ],
+    hints: [],
     glossary: [
       { nl: "boete", en: "fine" },
       { nl: "inleverdatum", en: "return date" },
@@ -693,21 +666,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemorgen. Mijn laptop start opeens niet meer op, ook niet na een herstart. Ik heb vandaag een belangrijke deadline, dus ik hoop dat het snel opgelost kan worden. Kunt u op afstand meekijken, of moet ik langskomen?", en: "Good morning. My laptop suddenly won't start anymore, not even after a restart. I have an important deadline today, so I hope it can be fixed quickly. Can you take a look remotely, or do I need to come by?" },
-          { nl: "Mijn laptop reageert nergens meer op. Zou u er telefonisch bij kunnen helpen?", en: "My laptop isn't responding to anything anymore. Could you help over the phone?" },
-          { nl: "Het scherm blijft zwart, zelfs na opnieuw opstarten. Is er iemand die er snel naar kan kijken?", en: "The screen stays black, even after restarting. Is there someone who can take a look quickly?" }
+          { nl: "Goedemorgen, ik was bezig met mijn werk op mijn laptop, en toen gebeurde er iets. Ik weet niet precies wat, maar het scherm is niet meer aan. Daarna werkte de laptop niet meer. Hij start niet meer op. Kunt u me helpen, of zeggen wat het beste is om te doen?", en: "Good morning, I was working on my laptop, and then something happened. I don't know exactly what, but the screen is no longer on. After that the laptop stopped working. It won't start up anymore. Could you help me, or tell me what's best to do?" }
         ],
-        simple: [
-          { nl: "Mijn laptop doet het niet. Kunt u mij helpen?", en: "My laptop isn't working. Can you help me?" },
-          { nl: "Mijn laptop start niet op. Kan iemand dit snel maken?", en: "My laptop won't start. Can someone fix this quickly?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "een probleem melden (report a problem)",
-      "back-up maken (make a backup)",
-      "IT-afdeling (IT department)"
-    ],
+    hints: [],
     glossary: [
       { nl: "opstarten", en: "to start up" },
       { nl: "herstart", en: "restart" },
@@ -725,21 +689,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ja, dat wil ik graag doen. Ik kan hem op de eerste dag rondleiden en uitleggen hoe alles werkt. En de rest van de week kan hij bij mij terecht als hij vragen heeft.", en: "Yes, I'd be happy to do that. I can show him around on the first day and explain how everything works. And for the rest of the week he can come to me if he has questions." },
-          { nl: "Natuurlijk wil ik hem inwerken. Ik laat hem de belangrijkste dingen zien op zijn eerste dag.", en: "Of course I want to help him get settled in. I'll show him the most important things on his first day." },
-          { nl: "Geen probleem, ik neem hem graag onder mijn hoede. Ik zorg dat hij zich snel thuis voelt.", en: "No problem, I'll gladly take him under my wing. I'll make sure he feels at home quickly." }
+          { nl: "Zeker weten! Geen probleem, ik neem hem graag onder mijn hoede. Ik kan hem alles over ons bedrijf vertellen. Ik maak een paar afspraken met andere belangrijke collega's, en ik ga met hem lunchen, of we gaan samen wandelen in de buurt. Ik heb er zin in!", en: "For sure! No problem, I'll gladly take him under my wing. I can tell him everything about our company. I'll set up a few meetings with other important colleagues, and I'll have lunch with him, or we'll go for a walk together in the area. I'm looking forward to it!" }
         ],
-        simple: [
-          { nl: "Ja, ik help hem graag de eerste dagen.", en: "Yes, I'm happy to help him the first few days." },
-          { nl: "Natuurlijk, ik laat hem graag alles zien.", en: "Of course, I'm happy to show him everything." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "wegwijs maken (show the ropes)",
-      "vragen stellen (ask questions)",
-      "welkom heten (welcome someone)"
-    ],
+    hints: [],
     glossary: [
       { nl: "begeleiden", en: "to guide" },
       { nl: "inwerken", en: "to train/onboard" },
@@ -757,21 +712,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ja, natuurlijk, dat is geen probleem. Ik ben eigenlijk de hele week thuis, dus dat komt goed uit. Leg de pakketjes maar bij mij neer, dan zorg ik dat ze veilig blijven tot je terug bent.", en: "Yes, of course, that's no problem. I'm actually home all week, so that works out well. Just drop the packages off with me, then I'll make sure they stay safe until you're back." },
-          { nl: "Dat doe ik met plezier, ik ben toch veel thuis. Zet de pakketjes gerust bij mij neer.", en: "I'm happy to do that, I'm home a lot anyway. Just leave the packages with me." },
-          { nl: "Natuurlijk regel ik dat voor je. Ik zorg dat ze veilig bij mij blijven staan.", en: "Of course I'll arrange that for you. I'll make sure they stay safe with me." }
+          { nl: "Natuurlijk! Wat ga je doen de komende dagen? Ga je ver weg? En wat heb je gekocht? Dat is prima, ik doe het graag. Veel plezier!", en: "Of course! What are you going to do in the coming days? Are you going far away? And what did you buy? That's fine, I'm happy to do it. Have fun!" }
         ],
-        simple: [
-          { nl: "Geen probleem, ik ben thuis. Ik neem ze wel aan.", en: "No problem, I'm home. I'll accept them." },
-          { nl: "Dat is goed. Ik ben veel thuis, dus dat lukt prima.", en: "That's fine. I'm home a lot, so that works well." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "thuis bezorgen (deliver at home)",
-      "sleutel geven (give a key)",
-      "op tijd zijn (be on time)"
-    ],
+    hints: [],
     glossary: [
       { nl: "bezorger", en: "delivery person" },
       { nl: "pakketjes", en: "packages" },
@@ -789,21 +735,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Het bevalt heel goed, maar ik ben nog niet helemaal klaar met inrichten. Ik wil binnenkort een housewarming geven om het te vieren. Zou jij mij kunnen helpen met de voorbereidingen, zoals het versieren en het eten regelen?", en: "I like it a lot, but I'm not quite finished decorating yet. I want to throw a housewarming soon to celebrate. Could you help me with the preparations, like decorating and arranging the food?" },
-          { nl: "Ik wil binnenkort mensen uitnodigen om het nieuwe huis te vieren. Zou je willen meedenken over de indeling van de avond?", en: "I want to invite people soon to celebrate the new house. Would you want to help think about the plan for the evening?" },
-          { nl: "Ik plan een housewarming, maar heb nog geen idee waar ik moet beginnen. Kun je me helpen met de boodschappen?", en: "I'm planning a housewarming, but have no idea where to start. Can you help me with the groceries?" }
+          { nl: "Bijna. Ik wil een klein feestje geven voor onze housewarming. Kun je me helpen? Ik heb jouw hulp nodig om dingen voor te bereiden, eten te maken en schoon te maken, alsjeblieft.", en: "Almost. I want to throw a small party for our housewarming. Can you help me? I need your help to prepare things, make food, and clean, please." }
         ],
-        simple: [
-          { nl: "Ik geef binnenkort een feestje. Kun je me helpen met de voorbereiding?", en: "I'm having a party soon. Can you help me with the preparation?" },
-          { nl: "Ik wil een feestje geven in mijn nieuwe huis. Help je mee?", en: "I want to have a party in my new house. Will you help?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "gasten ontvangen (host guests)",
-      "hapjes maken (make snacks)",
-      "de boel inrichten (set up the place)"
-    ],
+    hints: [],
     glossary: [
       { nl: "housewarming", en: "housewarming party" },
       { nl: "ingericht", en: "furnished/decorated" },
@@ -821,21 +758,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ja, graag, dank u wel. Ik heb net mijn bus gemist en moet over twintig minuten op een afspraak zijn. Weet u misschien of er een andere bus rijdt, of is het te voet ook te doen?", en: "Yes, please, thank you. I just missed my bus and need to be at an appointment in twenty minutes. Do you maybe know if there's another bus, or is it doable on foot too?" },
-          { nl: "Mijn bus is net weggereden voor mijn neus. Rijdt er misschien snel een andere?", en: "My bus just left right in front of me. Is there maybe another one coming soon?" },
-          { nl: "Ik ben net te laat voor de bus. Is lopen naar mijn afspraak een optie, denkt u?", en: "I'm just too late for the bus. Is walking to my appointment an option, do you think?" }
+          { nl: "Ja, ik ben laat voor een belangrijke afspraak. Ik heb mijn bus gemist. Is er een andere bus of trein die ik kan gebruiken? Of is het sneller om te lopen of te fietsen?", en: "Yes, I'm late for an important appointment. I missed my bus. Is there another bus or train I can use? Or is it faster to walk or cycle?" }
         ],
-        simple: [
-          { nl: "Ik heb mijn bus gemist. Is er een andere bus?", en: "I missed my bus. Is there another bus?" },
-          { nl: "Mijn bus is net weg. Kan ik ook lopen naar mijn afspraak?", en: "My bus just left. Can I also walk to my appointment?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "een taxi nemen (take a taxi)",
-      "de volgende bus (the next bus)",
-      "je haasten (to hurry)"
-    ],
+    hints: [],
     glossary: [
       { nl: "gestrest", en: "stressed" },
       { nl: "weggereden", en: "drove off" },
@@ -853,21 +781,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemorgen. Ik heb al een paar dagen flinke kiespijn, vooral als ik iets kouds of warms eet. Zou ik zo snel mogelijk een afspraak kunnen maken? Ik kan bijna elk moment deze week.", en: "Good morning. I've had a bad toothache for a few days now, especially when I eat something cold or warm. Could I make an appointment as soon as possible? I'm available almost any time this week." },
-          { nl: "Mijn kies doet al dagen pijn, vooral 's nachts. Kan ik snel terecht bij de tandarts?", en: "My tooth has been hurting for days, especially at night. Can I get in soon at the dentist?" },
-          { nl: "De pijn wordt steeds erger. Is er misschien een spoedafspraak mogelijk?", en: "The pain keeps getting worse. Is an emergency appointment maybe possible?" }
+          { nl: "Goedemorgen, ik wil snel een afspraak maken, want ik heb pijn in mijn mond, bij mijn tanden. Wat voor advies heeft u voor mij tot de afspraak? Kan ik iets innemen?", en: "Good morning, I'd like to make an appointment quickly, because I have pain in my mouth, near my teeth. What advice do you have for me until the appointment? Can I take something?" }
         ],
-        simple: [
-          { nl: "Ik heb kiespijn. Kan ik snel een afspraak krijgen?", en: "I have a toothache. Can I get an appointment soon?" },
-          { nl: "Mijn kies doet al dagen pijn. Kan ik snel langskomen?", en: "My tooth has hurt for days. Can I come by soon?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "ontsteking (infection)",
-      "pijnstiller (painkiller)",
-      "gevoelig zijn (be sensitive)"
-    ],
+    hints: [],
     glossary: [
       { nl: "kiespijn", en: "toothache" },
       { nl: "spoedafspraak", en: "emergency appointment" },
@@ -885,22 +804,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemorgen. Nee, het gaat eigenlijk niet zo goed. Ik heb hoge koorts en voel me erg grieperig, dus ik denk niet dat ik vandaag kan werken. Ik ga even rusten en hoop morgen weer beter te zijn.", en: "Good morning. No, it's actually not going very well. I have a high fever and feel very feverish, so I don't think I can work today. I'm going to rest for a bit and hope to feel better tomorrow." },
-          { nl: "Ik voel me erg beroerd vandaag, met koorts. Ik denk dat het beter is als ik vandaag thuisblijf.", en: "I feel quite awful today, with a fever. I think it's better if I stay home today." },
-          { nl: "Helaas voel ik me te ziek om te werken. Ik hoop morgen weer aan de slag te kunnen.", en: "Unfortunately I feel too sick to work. I hope to be back at it tomorrow." }
+          { nl: "Hoi, ja, ik voel me niet goed. Ik heb veel hoofdpijn en ik ben een beetje ziek. Ik denk dat ik vandaag niet kan werken. Ik ga vandaag rusten, en hopelijk voel ik me morgen beter.", en: "Hi, yes, I don't feel well. I have a bad headache and I'm a bit sick. I think I can't work today. I'm going to rest today, and hopefully I'll feel better tomorrow." }
         ],
-        simple: [
-          { nl: "Ik ben ziek. Ik kan vandaag niet werken.", en: "I'm sick. I can't work today." },
-          { nl: "Ik heb koorts. Ik blijf vandaag thuis.", en: "I have a fever. I'm staying home today." },
-          { nl: "Ik voel me niet goed. Ik ga vandaag rusten.", en: "I don't feel well. I'm going to rest today." }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "uitzieken (to recover from illness)",
-      "beterschap (get well)",
-      "thuisblijven (stay home)"
-    ],
+    hints: [],
     glossary: [
       { nl: "grieperig", en: "feverish/flu-like" },
       { nl: "koorts", en: "fever" },
