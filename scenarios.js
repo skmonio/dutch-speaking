@@ -827,21 +827,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemiddag. De kraan in mijn keuken lekt al een paar dagen, en het lijkt steeds erger te worden. Zou iemand deze week nog kunnen langskomen om ernaar te kijken?", en: "Good afternoon. The tap in my kitchen has been leaking for a few days now, and it seems to be getting worse. Could someone come by this week to take a look at it?" },
-          { nl: "Er druppelt al dagen water uit mijn kraan. Zou er snel iemand kunnen komen kijken?", en: "Water has been dripping from my tap for days. Could someone come take a look soon?" },
-          { nl: "Mijn keukenkraan lekt steeds meer. Is het mogelijk om deze week nog langs te komen?", en: "My kitchen tap keeps leaking more and more. Is it possible to come by this week still?" }
+          { nl: "Goedemiddag. We hebben een probleem met onze kraan. Er komt water uit, maar hij is dicht. Ik zie geen andere manier om dit probleem op te lossen. Kunt u bij ons komen om te kijken en het te repareren?", en: "Good afternoon. We have a problem with our tap. Water is coming out, but it's closed. I don't see another way to solve this problem. Could you come to us to take a look and repair it?" }
         ],
-        simple: [
-          { nl: "Mijn kraan lekt. Kan iemand komen kijken?", en: "My tap is leaking. Can someone come take a look?" },
-          { nl: "Er druppelt water uit mijn kraan. Kunt u dit repareren?", en: "Water is dripping from my tap. Can you repair this?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "een monteur inschakelen (call in a repairman)",
-      "waterschade (water damage)",
-      "repareren (to repair)"
-    ],
+    hints: [],
     glossary: [
       { nl: "lekt", en: "leaks" },
       { nl: "druppelt", en: "drips" },
@@ -859,21 +850,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Ja, graag. Ik vind deze jas erg mooi, maar hij is eigenlijk net iets te duur voor mij. Weet u toevallig of hier binnenkort een uitverkoop is, of komt er misschien korting op dit merk?", en: "Yes, please. I think this jacket is very nice, but it's actually just a bit too expensive for me. Do you happen to know if there's a sale coming up soon, or will there maybe be a discount on this brand?" },
-          { nl: "Deze jas vind ik echt prachtig, maar de prijs is best hoog. Verwacht u binnenkort een actie?", en: "I really love this jacket, but the price is quite high. Are you expecting a sale soon?" },
-          { nl: "Ik twijfel door de prijs van deze jas. Is er misschien een studentenkorting of iets dergelijks?", en: "I'm hesitant because of the price of this jacket. Is there maybe a student discount or something like that?" }
+          { nl: "Ja, ik vind hem heel mooi, maar ik twijfel door de prijs. Hij is te duur voor mij. Mag ik hem kopen met tien procent korting, want ik ben student? Of heeft u korting als ik lid word?", en: "Yes, I think it's very nice, but I'm hesitant because of the price. It's too expensive for me. Can I buy it with a ten percent discount, because I'm a student? Or do you have a discount if I become a member?" }
         ],
-        simple: [
-          { nl: "Deze jas is mooi maar duur. Komt er nog korting?", en: "This jacket is nice but expensive. Will there be a discount?" },
-          { nl: "Ik vind deze jas mooi, maar duur. Is er binnenkort een uitverkoop?", en: "I like this jacket, but it's expensive. Is there a sale coming up soon?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "afprijzen (to mark down)",
-      "prijskaartje (price tag)",
-      "een koopje (a bargain)"
-    ],
+    hints: [],
     glossary: [
       { nl: "uitverkoop", en: "sale" },
       { nl: "actie", en: "promotion/sale" },
@@ -891,21 +873,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemiddag. Ik heb bij u een kamer geboekt voor komend weekend, maar mijn reisplannen zijn veranderd. Zou het mogelijk zijn om de boeking te verzetten naar het weekend erna, in plaats van te annuleren?", en: "Good afternoon. I've booked a room with you for this coming weekend, but my travel plans have changed. Would it be possible to move the booking to the following weekend, instead of canceling?" },
-          { nl: "Door veranderde plannen kan ik dit weekend niet komen. Kan de boeking naar een latere datum?", en: "Due to changed plans I can't come this weekend. Can the booking move to a later date?" },
-          { nl: "Ik moet mijn verblijf verschuiven door omstandigheden. Is een andere week mogelijk zonder extra kosten?", en: "I need to shift my stay due to circumstances. Is another week possible without extra costs?" }
+          { nl: "Goedemiddag, ik heb bij u een kamer geboekt, maar mijn plannen zijn veranderd, dus ik kan niet op die datum komen. Kan ik voor een andere datum boeken? Of moet ik extra betalen?", en: "Good afternoon, I've booked a room with you, but my plans have changed, so I can't come on that date. Can I book for a different date? Or do I have to pay extra?" }
         ],
-        simple: [
-          { nl: "Mijn plannen zijn veranderd. Kan ik de boeking verzetten?", en: "My plans have changed. Can I move the booking?" },
-          { nl: "Ik kan dit weekend niet komen. Mag het een andere datum zijn?", en: "I can't come this weekend. Can it be a different date?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "reservering wijzigen (change reservation)",
-      "aanbetaling (deposit)",
-      "een latere datum (a later date)"
-    ],
+    hints: [],
     glossary: [
       { nl: "boeking", en: "booking" },
       { nl: "annuleren", en: "to cancel" },
@@ -923,21 +896,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemiddag. Door de vertraging van mijn eerste vlucht heb ik net mijn aansluiting gemist. Is er een andere vlucht waarmee ik vandaag nog verder kan reizen, of moet ik wachten tot morgen?", en: "Good afternoon. Because of the delay of my first flight, I just missed my connection. Is there another flight I can still travel on today, or do I have to wait until tomorrow?" },
-          { nl: "Ik heb mijn overstap gemist door de vertraging. Wanneer vertrekt de volgende vlucht naar mijn bestemming?", en: "I missed my connection because of the delay. When does the next flight to my destination leave?" },
-          { nl: "Door de vertraging zit ik nu vast op het vliegveld. Kunt u mij op een latere vlucht zetten?", en: "Because of the delay I'm now stuck at the airport. Can you put me on a later flight?" }
+          { nl: "Goedemiddag, ik ben gestrest. Ik heb mijn vlucht gemist, want mijn eerste vlucht was niet op tijd. Wanneer is de volgende vlucht naar Engeland? Kan ik daar vandaag nog gaan, of is het te laat?", en: "Good afternoon, I'm stressed. I missed my flight, because my first flight wasn't on time. When is the next flight to England? Can I still get there today, or is it too late?" }
         ],
-        simple: [
-          { nl: "Ik heb mijn vlucht gemist. Is er een andere vlucht vandaag?", en: "I missed my flight. Is there another flight today?" },
-          { nl: "Mijn vlucht had vertraging. Kunt u mij op een andere vlucht zetten?", en: "My flight was delayed. Can you put me on another flight?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "omboeken (to rebook)",
-      "instapkaart (boarding pass)",
-      "vertrektijd (departure time)"
-    ],
+    hints: [],
     glossary: [
       { nl: "aansluiting", en: "connection" },
       { nl: "overstap", en: "connecting flight/transfer" },
@@ -955,21 +919,12 @@ const SCENARIOS = [
       {
         speaker: "you",
         options: [
-          { nl: "Goedemiddag. Ik zag op uw website een schilderscursus voor beginners, en die lijkt me erg leuk. Kunt u mij vertellen wanneer die begint, en of er nog plek vrij is?", en: "Good afternoon. I saw a beginner's painting course on your website, and it seems really nice to me. Could you tell me when it starts, and whether there's still room available?" },
-          { nl: "Ik wil me graag aanmelden voor de schilderscursus. Is er nog ruimte voor nieuwe deelnemers?", en: "I'd like to sign up for the painting course. Is there still room for new participants?" },
-          { nl: "De cursus voor beginners lijkt me leuk. Kunt u vertellen hoeveel de cursus ongeveer kost?", en: "The beginner course sounds nice to me. Could you tell me roughly what the course costs?" }
+          { nl: "Goedemiddag, ik heb interesse in de schilderscursus. Zit hij al vol? Ik heb nog meer vragen: hoeveel kost het, en waar is het? Oh, en welke datum begint hij?", en: "Good afternoon, I'm interested in the painting course. Is it already full? I have more questions: how much does it cost, and where is it? Oh, and what date does it start?" }
         ],
-        simple: [
-          { nl: "Ik wil me inschrijven. Is er nog plek?", en: "I want to sign up. Is there still room?" },
-          { nl: "Ik wil de schilderscursus doen. Wanneer begint die?", en: "I want to take the painting course. When does it start?" }
-        ]
+        simple: []
       }
     ],
-    hints: [
-      "materiaal meenemen (bring supplies)",
-      "creatief bezig zijn (be creative)",
-      "wekelijkse les (weekly lesson)"
-    ],
+    hints: [],
     glossary: [
       { nl: "schilderscursus", en: "painting course" },
       { nl: "deelnemers", en: "participants" },
